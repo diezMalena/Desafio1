@@ -51,5 +51,18 @@
         }
         
 
+        public function seleccionarCorreos(){
+            $stmt = $this->conexion->prepare('SELECT correo FROM usuario');
+            $vectorEmail = []; 
+            $stmt->execute();
+            $result = $stmt->get_result();
+            while($fila = $result->fetch_assoc()){
+                $vectorEmail[] = $fila;
+            } 
+            $this->bitacora->guardarArchivo("Emails seleccionados correctamente.");
+            return $vectorEmail;
+        }
+
+        
     }
 ?>
