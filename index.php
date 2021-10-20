@@ -4,12 +4,12 @@
     </head>
     <body>
         <?php
-            /*require_once 'conexion.php';
+            require_once 'conexion.php';
             session_start();
             if(isset($_SESSION["mensajeError"])){
                 echo $_SESSION["mensajeError"];
                 unset($_SESSION["mensajeError"]);
-            }*/
+            }
         ?>
         
         <form action="controlador.php" method="post">
