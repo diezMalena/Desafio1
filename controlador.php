@@ -42,4 +42,12 @@
             header("Location: index.php");
         }
     }
+
+
+
+
+    //Si el usuario se quiere registrar...
+    if(isset($_REQUEST["registrar"])){
+
+    }
 ?>
