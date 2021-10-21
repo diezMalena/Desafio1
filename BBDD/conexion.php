@@ -1,6 +1,7 @@
 <?php
     require_once 'Persona.php';
     require_once 'Bitacora.php';
+    require_once 'constantes.php';
 
     Class Conexion{
         private $servidor;
@@ -10,8 +11,9 @@
         private $conexion;
         private $bitacora;
 
+
         public function __construct(){
-            $this->servidor = "Localhost";
+            $servidor = "Localhost";
             $this->usuario = "Malena";
             $this->contraseña = "Chubaca2020";
             $this->bbdd = "desafio1";
