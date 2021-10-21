@@ -16,7 +16,7 @@
         <form action="controlador.php" method="post">
             <label for="mail">
                 <span>E-mail:</span>
-                <input type="email" id="mail" required minlength="5">
+                <input type="email" name="correo" id="mail" required minlength="5">
                 <span class="error" aria-live="polite"></span>
             </label> <br><br>
             

@@ -1,9 +1,9 @@
 <html>
     <head>
         <title>Registrarse</title>
-        
+        <script src="Script/validacion.js"></script>
     </head>
-    <body>
+    <body onload="validarEmail()">
         <?php
             session_start();
             if(isset($_SESSION["mensajeError"])){
@@ -13,16 +13,17 @@
         ?>
         
         <form action="controlador.php">
-            <label for="mail">
+            <!--El atributo novalidate sirve para no enviar el formulario -->
+            <label for="mail" novalidate>
                 <span>E-mail:</span>
-                <input type="email" id="mail" required minlength="5">
+                <input type="email" name="correo" id="mail" required minlength="5">
                 <span class="error" aria-live="polite"></span>
             </label> <br><br>
             Nombre  <input type="text" name="nombre" value="" required> <br><br>
             Apellidos  <input type="text" name="apellidos" value="" required> <br><br>
             Foto <input type="text" name="foto" value=""> <br><br>
-            Contraseña <input type="password" name="contraseña" value="" required> <br><br>
-            Repite la contraseña <input type="password" name="contraseña2" value="" required> <br><br>
+            Contraseña <input type="password" name="contraseña" value="" required minlength="5"> <br><br>
+            Repite la contraseña <input type="password" name="contraseña2" value="" required minlength="5"> <br><br>
 
             <input type="submit" name="registrar" value="Registrarse">
             <button><a href="index.php">Volver</a></button>

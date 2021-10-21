@@ -1,7 +1,7 @@
 <?php
     require_once 'Persona.php';
-    require_once 'Bitacora.php';
-    require_once 'constantes.php';
+    require_once 'Bitacora/Bitacora.php';
+    require_once 'BBDD/constantes.php';
 
     Class Conexion{
         private $servidor;
@@ -26,7 +26,7 @@
         }
 
         public function iniciarSesion($email,$contraseña){
-            $stmt = $this->conexion->prepare('SELECT * FROM personas WHERE Email = ? AND Contraseña = ?');
+            $stmt = $this->conexion->prepare('SELECT * FROM usuario WHERE correo = ? AND contraseña = ?');
             $persona = null;
             $stmt->bind_param("ss",$email,$contraseña);
             $stmt->execute();
@@ -40,9 +40,9 @@
 
 
         public function insertarPersona($persona){
-            $stmt = $this->conexion->prepare('INSERT INTO usuario VALUES(?,?,?,?,?,?,?,?,?,?)');
+            $stmt = $this->conexion->prepare('INSERT INTO usuario VALUES(?,?,?,?,?,?,?,?,?)');
             $stmt2 = $this->conexion->prepare('INSERT INTO rol_usuario VALUES(?,?)');            
-            $stmt->bind_param("sssiis",$persona->getCorreo(),$persona->getNombre(),$persona->getApellidos(),$persona->getContraseña(),$persona->getFoto(),$persona->getVictorias(),$persona->getEstado(),$persona->getActivado(),$persona->getPuntuacion());
+            $stmt->bind_param("sssssiiii",$persona->getCorreo(),$persona->getNombre(),$persona->getApellidos(),$persona->getFoto(), $persona->getContraseña(),$persona->getVictorias(),$persona->getEstado(),$persona->getActivado(),$persona->getPuntuacion());
             $stmt2->bind_param("si", $persona->getCorreo(), $persona->getRol());
             $conseguido = false;
             if($stmt->execute() && $stmt2->execute()){

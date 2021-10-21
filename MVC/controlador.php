@@ -1,6 +1,7 @@
 <?php
+    require_once 'BBDD/conexion.php';
     require_once 'Persona.php';
-    require_once 'Bitacora.php';
+    require_once 'Bitacora/Bitacora.php';
 
     session_start();
     $conex = new Conexion();
@@ -9,7 +10,8 @@
     
     //Cuando pulsamos el botón de INICIAR SESIÓN:
     if(isset($_REQUEST["iniciarSesion"])){
-        $correo = $_REQUEST["usuario"];
+        
+        $correo = $_REQUEST["correo"];
         $contraseña = $_REQUEST["contraseña"];
 
         $persona = $conex->iniciarSesion($correo, $contraseña);
