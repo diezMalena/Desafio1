@@ -5,7 +5,7 @@
     </head>
     <body>
         <?php
-            require_once 'BBDD/conexion.php';
+            require_once './BBDD/conexion.php';
             session_start();
             if(isset($_SESSION["mensajeError"])){
                 echo $_SESSION["mensajeError"];
@@ -13,7 +13,7 @@
             }
         ?>
         
-        <form action="controlador.php" method="post">
+        <form action="./Controlador/registro_IS.php" method="post">
             <label for="mail">
                 <span>E-mail:</span>
                 <input type="email" name="correo" id="mail" required minlength="5">

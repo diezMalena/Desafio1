@@ -1,7 +1,8 @@
 <?php
-    require_once 'Persona.php';
-    require_once 'Bitacora/Bitacora.php';
-    require_once 'BBDD/constantes.php';
+    require_once (dirname(__DIR__).'/Bitacora/Bitacora.php');
+    require_once (dirname(__DIR__).'/Modelo/Persona.php');
+    require_once 'constantes.php';
+    
 
     Class Conexion{
         private $servidor;
@@ -13,7 +14,7 @@
 
 
         public function __construct(){
-            $servidor = "Localhost";
+            $this->servidor = "Localhost";
             $this->usuario = "Malena";
             $this->contraseña = "Chubaca2020";
             $this->bbdd = "desafio1";

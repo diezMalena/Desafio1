@@ -12,7 +12,7 @@
             }
         ?>
         
-        <form action="controlador.php">
+        <form action="./Controlador/registro_IS.php">
             <!--El atributo novalidate sirve para no enviar el formulario -->
             <label for="mail" novalidate>
                 <span>E-mail:</span>

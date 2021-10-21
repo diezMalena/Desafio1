@@ -1,7 +1,6 @@
 <?php
-    require_once 'BBDD/conexion.php';
-    require_once 'Persona.php';
-    require_once 'Bitacora/Bitacora.php';
+    require_once (dirname(__DIR__).'/BBDD/conexion.php');
+    require_once (dirname(__DIR__).'/Modelo/Persona.php');
 
     session_start();
     $conex = new Conexion();
