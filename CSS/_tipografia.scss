@@ -1,0 +1,43 @@
+//Para las P y las H, poner dos tipos diferentes de letra.
+p{
+    font-family: Verdana;
+    color: black;
+}
+
+
+@for $i from 1 through 6{
+    h#{$i} {
+        font-family: Comic Arial;
+        font-size: 2rem * (1.7/$i);
+    }
+}
+
+.vertical{
+    ul{
+        text-align: justify;
+    }
+    
+    ul a{
+        color:rgb(27, 23, 23);
+    }
+    
+    ul a:hover{
+        color: darkgoldenrod;
+    }
+}
+
+.horizontal{
+    ul{
+        float: left;
+        text-align: center;
+    }
+    
+    ul a{
+        color:rgb(27, 23, 23);
+        margin-left: 10px;
+    }
+    
+    ul a:hover{
+        color: darkgoldenrod;
+    }
+}

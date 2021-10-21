@@ -1,0 +1,106 @@
+//3 puntos de corte, 480px, 768px y 1280px:
+$maxColumnas: 12;
+$colorMain:rgb(5, 88, 54);
+
+*{box-sizing: border-box; }
+.container {
+    position: relative;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: block;
+    //border: 1px solid orange;
+}
+
+
+@mixin paginaResponsive ($puntoCorte) {
+    @if $puntoCorte == movil{
+        @media only screen and ( max-width: 480px) {
+            @content;
+        }
+    }
+
+    @if $puntoCorte == tablet{
+        @media ( max-width: 768px) {
+            @content;
+        }
+    }
+
+    @if $puntoCorte == ordenador{
+        @media ( max-width: 1280px) {
+            @content;
+        }
+    }
+    @if $puntoCorte == extra{
+        @media ( max-width: 2000px){
+            @content;
+        }
+    }
+}
+
+
+@include paginaResponsive(movil){
+    @for $i from 1 through $maxColumnas {
+        .col-m-#{$i}{
+            width: (100% / $maxColumnas)*$i;
+            float: left;
+        }
+    }
+}
+    
+
+@include paginaResponsive(tablet){
+    @for $i from 1 through $maxColumnas {
+        .col-t-#{$i}{
+            width: (100% / $maxColumnas)*$i;
+            float: left;
+        }
+    }
+}
+
+@include paginaResponsive(ordenador){
+    @for $i from 1 through $maxColumnas {
+        .col-o-#{$i}{
+            width: (100% / $maxColumnas)*$i;
+            float: left;
+        }
+    }
+}
+@include paginaResponsive(extra){
+    @for $i from 1 through $maxColumnas {
+        .col-e-#{$i}{
+            width: (100% / $maxColumnas)*$i;
+            float: left;
+        }
+    }
+}
+
+.izquierda{
+    text-align: left;
+}
+
+.centrado{
+    text-align: center;
+}
+
+.derecha{
+    text-align: right;
+}
+
+.pad5{
+    padding: 0.5em;
+}
+
+.padBottom{
+    padding-bottom: 10px;
+}
+
+.divMenuHorizontal{
+    margin-left: 26%;
+}

@@ -1,0 +1,29 @@
+@import "_colores.scss";
+
+.botonAceptar{
+    color: #FFF;
+    background-color: $primerColor;
+    border-color: $primerColor;
+    border-radius: 1em 1em 1em 1em;
+}
+.botonAceptar:hover{
+    color: #FFF;;
+    background-color: $primerColorEncendido;
+    border-color: $primerColorEncendido;
+    border-radius: 1em 1em 1em 1em;
+}
+
+
+.botonCancelar{
+    color: rgb(0, 0, 0);
+    background-color: $cuartoColor;
+    border-color: $cuartoColor;
+    box-shadow: 10px 5px 5px  rgb(0, 0, 0);
+}
+
+.botonCancelar:hover{
+    color: rgb(0, 0, 0);;
+    background-color: $cuartoColorEncendido;
+    border-color: $cuartoColorEncendido;
+    box-shadow: 10px 5px 5px rgb(161, 179, 187);
+}

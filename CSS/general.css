@@ -1,0 +1,439 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+@media only screen and (max-width: 480px) {
+  .col-m-1 {
+    width: 8.33333%;
+    float: left;
+  }
+  .col-m-2 {
+    width: 16.66667%;
+    float: left;
+  }
+  .col-m-3 {
+    width: 25%;
+    float: left;
+  }
+  .col-m-4 {
+    width: 33.33333%;
+    float: left;
+  }
+  .col-m-5 {
+    width: 41.66667%;
+    float: left;
+  }
+  .col-m-6 {
+    width: 50%;
+    float: left;
+  }
+  .col-m-7 {
+    width: 58.33333%;
+    float: left;
+  }
+  .col-m-8 {
+    width: 66.66667%;
+    float: left;
+  }
+  .col-m-9 {
+    width: 75%;
+    float: left;
+  }
+  .col-m-10 {
+    width: 83.33333%;
+    float: left;
+  }
+  .col-m-11 {
+    width: 91.66667%;
+    float: left;
+  }
+  .col-m-12 {
+    width: 100%;
+    float: left;
+  }
+}
+
+@media (max-width: 768px) {
+  .col-t-1 {
+    width: 8.33333%;
+    float: left;
+  }
+  .col-t-2 {
+    width: 16.66667%;
+    float: left;
+  }
+  .col-t-3 {
+    width: 25%;
+    float: left;
+  }
+  .col-t-4 {
+    width: 33.33333%;
+    float: left;
+  }
+  .col-t-5 {
+    width: 41.66667%;
+    float: left;
+  }
+  .col-t-6 {
+    width: 50%;
+    float: left;
+  }
+  .col-t-7 {
+    width: 58.33333%;
+    float: left;
+  }
+  .col-t-8 {
+    width: 66.66667%;
+    float: left;
+  }
+  .col-t-9 {
+    width: 75%;
+    float: left;
+  }
+  .col-t-10 {
+    width: 83.33333%;
+    float: left;
+  }
+  .col-t-11 {
+    width: 91.66667%;
+    float: left;
+  }
+  .col-t-12 {
+    width: 100%;
+    float: left;
+  }
+}
+
+@media (max-width: 1280px) {
+  .col-o-1 {
+    width: 8.33333%;
+    float: left;
+  }
+  .col-o-2 {
+    width: 16.66667%;
+    float: left;
+  }
+  .col-o-3 {
+    width: 25%;
+    float: left;
+  }
+  .col-o-4 {
+    width: 33.33333%;
+    float: left;
+  }
+  .col-o-5 {
+    width: 41.66667%;
+    float: left;
+  }
+  .col-o-6 {
+    width: 50%;
+    float: left;
+  }
+  .col-o-7 {
+    width: 58.33333%;
+    float: left;
+  }
+  .col-o-8 {
+    width: 66.66667%;
+    float: left;
+  }
+  .col-o-9 {
+    width: 75%;
+    float: left;
+  }
+  .col-o-10 {
+    width: 83.33333%;
+    float: left;
+  }
+  .col-o-11 {
+    width: 91.66667%;
+    float: left;
+  }
+  .col-o-12 {
+    width: 100%;
+    float: left;
+  }
+}
+
+@media (max-width: 2000px) {
+  .col-e-1 {
+    width: 8.33333%;
+    float: left;
+  }
+  .col-e-2 {
+    width: 16.66667%;
+    float: left;
+  }
+  .col-e-3 {
+    width: 25%;
+    float: left;
+  }
+  .col-e-4 {
+    width: 33.33333%;
+    float: left;
+  }
+  .col-e-5 {
+    width: 41.66667%;
+    float: left;
+  }
+  .col-e-6 {
+    width: 50%;
+    float: left;
+  }
+  .col-e-7 {
+    width: 58.33333%;
+    float: left;
+  }
+  .col-e-8 {
+    width: 66.66667%;
+    float: left;
+  }
+  .col-e-9 {
+    width: 75%;
+    float: left;
+  }
+  .col-e-10 {
+    width: 83.33333%;
+    float: left;
+  }
+  .col-e-11 {
+    width: 91.66667%;
+    float: left;
+  }
+  .col-e-12 {
+    width: 100%;
+    float: left;
+  }
+}
+
+.izquierda {
+  text-align: left;
+}
+
+.centrado {
+  text-align: center;
+}
+
+.derecha {
+  text-align: right;
+}
+
+.pad5 {
+  padding: 0.5em;
+}
+
+.padBottom {
+  padding-bottom: 10px;
+}
+
+.divMenuHorizontal {
+  margin-left: 26%;
+}
+
+p {
+  font-family: Verdana;
+  color: black;
+}
+
+h1 {
+  font-family: Comic Arial;
+  font-size: 3.4rem;
+}
+
+h2 {
+  font-family: Comic Arial;
+  font-size: 1.7rem;
+}
+
+h3 {
+  font-family: Comic Arial;
+  font-size: 1.13333rem;
+}
+
+h4 {
+  font-family: Comic Arial;
+  font-size: 0.85rem;
+}
+
+h5 {
+  font-family: Comic Arial;
+  font-size: 0.68rem;
+}
+
+h6 {
+  font-family: Comic Arial;
+  font-size: 0.56667rem;
+}
+
+.vertical ul {
+  text-align: justify;
+}
+
+.vertical ul a {
+  color: #1b1717;
+}
+
+.vertical ul a:hover {
+  color: darkgoldenrod;
+}
+
+.horizontal ul {
+  float: left;
+  text-align: center;
+}
+
+.horizontal ul a {
+  color: #1b1717;
+  margin-left: 10px;
+}
+
+.horizontal ul a:hover {
+  color: darkgoldenrod;
+}
+
+.botonAceptar {
+  color: #FFF;
+  background-color: #075525;
+  border-color: #075525;
+  border-radius: 1em 1em 1em 1em;
+}
+
+.botonAceptar:hover {
+  color: #FFF;
+  background-color: #129247;
+  border-color: #129247;
+  border-radius: 1em 1em 1em 1em;
+}
+
+.botonCancelar {
+  color: black;
+  background-color: #949613;
+  border-color: #949613;
+  -webkit-box-shadow: 10px 5px 5px black;
+          box-shadow: 10px 5px 5px black;
+}
+
+.botonCancelar:hover {
+  color: black;
+  background-color: #e6e77f;
+  border-color: #e6e77f;
+  -webkit-box-shadow: 10px 5px 5px #a1b3bb;
+          box-shadow: 10px 5px 5px #a1b3bb;
+}
+
+.imgResponsive {
+  width: 120px;
+  height: auto;
+  display: block;
+}
+
+article.reportaje img {
+  float: left;
+  border-radius: 1em 1em 1em 1em;
+}
+
+table.primera {
+  border-color: black;
+  background-color: #043a0d;
+}
+
+table.segunda {
+  border-color: black;
+  background-color: #1d5f2e;
+}
+
+form.primario {
+  background-color: silver;
+  color: black;
+}
+
+form.primario input {
+  border: 1px dotted black;
+}
+
+form.secundario {
+  background-color: wheat;
+  color: black;
+}
+
+header {
+  background-color: cadetblue;
+}
+
+nav {
+  background-color: #b6ebeb;
+}
+
+.menu {
+  background-color: #639494;
+}
+/*# sourceMappingURL=general.css.map */
