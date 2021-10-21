@@ -15,33 +15,6 @@ p{
     }
 }
 
-
-.vertical{
-    ul{
-        text-align: justify;
-    }
-    
-    ul a{
-        color:rgb(27, 23, 23);
-    }
-    
-    ul a:hover{
-        color: darkgoldenrod;
-    }
-}
-
-.horizontal{
-    ul{
-        float: left;
-        text-align: center;
-    }
-    
-    ul a{
-        color:rgb(27, 23, 23);
-        margin-left: 10px;
-    }
-    
-    ul a:hover{
-        color: darkgoldenrod;
-    }
+p >a:hover {
+    color: #753422;
 }

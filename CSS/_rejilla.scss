@@ -8,7 +8,7 @@ $colorMain:rgb(5, 88, 54);
     width: 100%;
     max-width: 1900px;
     margin: 0 auto;
-    padding: 0 10px;
+    //padding: 0 10px;
 }
 
 .row::after {
@@ -98,7 +98,7 @@ $colorMain:rgb(5, 88, 54);
 }
 
 .padBottom{
-    padding-bottom: 10px;
+    padding-bottom: 40px;
 }
 
 .divMenuHorizontal{
@@ -110,4 +110,5 @@ $colorMain:rgb(5, 88, 54);
     margin-top: 35px;
     padding-left: 50px;
 }
+
 

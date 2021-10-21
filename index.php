@@ -25,19 +25,59 @@
                     <h1>ESCAPE WEB</h1>
                 </div>
             </header>
-        
-            <form action="./Controlador/registro_IS.php" method="post">
-                <label for="mail">
-                    <span>E-mail:</span>
-                    <input type="email" name="correo" id="mail" required minlength="5">
-                    <span class="error" aria-live="polite"></span>
-                </label> <br><br>
-                
-                Contraseña  <input type="password" name="contraseña" value="" required minlength="5"><br><br>
-                <input type="submit" value="Iniciar sesión" name="iniciarSesion">
-            </form>
-            <a href="registro.php">Registrarse</a>      
-            <a href="olvideContraseña.php">He olvidado la contraseña</a>
+            
+            <nav class="row">
+                <div class="col-m-12 derecha">
+                <button class="tooltip">?
+                    <span class="tooltiptext">
+                        <center><b>ATAKEBUNE</b></center>
+                        <p>
+                        Un grupo de marines de la Marina Imperial Japonesa, se vio, no sabe muy bien cómo,
+                        encerrado en la bodega de un buque de guerra japonés de la era Sengoku (s. XVI).
+                        Uno de los marines se da cuenta de
+                        que sus pies cada vez están más
+                        cubiertos de agua.
+                        El objetivo es salir del barco en el
+                        menor tiempo posible, ya que
+                        calculan que en menos de media hora
+                        su vida corre peligro.
+                        Para salir del barco, deberán
+                        encontrar las cinco llaves que les
+                        permitirán salir de la bodega…
+                        pero… ¿cómo?
+                        </p>
+                    </span>
+                </button>
+                </div>
+            </nav>
+
+            <section class="row">
+                <article class="col-e-12 centrado pad5 padBottom">
+                        <form action="./Controlador/registro_IS.php" method="post">
+                            <fieldset  class="padBottom col-e-6">
+                                <legend>Introduce tus datos:  </legend>
+                                    <label for="mail">
+                                        <span>E-mail:</span>
+                                        <input type="email" name="correo" id="mail" required minlength="5">
+                                        <span class="error" aria-live="polite"></span>
+                                    </label> <br><br>
+                                
+                                    Contraseña:  <input type="password" name="contraseña" value="" required minlength="5"><br><br>
+                                    <input type="submit" value="Iniciar sesión" name="iniciarSesion" class="botonIS">
+                                    <br><br>
+                                    <p> ¿No tienes cuenta?  <a href="registro.php">Registrarse</a> </p>      
+                                    <br>
+                                    <p> <a href="olvideContraseña.php">He olvidado la contraseña</a> </p>
+                            </fieldset>
+                        </form>
+                        <br>
+                    </article>
+            </section>
+
+            <footer class="row">
+                <p class=" col-e-4 col-m-12 izquierda">Creado por Malena Diez</p>
+                <p class=" col-e-8 col-m-12 derecha">@Copyright</p>
+            </footer>
         </div>        
     </body>
 </html>
