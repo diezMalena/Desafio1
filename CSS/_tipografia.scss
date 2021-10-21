@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@1,700&display=swap");
+
 //Para las P y las H, poner dos tipos diferentes de letra.
 p{
     font-family: Verdana;
@@ -7,10 +9,12 @@ p{
 
 @for $i from 1 through 6{
     h#{$i} {
-        font-family: Comic Arial;
+        font-family: 'Vollkorn', italic;
         font-size: 2rem * (1.7/$i);
+        color: #E2C275;
     }
 }
+
 
 .vertical{
     ul{

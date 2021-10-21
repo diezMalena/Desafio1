@@ -3,6 +3,7 @@
         <title>Escape Web</title>
         <script src="Script/validacion.js"></script>
         <link rel="stylesheet" href="./CSS/general.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@1,500&display=swap">
     </head>
 
     <body>
@@ -17,7 +18,11 @@
         <div class="container">
             <header class="row">
                 <div class="col-e-4 col-m-12">
-                <img src="" alt="">
+                    <img src="./Img/Generales/barco.png" class="imgResponsive">
+                </div>
+
+                <div class="col-e-6 col-m-12 edicionTitulo">
+                    <h1>ESCAPE WEB</h1>
                 </div>
             </header>
         

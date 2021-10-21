@@ -1,7 +1,7 @@
 //header, footer, nav, section:
-
+@import "_colores.scss";
 header{
-    background-color: cadetblue;
+    background-color: $colorHeader;
 }
 
 nav{

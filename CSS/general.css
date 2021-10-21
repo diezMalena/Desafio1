@@ -2,6 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@import url("https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@1,700&display=swap");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -60,7 +61,7 @@ table {
 .container {
   position: relative;
   width: 100%;
-  max-width: 1280px;
+  max-width: 1900px;
   margin: 0 auto;
   padding: 0 10px;
 }
@@ -299,39 +300,50 @@ table {
   margin-left: 26%;
 }
 
+.edicionTitulo {
+  margin-top: 35px;
+  padding-left: 50px;
+}
+
 p {
   font-family: Verdana;
   color: black;
 }
 
 h1 {
-  font-family: Comic Arial;
+  font-family: 'Vollkorn', italic;
   font-size: 3.4rem;
+  color: #E2C275;
 }
 
 h2 {
-  font-family: Comic Arial;
+  font-family: 'Vollkorn', italic;
   font-size: 1.7rem;
+  color: #E2C275;
 }
 
 h3 {
-  font-family: Comic Arial;
+  font-family: 'Vollkorn', italic;
   font-size: 1.13333rem;
+  color: #E2C275;
 }
 
 h4 {
-  font-family: Comic Arial;
+  font-family: 'Vollkorn', italic;
   font-size: 0.85rem;
+  color: #E2C275;
 }
 
 h5 {
-  font-family: Comic Arial;
+  font-family: 'Vollkorn', italic;
   font-size: 0.68rem;
+  color: #E2C275;
 }
 
 h6 {
-  font-family: Comic Arial;
+  font-family: 'Vollkorn', italic;
   font-size: 0.56667rem;
+  color: #E2C275;
 }
 
 .vertical ul {
@@ -426,7 +438,7 @@ form.secundario {
 }
 
 header {
-  background-color: cadetblue;
+  background-color: #321F28;
 }
 
 nav {
