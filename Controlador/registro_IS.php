@@ -23,16 +23,12 @@
             //Si es jugador...
             if($persona->getRol() == 0){
                 header("Location: juego.php");
-            }
-
-            //Si es editor...
-            if($persona->getRol() == 1){
-                header("Location: editor.php");
-            }
-
-            //Si es administrador...
-            if($persona->getRol() == 2){
-                header("Location: admin.php");
+            }//Si es administrador...
+            else{
+                $vectorRoles = $conex->seleccionarRoles($persona->getRol());
+                //Lo metemos en una sesión para llevarnoslo a elegirRol.php.
+                $_SESSION["vectorRoles"] = $vectorRoles;
+                header("Location: ../Vistas/elegirRol.php");
             }
 
         //Si la persona no existe...    
@@ -40,7 +36,7 @@
             //Mostramos un mensaje al recargar la pagina que nos diga que el usuario o la contraseña son incorrectas:
             $mensajeError = 'El usuario y/o la contraseña son incorrectos, inténtelo de nuevo.';
             $_SESSION["mensajeError"] = $mensajeError;
-            header("Location: index.php");
+            header("Location: ../index.php");
         }
     }
 
@@ -81,6 +77,24 @@
             $mensajeError = 'Las contraseñas no coinciden. Registro fallido.';
             $_SESSION["mensajeError"] = $mensajeError; 
             header("location: registro.php");
+        }
+    }
+
+    if(isset($_REQUEST["aceptarRol"])){
+        $rolSeleccionado = $_REQUEST["rol"];
+
+        if($rolSeleccionado == 0){
+            header("Location: ../Vistas/Jugador/juego.php");
+        }
+
+        if($rolSeleccionado == 1){
+            header("Location: ../Vistas/Editor/editor.php");
+        }
+
+        if($rolSeleccionado == 2){
+            $vectorUsuarios = $conex->seleccionarUsuarios();
+            $_SESSION["vectorUsuarios"] = $vectorUsuarios;
+            header("Location: ../Vistas/Admin/crudAdmin.php");
         }
     }
 ?>
