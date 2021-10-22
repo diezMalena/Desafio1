@@ -1,0 +1,47 @@
+//header, footer, nav, section:
+@import "_colores.scss";
+@import url('https://fonts.googleapis.com/css2?family=Bitter&family=Vollkorn:wght@400;600&display=swap');
+html, body{
+    height: 100%;
+}
+
+header{
+    background-color: $colorHeader;
+    height: 20%;
+}
+
+
+section{
+    background-color: $colorSection;
+    height: 70%;
+}
+
+form{
+    font-family: 'Bitter', serif;
+    position: relative;
+}
+
+
+fieldset{
+    padding: 3px 10px;
+    border: #321F28 5px solid;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    position: relative;
+}
+
+.alineado{
+    display: inline-block;
+    width: 80px;
+}
+
+footer{
+    height:10%;
+    line-height:50px;
+    background:$colorHeader;
+    color:white;
+    text-align:center;
+    bottom:0;
+    left:0;
+    width:100%;
+}

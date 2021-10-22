@@ -1,0 +1,42 @@
+@import "_colores.scss";
+@import url("https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@1,700&display=swap");
+
+.botonIS{
+    color: #FFF;
+    background-color: $botonIS;
+    border-color: #775155;
+    border-radius: 1em 1em 1em 1em;
+    height: 35px;
+    width: 120px;
+    font-size: 18px;
+}
+.botonIS:hover{
+    color: rgb(0, 0, 0);;
+    background-color: $botonISencendido;
+    border-radius: 1em 1em 1em 1em;
+}
+
+
+.tooltip {
+    border-bottom: 1px dotted black;
+    float: right;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 20rem;
+    background-color: lightcyan;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    text-align: left;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    right: 0;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+

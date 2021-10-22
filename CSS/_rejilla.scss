@@ -1,0 +1,136 @@
+//3 puntos de corte, 480px, 768px y 1280px:
+$maxColumnas: 12;
+$colorMain:rgb(5, 88, 54);
+
+*{box-sizing: border-box; }
+
+.container {
+    position: relative;
+    width: 100%;
+    max-width: 1900px;
+    margin: 0 auto;
+    //padding: 0 10px;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: block;
+    //border: 1px solid orange;
+}
+
+
+@mixin paginaResponsive ($puntoCorte) {
+    @if $puntoCorte == movil{
+        @media only screen and ( max-width: 480px) {
+            @content;
+        }
+    }
+
+    @if $puntoCorte == tablet{
+        @media ( max-width: 768px) {
+            @content;
+        }
+    }
+
+    @if $puntoCorte == ordenador{
+        @media ( max-width: 1280px) {
+            @content;
+        }
+    }
+    @if $puntoCorte == extra{
+        @media ( max-width: 2000px){
+            @content;
+        }
+    }
+}
+
+
+
+    
+
+
+
+
+@include paginaResponsive(extra){
+    @for $i from 0 through $maxColumnas {
+        .col-e-#{$i}{
+            width: (100% / $maxColumnas)*$i;
+            float: left;
+        }
+        .offset-e-#{$i}{
+            margin-left: (100% / $maxColumnas)*$i;
+        }
+    }
+}
+
+@include paginaResponsive(ordenador){
+    @for $i from 0 through $maxColumnas {
+        .col-o-#{$i}{
+            width: (100% / $maxColumnas)*$i;
+            float: left;
+        }
+        .offset-o-#{$i}{
+            margin-left: (100% / $maxColumnas)*$i;
+        }
+    }
+}
+
+@include paginaResponsive(tablet){
+    @for $i from 0 through $maxColumnas {
+        .col-t-#{$i}{
+            width: (100% / $maxColumnas)*$i;
+            float: left;
+        }
+        .offset-t-#{$i}{
+            margin-left: (100% / $maxColumnas)*$i;
+        }
+    }
+}
+
+@include paginaResponsive(movil){
+    @for $i from 0 through $maxColumnas {
+        .col-m-#{$i}{
+            width: (100% / $maxColumnas)*$i;
+            float: left;
+        }
+        .offset-m-#{$i}{
+            margin-left: (100% / $maxColumnas)*$i;
+        }
+    }
+}
+
+.izquierda{
+    text-align: left;
+}
+
+.centrado{
+    text-align: center;
+}
+
+.derecha{
+    text-align: right;
+}
+
+.pad8{
+    padding-top: 0.8em;
+}
+
+.padBottom{
+    padding-bottom: 40px;
+}
+
+.padTop{
+    padding-top: 40px;
+}
+
+.divMenuHorizontal{
+    margin-left: 26%;
+}
+
+
+.edicionTitulo{
+    margin-top: 20px;
+    padding-left: 50px;
+}
+
