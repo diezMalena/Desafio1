@@ -10,22 +10,15 @@ header{
     height: 20%;
 }
 
-nav{
-    height: 4%;
-    background-color: $colorSection;
-}
 
 section{
     background-color: $colorSection;
-    height: 66%;
+    height: 70%;
 }
 
 form{
-    margin-top: 50px;
     font-family: 'Bitter', serif;
-    width:60%; 
-    margin-left:35%;
-    margin-right:35%; 
+    position: relative;
 }
 
 
@@ -34,6 +27,7 @@ fieldset{
     border: #321F28 5px solid;
     border-top-left-radius: 20px;
     border-bottom-right-radius: 20px;
+    position: relative;
 }
 
 .alineado{

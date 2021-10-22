@@ -46,38 +46,56 @@ $colorMain:rgb(5, 88, 54);
 }
 
 
-@include paginaResponsive(movil){
-    @for $i from 1 through $maxColumnas {
-        .col-m-#{$i}{
+
+    
+
+
+
+
+@include paginaResponsive(extra){
+    @for $i from 0 through $maxColumnas {
+        .col-e-#{$i}{
             width: (100% / $maxColumnas)*$i;
             float: left;
         }
-    }
-}
-    
-
-@include paginaResponsive(tablet){
-    @for $i from 1 through $maxColumnas {
-        .col-t-#{$i}{
-            width: (100% / $maxColumnas)*$i;
-            float: left;
+        .offset-e-#{$i}{
+            margin-left: (100% / $maxColumnas)*$i;
         }
     }
 }
 
 @include paginaResponsive(ordenador){
-    @for $i from 1 through $maxColumnas {
+    @for $i from 0 through $maxColumnas {
         .col-o-#{$i}{
             width: (100% / $maxColumnas)*$i;
             float: left;
         }
+        .offset-o-#{$i}{
+            margin-left: (100% / $maxColumnas)*$i;
+        }
     }
 }
-@include paginaResponsive(extra){
-    @for $i from 1 through $maxColumnas {
-        .col-e-#{$i}{
+
+@include paginaResponsive(tablet){
+    @for $i from 0 through $maxColumnas {
+        .col-t-#{$i}{
             width: (100% / $maxColumnas)*$i;
             float: left;
+        }
+        .offset-t-#{$i}{
+            margin-left: (100% / $maxColumnas)*$i;
+        }
+    }
+}
+
+@include paginaResponsive(movil){
+    @for $i from 0 through $maxColumnas {
+        .col-m-#{$i}{
+            width: (100% / $maxColumnas)*$i;
+            float: left;
+        }
+        .offset-m-#{$i}{
+            margin-left: (100% / $maxColumnas)*$i;
         }
     }
 }
@@ -95,7 +113,7 @@ $colorMain:rgb(5, 88, 54);
 }
 
 .pad5{
-    padding: 0.5em;
+    padding-top: 0.5em;
 }
 
 .padBottom{
@@ -108,8 +126,7 @@ $colorMain:rgb(5, 88, 54);
 
 
 .edicionTitulo{
-    margin-top: 35px;
+    margin-top: 20px;
     padding-left: 50px;
 }
-
 

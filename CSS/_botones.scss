@@ -19,15 +19,12 @@
 
 .tooltip {
     border-bottom: 1px dotted black;
-}
-
-.tooltip {
-    border-bottom: 1px dotted black;
+    float: right;
 }
 
 .tooltip .tooltiptext {
     visibility: hidden;
-    width: 500px;
+    width: 20rem;
     background-color: rgb(122, 102, 102);
     color: rgb(0, 0, 0);
     font-size: 16px;
