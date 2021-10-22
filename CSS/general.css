@@ -461,12 +461,16 @@ table {
   text-align: right;
 }
 
-.pad5 {
-  padding-top: 0.5em;
+.pad8 {
+  padding-top: 0.8em;
 }
 
 .padBottom {
   padding-bottom: 40px;
+}
+
+.padTop {
+  padding-top: 40px;
 }
 
 .divMenuHorizontal {
@@ -547,7 +551,7 @@ p > a:hover {
 .tooltip .tooltiptext {
   visibility: hidden;
   width: 20rem;
-  background-color: #7a6666;
+  background-color: lightcyan;
   color: black;
   font-size: 16px;
   text-align: left;
