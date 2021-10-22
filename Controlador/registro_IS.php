@@ -68,7 +68,7 @@
                 if(!$conseguido){
                     $mensajeError = 'La persona que intentas registrar ya está registrada.';
                     $_SESSION["mensajeError"] = $mensajeError; 
-                    header("location: ../registro.php");
+                    header("location: ../Vistas/registro.php");
                 }else{
                     //Me mando a index.php para poder iniciar sesión:
                     header("location: ../index.php");

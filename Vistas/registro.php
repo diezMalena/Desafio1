@@ -2,7 +2,7 @@
     <head>
         <title>Registrarse</title>
         <script src="Script/validacion.js"></script>
-        <link rel="stylesheet" href="./CSS/general.css">
+        <link rel="stylesheet" href="../CSS/general.css">
     </head>
     <body onload="validarEmail()">
         <?php
@@ -20,7 +20,7 @@
         <div class="container">
             <header class="row">
                 <div class="col-e-4 col-m-5">
-                    <img src="./Img/Generales/barco.png" class="imgResponsive">
+                    <img src="../Img/Generales/barco.png" class="imgResponsive">
                 </div>
 
                 <div class="col-e-6 col-m-6 centrado">
@@ -30,7 +30,7 @@
 
             <section class="row">
                 <div class="col-e-12">
-                    <form action="./Controlador/registro_IS.php" method="POST" class="col-m-12 col-e-4  padTop padBottom offset-e-4 offset-m-0 ">
+                    <form action="../Controlador/registro_IS.php" method="POST" class="col-m-12 col-e-4  padTop padBottom offset-e-4 offset-m-0 ">
                         <fieldset class="padBottom">
                             <legend>Registro:  </legend>
                                 <button class="tooltip">?
@@ -109,7 +109,7 @@
                                 </div>
 
                                 <div class="col-e-6 col-m-12">
-                                    <button><a href="index.php">Volver</a></button>
+                                    <button><a href="../index.php">Volver</a></button>
                                 </div>
                             </div>
 

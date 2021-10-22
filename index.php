@@ -83,7 +83,7 @@
 
                             <div class="row">
                                 <div class="col-e-12 centrado">
-                                    <p> ¿No tienes cuenta?  <a href="registro.php">Registrarse</a> </p> 
+                                    <p> ¿No tienes cuenta?  <a href="./Vistas/registro.php">Registrarse</a> </p> 
                                 </div>
                             </div>
 
