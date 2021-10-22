@@ -55,7 +55,7 @@
                 <article class="col-e-12 centrado pad5 padBottom">
                         <form action="./Controlador/registro_IS.php" method="post">
                             <fieldset  class="padBottom col-e-6">
-                                <legend>Introduce tus datos:  </legend>
+                                <legend>Introduce tus datos:  </legend><br>
                                     <label for="mail">
                                         <span>E-mail:</span>
                                         <input type="email" name="correo" id="mail" required minlength="5">
