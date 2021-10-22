@@ -71,7 +71,7 @@
                     header("location: ../registro.php");
                 }else{
                     //Me mando a index.php para poder iniciar sesión:
-                    header("location: index.php");
+                    header("location: ../index.php");
                 }
             }
     

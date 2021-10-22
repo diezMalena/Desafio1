@@ -30,7 +30,7 @@
                 <div class="col-m-12 derecha">
                 <button class="tooltip">?
                     <span class="tooltiptext">
-                        <center><b>ATAKEBUNE</b></center>
+                        <b>ATAKEBUNE</b>
                         <p>
                         Un grupo de marines de la Marina Imperial Japonesa, se vio, no sabe muy bien cómo,
                         encerrado en la bodega de un buque de guerra japonés de la era Sengoku (s. XVI).

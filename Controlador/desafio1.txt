@@ -6,3 +6,6 @@ Conexión a la Base de Datos correcta.
 Se ha iniciado sesión correctamente.
 Conexión a la Base de Datos correcta.
 Se ha iniciado sesión correctamente.
+Conexión a la Base de Datos correcta.
+Emails seleccionados correctamente.
+Persona insertada correctamente.
