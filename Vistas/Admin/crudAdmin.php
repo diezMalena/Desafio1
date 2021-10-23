@@ -42,12 +42,14 @@
                                         Puntuacion <input type="text" name="puntuacion" value="'. $usuario->getPuntuacion().'" readonly>
                                         Rol <input type="text" name="rol" value="'. $usuario->getRol().'" readonly>
                                         <input type="submit" name="borrar" value="Borrar">
-                                        <input type="submit" name="editar" value="Editar">
+                                        <input type="submit" name="editarAdmin" value="Editar">
                                     </form>';
                             echo $cad;
                         }
                     ?>
                     <a href="../elegirRol.php">Volver</a>
+                    <button><a href="añadirGestores.php">Añadir otros gestores</a></button>
+                    <input type="button" value="Cerrar sesion" name="cerrarSesion">
                 </div>
                                     
             </section>

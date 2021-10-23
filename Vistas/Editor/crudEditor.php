@@ -33,14 +33,15 @@
                     <?php
                         foreach($vectorEnigmas as $enigma){
                             $cad = '<form action="../../Controlador/controlador_crud.php" method="POST">
-                                        ID_Pregunta <input type="text" name="id_pregunta" value="'.$enimga->getId_pregunta().'" readonly>
-                                        Frase <input type="text" name="frase" value="'. $enimga->getFrase() .'" readonly>
+                                        ID_Pregunta <input type="text" name="id_pregunta" value="'.$enigma->getId_pregunta().'" readonly>
+                                        Frase <input type="text" name="frase" value="'. $enigma->getFrase() .'" readonly>
                                         <input type="submit" name="borrar" value="Borrar">
-                                        <input type="submit" name="editar" value="Editar">
+                                        <input type="submit" name="editarEditor" value="Editar">
                                     </form>';
                             echo $cad;
                         }
                     ?>
+                    <button><a href="añadirEnigmas.php">Añadir enigmas</a></button>
                     <a href="../elegirRol.php">Volver</a>
                 </div>
                                     

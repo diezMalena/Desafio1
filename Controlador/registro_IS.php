@@ -96,4 +96,10 @@
             header("Location: ../Vistas/Admin/crudAdmin.php");
         }
     }
+
+    if(isset($_REQUEST["cerrarSesion"])){
+        //Vamos a borrar la sesion de la persona que inició sesion:
+        unset($_SESSION["persona"]);
+        header("Location: ../index.php");
+    }
 ?>
