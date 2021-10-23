@@ -4,12 +4,9 @@
 
     session_start();
     $conex = new Conexion();
-    $conex->conectarBBDD();
 
-    
     //Cuando pulsamos el botón de INICIAR SESIÓN:
     if(isset($_REQUEST["iniciarSesion"])){
-        
         $correo = $_REQUEST["correo"];
         $contraseña = $_REQUEST["contraseña"];
 
@@ -88,7 +85,9 @@
         }
 
         if($rolSeleccionado == 1){
-            header("Location: ../Vistas/Editor/editor.php");
+            $vectorEnigmas = $conex->seleccionarEnigmas();
+            $_SESSION["vectorEnigmas"] = $vectorEnigmas;
+            header("Location: ../Vistas/Editor/crudEditor.php");
         }
 
         if($rolSeleccionado == 2){

@@ -27,7 +27,13 @@
             $this->bitacora->guardarArchivo("Conexión a la Base de Datos correcta.");
         }
 
+        public function cerrarBBDD(){
+            $this->conexion->close();
+            $this->bitacora->guardarArchivo("Conexion a la Base de Datos cerrada correctamente.");
+        }
+
         public function iniciarSesion($email,$contraseña){
+            $this->conectarBBDD();
             $stmt = $this->conexion->prepare('SELECT * FROM usuario JOIN rol_usuario ON usuario.correo=rol_usuario.correo WHERE usuario.correo=? AND usuario.contraseña=?');
             $persona = null;
             $stmt->bind_param("ss",$email,$contraseña);
@@ -37,6 +43,8 @@
                 $this->bitacora->guardarArchivo("Se ha iniciado sesión correctamente.");
                 $persona = new Persona($fila["correo"], $fila["nombre"], $fila["apellidos"], $fila["contraseña"], $fila["foto"], $fila["victorias"], $fila["estado"],$fila["activado"], $fila["puntuacion"], $fila["id_rol"]);
             }
+            $stmt->close();
+            $this->cerrarBBDD();
             return $persona;
         }
 
@@ -44,6 +52,7 @@
          * Esta función me devolverá los roles a los que puedo acceder dependiendo de que tipo de usuario sea, administrador o editor.
          */
         public function seleccionarRoles($rol){
+            $this->conectarBBDD();
             $stmt = $this->conexion->prepare('SELECT * FROM rol WHERE id_rol <= ?');
             $stmt->bind_param("i", $rol);
             $vectorRoles = [];
@@ -54,11 +63,14 @@
                 $vectorRoles[] = $rol; 
                 $this->bitacora->guardarArchivo('Roles seleccionados correctamente.');
             }
+            $stmt->close();
+            $this->cerrarBBDD();
             return $vectorRoles;
         }
 
 
         public function insertarPersona($persona){
+            $this->conectarBBDD();
             $stmt = $this->conexion->prepare('INSERT INTO usuario VALUES(?,?,?,?,?,?,?,?,?)');
             $stmt2 = $this->conexion->prepare('INSERT INTO rol_usuario VALUES(?,?)');            
             $stmt->bind_param("sssssiiii",$persona->getCorreo(),$persona->getNombre(),$persona->getApellidos(),$persona->getFoto(), $persona->getContraseña(),$persona->getVictorias(),$persona->getEstado(),$persona->getActivado(),$persona->getPuntuacion());
@@ -68,11 +80,14 @@
                 $conseguido = true;
                 $this->bitacora->guardarArchivo("Persona insertada correctamente.");
             }
+            $stmt->close();
+            $this->cerrarBBDD();
             return $conseguido;
         }
         
 
         public function seleccionarCorreos(){
+            $this->conectarBBDD();
             $stmt = $this->conexion->prepare('SELECT correo FROM usuario');
             $vectorEmail = []; 
             $stmt->execute();
@@ -80,11 +95,14 @@
             while($fila = $result->fetch_assoc()){
                 $vectorEmail[] = $fila;
             } 
+            $stmt->close();
+            $this->cerrarBBDD();
             $this->bitacora->guardarArchivo("Emails seleccionados correctamente.");
             return $vectorEmail;
         }
 
         public function seleccionarUsuarios(){
+            $this->conectarBBDD();
             $stmt = $this->conexion->prepare('SELECT * FROM usuario JOIN rol_usuario ON usuario.correo=rol_usuario.correo');
             $persona = null;
             $vectorUsuarios = [];
@@ -95,7 +113,43 @@
                 $persona = new Persona($fila["correo"], $fila["nombre"], $fila["apellidos"], $fila["contraseña"], $fila["foto"], $fila["victorias"], $fila["estado"],$fila["activado"], $fila["puntuacion"], $fila["id_rol"]);
                 $vectorUsuarios[] = $persona;
             }
+            $stmt->close();
+            $this->cerrarBBDD();
             return $vectorUsuarios;
+        }
+
+        public function seleccionarEnigmas(){
+            $this->conectarBBDD();
+            //Cojo los enigmas:
+            $stmt = $this->conexion->prepare('SELECT * FROM enigma_pregunta');
+            $enigma = null;
+            $opcion = null;
+            $vectorEnigmas = [];
+            $stmt->execute();
+            $result = $stmt->get_result();
+            while($fila = $result->fetch_assoc()){
+                $enigma = new Enigma($fila["id_pregunta"], $fila["frase"]);
+                //Cojo el enigma y le meto sus opciones:
+                $enigma = $this->recogerOpciones($enigma);
+                //El enigma con sus opciones y sus datos lo meto en un vectorEnigmas que me recoge todos los que tenga la BBDD:
+                $vectorEnigmas[] = $enigma;
+            }
+            $this->bitacora->guardarArchivo("Enigmas con sus opciones recogidos correctamente.");
+            return $vectorEnigmas;
+        }
+
+        public function recogerOpciones($enigma){
+            $stmt = $this->conexion->prepare('SELECT * FROM enigma_opcion WHERE id_pregunta = ?');
+            $stmt->bind_param("i", $enigma->getId_pregunta());
+            $stmt->execute();
+            $result = $stmt->get_result();
+            while($fila = $result->fetch_assoc()){
+                $opcion = new Opcion($fila["id_opcion"], $fila["descripcion"],$fila["opcion_correcta"]);
+                //Cojo cada opcion de ese enigma y lo meto dentro del vectorOpciones de la clase Enigma...
+                $enigma->addOpcion($opcion);
+            }
+            //Devuelvo el enigma con sus opciones en el vector interno de su clase.
+            return $enigma;
         }
     }
 ?>
