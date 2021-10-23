@@ -34,4 +34,5 @@
         public function setVectorOpciones($op_correcta){
             $this->opcion_correcta = $op_correcta;
         }
+
     }
