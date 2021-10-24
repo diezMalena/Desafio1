@@ -28,28 +28,69 @@
             </header>
             
 
-            <section class="row">
-                <div class="col-e-12">
+            <section class="row sectionEditor">
+                <div class="row offset-e-3 padTop">
+                    <div class="col-e-6 col-m-12 ">
+                        <button><a href="añadirEnigmas.php">Añadir enigmas</a></button>
+                    </div>
+
+                    <div class="col-e-6 col-m-12">
+                        <button><a href="../elegirRol.php">Volver</a></button>
+                    </div>
+                </div>
+                <div class="col-e-11 offset-e-1">
                     <?php
                         foreach($vectorEnigmas as $enigma){
-                            $cad = '<form action="../../Controlador/controlador_crud.php" method="POST">
-                                        ID_Pregunta <input type="text" name="id_pregunta" value="'.$enigma->getId_pregunta().'" readonly>
-                                        Frase <input type="text" name="frase" value="'. $enigma->getFrase() .'" readonly>
-                                        <select name="opciones">';
-                                        foreach($enigma->getVectorOpciones() as $opcion){
-                                            $cad .= '<option>"'.$opcion->getDescripcion().'"</option>';
-                                        }
-                                        $cad .= '</select>
-                                        <input type="submit" name="borrar" value="Borrar">
-                                        <input type="submit" name="editarEditor" value="Editar">
-                                    </form>';
-                            echo $cad;
+                            $cad =  '<div class="etiquetaEnigma col-e-5 col-m-12 padTarjeta marginTarjeta">
+                                        <form action="../../Controlador/controlador_crud.php" method="POST">
+                                            <div class="row">
+                                                <div class="col-e-3 col-m-12">
+                                                    ID_Pregunta:
+                                                </div>
+
+                                                <div class="col-e-9 col-m-12">
+                                                    <input class="col-e-12 col-m-12" type="text" name="id_pregunta" value="'.$enigma->getId_pregunta().'" readonly>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-e-3 col-m-12">
+                                                    Frase:
+                                                </div>
+
+                                                <div class="col-e-9 col-m-12">
+                                                    <input type="text" class="col-e-12 col-m-12" name="frase" value="'. $enigma->getFrase() .'" readonly>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-e-3 col-m-12">
+                                                    Opciones: 
+                                                </div>
+                                                <div class="col-e-9 col-m-12">
+                                                    <select name="opciones">';
+                                                        foreach($enigma->getVectorOpciones() as $opcion){
+                                                            $cad .= '<option>"'.$opcion->getDescripcion().'"</option>';
+                                                        }
+                                                        $cad .= '</select>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-e-4 col-m-8 izquierda">
+                                                    <input type="submit" name="borrar" value="Borrar">
+                                                </div>
+
+                                                <div class="col-e-8 col-m-4 derecha">
+                                                    <input type="submit" name="editarEditor" value="Editar">
+                                                </div>
+                                            </div>                        
+                                        </form>
+                                    </div>';
+                                echo $cad;
                         }
-                    ?>
-                    <button><a href="añadirEnigmas.php">Añadir enigmas</a></button>
-                    <a href="../elegirRol.php">Volver</a>
+                    ?>   
                 </div>
-                                    
             </section>
 
             <footer class="row">

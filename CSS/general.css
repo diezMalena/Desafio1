@@ -461,16 +461,20 @@ table {
   text-align: right;
 }
 
-.pad8 {
-  padding-top: 0.8em;
-}
-
 .padBottom {
   padding-bottom: 40px;
 }
 
 .padTop {
-  padding-top: 40px;
+  padding-top: 30px;
+}
+
+.padTarjeta {
+  padding: 7px;
+}
+
+.marginTarjeta {
+  margin: 12px;
 }
 
 .divMenuHorizontal {
@@ -528,11 +532,10 @@ p > a:hover {
 }
 
 .botonIS {
-  color: #FFF;
+  color: black;
   background-color: #734046;
   border-color: #775155;
-  border-radius: 1em 1em 1em 1em;
-  height: 35px;
+  height: 40px;
   width: 120px;
   font-size: 18px;
 }
@@ -540,7 +543,25 @@ p > a:hover {
 .botonIS:hover {
   color: black;
   background-color: #7c6265;
-  border-radius: 1em 1em 1em 1em;
+}
+
+.botonElegirRol {
+  color: #FFF;
+  background-color: #734046;
+  border-color: #775155;
+  height: 35px;
+  width: 110px;
+  font-size: 16px;
+}
+
+.botonElegirRol:hover {
+  color: black;
+  background-color: #7c6265;
+}
+
+button > a {
+  text-decoration: none;
+  color: black;
 }
 
 .tooltip {
@@ -615,6 +636,17 @@ section {
   height: 70%;
 }
 
+.sectionIndex {
+  background-image: url("../Img/Generales/fondo.png");
+  height: 70%;
+}
+
+.sectionEditor {
+  background-image: url("../Img/Generales/fondoEditor.jpg");
+  height: 70%;
+  background-size: cover;
+}
+
 form {
   font-family: 'Bitter', serif;
   position: relative;
@@ -626,6 +658,10 @@ fieldset {
   border-top-left-radius: 20px;
   border-bottom-right-radius: 20px;
   position: relative;
+}
+
+.fondoFieldset {
+  background-color: lightpink;
 }
 
 .alineado {
@@ -642,5 +678,11 @@ footer {
   bottom: 0;
   left: 0;
   width: 100%;
+}
+
+.etiquetaEnigma {
+  background-color: #b1c2cc;
+  color: black;
+  border-radius: 0.5em 0.5em 0.5em 0.5em;
 }
 /*# sourceMappingURL=general.css.map */

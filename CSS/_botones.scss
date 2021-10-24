@@ -2,20 +2,39 @@
 @import url("https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@1,700&display=swap");
 
 .botonIS{
-    color: #FFF;
+    color: rgb(0, 0, 0);
     background-color: $botonIS;
     border-color: #775155;
-    border-radius: 1em 1em 1em 1em;
-    height: 35px;
+    //border-radius: 1em 1em 1em 1em;
+    height: 40px;
     width: 120px;
     font-size: 18px;
 }
 .botonIS:hover{
     color: rgb(0, 0, 0);;
     background-color: $botonISencendido;
-    border-radius: 1em 1em 1em 1em;
+    //border-radius: 1em 1em 1em 1em;
 }
 
+.botonElegirRol{
+    color: #FFF;
+    background-color: $botonIS;
+    border-color: #775155;
+    //border-radius: 1em 1em 1em 1em;
+    height: 35px;
+    width: 110px;
+    font-size: 16px;
+}
+
+.botonElegirRol:hover{
+    color: rgb(0, 0, 0);;
+    background-color: $botonISencendido;
+}
+
+button > a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
 
 .tooltip {
     border-bottom: 1px dotted black;
