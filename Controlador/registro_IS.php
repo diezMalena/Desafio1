@@ -4,12 +4,9 @@
 
     session_start();
     $conex = new Conexion();
-    $conex->conectarBBDD();
 
-    
     //Cuando pulsamos el botón de INICIAR SESIÓN:
     if(isset($_REQUEST["iniciarSesion"])){
-        
         $correo = $_REQUEST["correo"];
         $contraseña = $_REQUEST["contraseña"];
 
@@ -23,16 +20,12 @@
             //Si es jugador...
             if($persona->getRol() == 0){
                 header("Location: juego.php");
-            }
-
-            //Si es editor...
-            if($persona->getRol() == 1){
-                header("Location: editor.php");
-            }
-
-            //Si es administrador...
-            if($persona->getRol() == 2){
-                header("Location: admin.php");
+            }//Si es administrador...
+            else{
+                $vectorRoles = $conex->seleccionarRoles($persona->getRol());
+                //Lo metemos en una sesión para llevarnoslo a elegirRol.php.
+                $_SESSION["vectorRoles"] = $vectorRoles;
+                header("Location: ../Vistas/elegirRol.php");
             }
 
         //Si la persona no existe...    
@@ -40,7 +33,7 @@
             //Mostramos un mensaje al recargar la pagina que nos diga que el usuario o la contraseña son incorrectas:
             $mensajeError = 'El usuario y/o la contraseña son incorrectos, inténtelo de nuevo.';
             $_SESSION["mensajeError"] = $mensajeError;
-            header("Location: index.php");
+            header("Location: ../index.php");
         }
     }
 
@@ -82,5 +75,31 @@
             $_SESSION["mensajeError"] = $mensajeError; 
             header("location: registro.php");
         }
+    }
+
+    if(isset($_REQUEST["aceptarRol"])){
+        $rolSeleccionado = $_REQUEST["rol"];
+
+        if($rolSeleccionado == 0){
+            header("Location: ../Vistas/Jugador/juego.php");
+        }
+
+        if($rolSeleccionado == 1){
+            $vectorEnigmas = $conex->seleccionarEnigmas();
+            $_SESSION["vectorEnigmas"] = $vectorEnigmas;
+            header("Location: ../Vistas/Editor/crudEditor.php");
+        }
+
+        if($rolSeleccionado == 2){
+            $vectorUsuarios = $conex->seleccionarUsuarios();
+            $_SESSION["vectorUsuarios"] = $vectorUsuarios;
+            header("Location: ../Vistas/Admin/crudAdmin.php");
+        }
+    }
+
+    if(isset($_REQUEST["cerrarSesion"])){
+        //Vamos a borrar la sesion de la persona que inició sesion:
+        unset($_SESSION["persona"]);
+        header("Location: ../index.php");
     }
 ?>
