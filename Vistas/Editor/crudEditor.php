@@ -42,7 +42,7 @@
                     <?php
                         foreach($vectorEnigmas as $enigma){
                             $cad =  '<div class="etiquetaEnigma col-e-5 col-m-12 padTarjeta marginTarjeta">
-                                        <form action="../../Controlador/controlador_crud.php" method="POST">
+                                        <form action="../../Controlador/controlador_editor.php" method="POST">
                                             <div class="row">
                                                 <div class="col-e-3 col-m-12">
                                                     ID_Pregunta:

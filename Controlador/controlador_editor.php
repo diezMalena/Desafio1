@@ -24,5 +24,14 @@
         $enigma = $_REQUEST["id_pregunta"];
         $enigma = $conex->cogerEnigma($enigma);
         $_SESSION["enigma"] = $enigma;
-        header("Location: ../Vistas/Admin/editarEditor.php");
+        header("Location: ../Vistas/Editor/editarEditor.php");
+    }
+
+    if(isset($_REQUEST["aceptarCambios"])){
+        $id = $_REQUEST["id_pregunta"];
+        $frase = $_REQUEST["frase"];
+        $vectorId_opciones = $_REQUEST["id_op"];
+        $vectorOpciones = $_REQUEST["op"];
+        $opcionCorrecta = $_REQUEST["opCorrecta"];
+        $conex->editarEnigma($id, $frase,$vectorId_opciones, $vectorOpciones, $opcionCorrecta);
     }

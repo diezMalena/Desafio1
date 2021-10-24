@@ -239,9 +239,9 @@
             $stmt = $this->conexion->prepare('INSERT INTO enigma_pregunta VALUES (null,?)');
             $stmt->bind_param("s", $frase);
             $stmt->execute();
+            $stmt->close();
             //Ahora vamos a añadirle las opciones a la tabla enigma_opcion:
             $this->añadirOpciones($opciones, $opCorrecta);
-            $stmt->close();
             $this->cerrarBBDD();
         }
 
@@ -290,9 +290,33 @@
             $stmt->close();
             $this->cerrarBBDD();
             $this->bitacora->guardarArchivo("Enigmas con sus opciones recogidos correctamente.");
-            return $id_pregunta;
+            return $enigma;
         }
 
+        public function editarEnigma($id, $frase, $vectorId_opciones, $vectorOpciones, $opcionCorrecta){
+            $this->conectarBBDD();
+            $stmt = $this->conexion->prepare('UPDATE enigma_pregunta SET frase = ? WHERE id_pregunta = ?');
+            $stmt->bind_param("si", $frase, $id);
+            $stmt->execute();
+            $stmt->close();
+            $this->editarOpcionesEnigma($id, $vectorId_opciones, $vectorOpciones, $opcionCorrecta);
+            $this->cerrarBBDD();
+            $this->bitacora->guardarArchivo("Enigma actualizado correctamente.");
+        }
+
+        public function editarOpcionesEnigma($id_pregunta,$vectorId_opciones, $opciones, $opcionCorrecta){
+            $stmt = $this->conexion->prepare('UPDATE enigma_opcion SET descripcion = ?, opcion_correcta = ? WHERE id_pregunta = ?');
+            $ultimoId = $this->ultimoId_Pregunta();
+            foreach($opciones as $i => $op){ 
+                //Si la opcion[i] tiene el radio button marcado, en la BBDD pondremos un 1 para saber que es la correcta:
+                $correcta = 0;
+                if($i == $opCorrecta){
+                    $correcta = 1;
+                }
+                $stmt->bind_param("isi", $ultimoId, $op, $correcta);
+                $stmt->execute();
+            } //Esta funcion esta incompleta.
+        }
     }
 
 ?>
