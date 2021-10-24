@@ -1,17 +1,9 @@
 <html>
     <head>
         <title>Registrarse</title>
-        <script src="Script/validacion.js"></script>
         <link rel="stylesheet" href="../../CSS/general.css">
     </head>
-    <body onload="validarEmail()">
-        <?php
-            session_start();
-            if(isset($_SESSION["mensajeError"])){
-                echo $_SESSION["mensajeError"];
-                unset($_SESSION["mensajeError"]);
-            }
-        ?>
+    <body>
         <div class="container">
             <header class="row">
                 <div class="col-e-4 col-m-5">

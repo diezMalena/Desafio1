@@ -1,7 +1,6 @@
 <html>
     <head>
         <title>Escape Web</title>
-        <script src="Script/validacion.js"></script>
         <link rel="stylesheet" href="../../CSS/general.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@1,500&display=swap">
     </head>

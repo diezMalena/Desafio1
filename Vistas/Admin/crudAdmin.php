@@ -49,7 +49,11 @@
                     ?>
                     <a href="../elegirRol.php">Volver</a>
                     <button><a href="añadirGestores.php">Añadir otros gestores</a></button>
-                    <input type="button" value="Cerrar sesion" name="cerrarSesion">
+                    
+                    <form action="../../Controlador/registro_IS.php" method="post">
+                        <input type="submit" value="Cerrar sesion" name="cerrarSesion">
+                    </form>
+                    
                 </div>
                                     
             </section>

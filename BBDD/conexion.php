@@ -231,7 +231,68 @@
             $stmt->close();
             $this->cerrarBBDD();
             $this->bitacora->guardarArchivo("Persona actualizada correctamente.");
-    
         }
+
+
+        public function añadirEnigma($frase, $opciones, $opCorrecta){
+            $this->conectarBBDD();
+            $stmt = $this->conexion->prepare('INSERT INTO enigma_pregunta VALUES (null,?)');
+            $stmt->bind_param("s", $frase);
+            $stmt->execute();
+            //Ahora vamos a añadirle las opciones a la tabla enigma_opcion:
+            $this->añadirOpciones($opciones, $opCorrecta);
+            $stmt->close();
+            $this->cerrarBBDD();
+        }
+
+
+        public function añadirOpciones($opciones, $opCorrecta){
+            $stmt = $this->conexion->prepare('INSERT INTO enigma_opcion VALUES (null,?,?,?)');
+            $ultimoId = $this->ultimoId_Pregunta();
+            foreach($opciones as $i => $op){ 
+                //Si la opcion[i] tiene el radio button marcado, en la BBDD pondremos un 1 para saber que es la correcta:
+                $correcta = 0;
+                if($i == $opCorrecta){
+                    $correcta = 1;
+                }
+                $stmt->bind_param("isi", $ultimoId, $op, $correcta);
+                $stmt->execute();
+            }
+        }
+
+        /**
+         * Con este método recogemos el ultimo id_pregunta que ha sido usado para poder usarlo en la insercion de la otra tabla:
+         */
+        public function ultimoId_Pregunta(){
+            $stmt = $this->conexion->prepare('SELECT max(id_pregunta) AS ultimoId FROM enigma_pregunta');
+            $stmt->execute();
+            $result = $stmt->get_result();
+            while($fila = $result->fetch_assoc()){
+                $ultimoId = $fila["ultimoId"];
+            }
+            return $ultimoId;
+        }
+
+        public function cogerEnigma($id_pregunta){
+            $this->conectarBBDD();
+            //Cojo los enigmas:
+            $stmt = $this->conexion->prepare('SELECT * FROM enigma_pregunta WHERE id_pregunta = ?');
+            $stmt->bind_param("i", $id_pregunta);
+            $enigma = null;
+            $opcion = null;
+            $stmt->execute();
+            $result = $stmt->get_result();
+            while($fila = $result->fetch_assoc()){
+                $enigma = new Enigma($fila["id_pregunta"], $fila["frase"]);
+                //Cojo el enigma y le meto sus opciones:
+                $enigma = $this->recogerOpciones($enigma);
+            }
+            $stmt->close();
+            $this->cerrarBBDD();
+            $this->bitacora->guardarArchivo("Enigmas con sus opciones recogidos correctamente.");
+            return $id_pregunta;
+        }
+
     }
+
 ?>

@@ -35,6 +35,11 @@
                             $cad = '<form action="../../Controlador/controlador_crud.php" method="POST">
                                         ID_Pregunta <input type="text" name="id_pregunta" value="'.$enigma->getId_pregunta().'" readonly>
                                         Frase <input type="text" name="frase" value="'. $enigma->getFrase() .'" readonly>
+                                        <select name="opciones">';
+                                        foreach($enigma->getVectorOpciones() as $opcion){
+                                            $cad .= '<option>"'.$opcion->getDescripcion().'"</option>';
+                                        }
+                                        $cad .= '</select>
                                         <input type="submit" name="borrar" value="Borrar">
                                         <input type="submit" name="editarEditor" value="Editar">
                                     </form>';
