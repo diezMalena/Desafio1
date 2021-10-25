@@ -51,10 +51,12 @@
         }
 
         /**
-         * Esta función me devolverá los roles a los que puedo acceder dependiendo de que tipo de usuario sea, administrador o editor.
+         * Esta función me devolverá los roles a los que puedo acceder dependiendo 
+         * de que tipo de usuario sea, administrador o editor.
          */
         public function seleccionarRoles($rol){
             $this->conectarBBDD();
+            //La select me devuelve los roles que estan por debajo o igual al rol de la persona que inicia sesion:
             $stmt = $this->conexion->prepare('SELECT * FROM rol WHERE id_rol <= ?');
             $stmt->bind_param("i", $rol);
             $vectorRoles = [];
@@ -76,7 +78,7 @@
             $stmt = $this->conexion->prepare('INSERT INTO usuario VALUES(?,?,?,?,?,?,?,?,?)');
             $stmt2 = $this->conexion->prepare('INSERT INTO rol_usuario VALUES(?,?)');            
             $stmt->bind_param("sssssiiii",$persona->getCorreo(),$persona->getNombre(),$persona->getApellidos(),$persona->getFoto(), $persona->getContraseña(),$persona->getVictorias(),$persona->getEstado(),$persona->getActivado(),$persona->getPuntuacion());
-            $stmt2->bind_param("si", $persona->getCorreo(), $persona->getRol());
+            $stmt2->bind_param("si", $persona->getCorreo(), $persona->getRol()); //El rol por defecto es 0 (usuario estandar)
             $conseguido = false;
             if($stmt->execute() && $stmt2->execute()){
                 $conseguido = true;

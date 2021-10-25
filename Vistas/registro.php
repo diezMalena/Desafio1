@@ -7,13 +7,8 @@
     <body onload="validarEmail()">
         <?php
             session_start();
-            if(isset($_SESSION["mensajeError"])){?>
-            <div class="alert alert-danger">
-                <?php
+            if(isset($_SESSION["mensajeError"])){
                 echo $_SESSION["mensajeError"];
-                ?>
-            </div>
-            <?php
                 unset($_SESSION["mensajeError"]);
             }
         ?>
