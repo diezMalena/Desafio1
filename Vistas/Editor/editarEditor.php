@@ -57,6 +57,7 @@
                                                     Opcion '.$aux.':
                                                 </div>
                                                 <div class="col-e-9 col-m-12">
+                                                    <!-- El vector id_op[] almacena los 4 id_opcion de ese enigma -->
                                                     <input type="hidden"  name="id_op[]" value="'.$op->getId_opcion().'">
                                                     <input class="col-e-10" type="text" name="op[]" value="'.$op->getDescripcion().'">';
                                                     if($op->getOpcion_correcta() == 0){ //Si no es la opcion correcta...

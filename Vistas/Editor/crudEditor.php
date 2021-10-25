@@ -83,7 +83,7 @@
 
                                             <div class="row">
                                                 <div class="col-e-4 col-m-8 izquierda">
-                                                    <input type="submit" name="borrar" value="Borrar">
+                                                    <input type="submit" name="borrarEnigma" value="Borrar">
                                                 </div>
 
                                                 <div class="col-e-8 col-m-4 derecha">

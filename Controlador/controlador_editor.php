@@ -21,8 +21,8 @@
 
     if(isset($_REQUEST["editarEditor"])){
         //Cojo todos los campos de la ventana crud.php y los meto en una sesion para irme a la ventana editar.php:
-        $enigma = $_REQUEST["id_pregunta"];
-        $enigma = $conex->cogerEnigma($enigma);
+        $id_pregunta = $_REQUEST["id_pregunta"];
+        $enigma = $conex->cogerEnigma($id_pregunta);
         $_SESSION["enigma"] = $enigma;
         header("Location: ../Vistas/Editor/editarEditor.php");
     }
@@ -33,5 +33,19 @@
         $vectorId_opciones = $_REQUEST["id_op"];
         $vectorOpciones = $_REQUEST["op"];
         $opcionCorrecta = $_REQUEST["opCorrecta"];
+
         $conex->editarEnigma($id, $frase,$vectorId_opciones, $vectorOpciones, $opcionCorrecta);
+        //Vuelvo a seleccionar los enigmas porque ahora estan actualizados:
+        $vectorEnigmas = $conex->seleccionarEnigmas();
+        $_SESSION["vectorEnigmas"] = $vectorEnigmas;
+        header("Location: ../Vistas/Editor/crudEditor.php");
+    }
+
+    if(isset($_REQUEST["borrarEnigma"])){
+        $id_pregunta = $_REQUEST["id_pregunta"];
+        $conex->deleteEnigma($id_pregunta);
+        //Vuelvo a seleccionar los enigmas porque ahora estan actualizados:
+        $vectorEnigmas = $conex->seleccionarEnigmas();
+        $_SESSION["vectorEnigmas"] = $vectorEnigmas;
+        header("Location: ../Vistas/Editor/crudEditor.php");
     }
