@@ -40,21 +40,7 @@
       "title": "Validaciones JS"
     }
   ],
-  "in-progress": [
-    {
-      "assignedTo": {
-        "name": "Malena"
-      },
-      "creation_time": "2021-10-25T07:39:32.925Z",
-      "description": {
-        "content": "En esta página el editor selecciona un enigma para editar, y tendrá todos los campos de los enigmas para editarlos y guardar los cambios.\nIncluirá los botones Aceptar cambios y Volver.",
-        "mime": "text/markdown"
-      },
-      "id": "9",
-      "references": [],
-      "title": "Página EditarEnigma"
-    }
-  ],
+  "in-progress": [],
   "testing": [],
   "done": [
     {
@@ -108,6 +94,19 @@
       "id": "8",
       "references": [],
       "title": "Página CrudEditor"
+    },
+    {
+      "assignedTo": {
+        "name": "Malena"
+      },
+      "creation_time": "2021-10-25T07:39:32.925Z",
+      "description": {
+        "content": "En esta página el editor selecciona un enigma para editar, y tendrá todos los campos de los enigmas para editarlos y guardar los cambios.\nIncluirá los botones Aceptar cambios y Volver.",
+        "mime": "text/markdown"
+      },
+      "id": "9",
+      "references": [],
+      "title": "Página EditarEnigma"
     },
     {
       "assignedTo": {

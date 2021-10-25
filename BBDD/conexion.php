@@ -160,9 +160,9 @@
 
 
         public function deleteUsuario($correo){
-            $this->conectarBBDD();
             $this->deleteRol($correo);
             $this->deleteUsuarioEquipo($correo);
+            $this->conectarBBDD();
             $stmt = $this->conexion->prepare('DELETE FROM usuario WHERE correo = ?');
             $stmt->bind_param("s",$correo);
             $stmt->execute();
@@ -176,20 +176,24 @@
          * Este metodo sirve para borrar el rol que tenia asignada la persona con ese correo.
          */
         public function deleteRol($correo){
+            $this->conectarBBDD();
             $stmt = $this->conexion->prepare('DELETE FROM rol_usuario WHERE correo = ?');
             $stmt->bind_param("s",$correo);
             $stmt->execute();
             $this->bitacora->guardarArchivo("Rol de la persona seleccionada eliminada correctamente.");
+            $this->cerrarBBDD();
         }
 
         /**
          * Este metodo sirve para borrar el usuario del equipo al que pertenecia.
          */
         public function deleteUsuarioEquipo($correo){
+            $this->conectarBBDD();
             $stmt = $this->conexion->prepare('DELETE FROM usuario_equipo WHERE correo = ?');
             $stmt->bind_param("s",$correo);
             $stmt->execute();
             $this->bitacora->guardarArchivo("Persona seleccionada eliminada del equipo correctamente.");
+            $this->cerrarBBDD();
         }
 
         public function cogerUsuario($correo){
@@ -243,14 +247,15 @@
             $stmt->execute();
             $stmt->close();
             //Ahora vamos a añadirle las opciones a la tabla enigma_opcion:
-            $this->añadirOpciones($opciones, $opCorrecta);
             $this->cerrarBBDD();
+            $this->añadirOpciones($opciones, $opCorrecta);
         }
 
 
         public function añadirOpciones($opciones, $opCorrecta){
-            $stmt = $this->conexion->prepare('INSERT INTO enigma_opcion VALUES (null,?,?,?)');
             $ultimoId = $this->ultimoId_Pregunta();
+            $this->conectarBBDD();
+            $stmt = $this->conexion->prepare('INSERT INTO enigma_opcion VALUES (null,?,?,?)');
             foreach($opciones as $i => $op){ 
                 //Si la opcion[i] tiene el radio button marcado, en la BBDD pondremos un 1 para saber que es la correcta:
                 $correcta = 0;
@@ -260,18 +265,21 @@
                 $stmt->bind_param("isi", $ultimoId, $op, $correcta);
                 $stmt->execute();
             }
+            $this->cerrarBBDD();
         }
 
         /**
          * Con este método recogemos el ultimo id_pregunta que ha sido usado para poder usarlo en la insercion de la otra tabla:
          */
         public function ultimoId_Pregunta(){
+            $this->conectarBBDD();
             $stmt = $this->conexion->prepare('SELECT max(id_pregunta) AS ultimoId FROM enigma_pregunta');
             $stmt->execute();
             $result = $stmt->get_result();
             while($fila = $result->fetch_assoc()){
                 $ultimoId = $fila["ultimoId"];
             }
+            $this->cerrarBBDD();
             return $ultimoId;
         }
 
@@ -295,30 +303,50 @@
             return $enigma;
         }
 
-        public function editarEnigma($id, $frase, $vectorId_opciones, $vectorOpciones, $opcionCorrecta){
+        public function editarEnigma($id_pregunta, $frase, $vectorId_opciones, $vectorOpciones, $opcionCorrecta){
             $this->conectarBBDD();
             $stmt = $this->conexion->prepare('UPDATE enigma_pregunta SET frase = ? WHERE id_pregunta = ?');
-            $stmt->bind_param("si", $frase, $id);
+            $stmt->bind_param("si", $frase, $id_pregunta);
             $stmt->execute();
             $stmt->close();
-            $this->editarOpcionesEnigma($id, $vectorId_opciones, $vectorOpciones, $opcionCorrecta);
+            $this->editarOpcionesEnigma($vectorId_opciones, $vectorOpciones, $opcionCorrecta);
             $this->cerrarBBDD();
             $this->bitacora->guardarArchivo("Enigma actualizado correctamente.");
         }
 
-       public function editarOpcionesEnigma($id_pregunta,$vectorId_opciones, $opciones, $opcionCorrecta){
-             /*$stmt = $this->conexion->prepare('UPDATE enigma_opcion SET descripcion = ?, opcion_correcta = ? WHERE id_pregunta = ?');
-            $ultimoId = $this->ultimoId_Pregunta();
+        public function editarOpcionesEnigma($vectorId_opciones, $opciones, $opcionCorrecta){
+            $stmt = $this->conexion->prepare('UPDATE enigma_opcion SET descripcion = ?, opcion_correcta = ? WHERE id_opcion = ?');
+            //Opciones es el vector de 4 opciones, i es 0,1,2,3 y op es los valores de 0,1,2 y 3
             foreach($opciones as $i => $op){ 
                 //Si la opcion[i] tiene el radio button marcado, en la BBDD pondremos un 1 para saber que es la correcta:
                 $correcta = 0;
-                if($i == $opCorrecta){
+                if($i == $opcionCorrecta){
                     $correcta = 1;
                 }
-                $stmt->bind_param("isi", $ultimoId, $op, $correcta);
+                //op es el valor que tienen 0, 1, 2 y 3, correcta es 0 o 1 y vectorId_opciones[$i] es el id_opcion de 0, de 1, de 2 y de 3.
+                //Es decir, id_opcion19[0], id_opcion20[1]...
+                $stmt->bind_param("sii", $op, $correcta, $vectorId_opciones[$i]);
                 $stmt->execute();
-            } Esta funcion esta incompleta.*/
+            }
+        }
+
+        public function deleteEnigma($id_pregunta){
+            $this->deleteOpciones($id_pregunta);
+            $this->conectarBBDD();
+            $stmt = $this->conexion->prepare('DELETE FROM enigma_pregunta WHERE id_pregunta = ?');
+            $stmt->bind_param("i",$id_pregunta);
+            $stmt->execute();
+            $this->bitacora->guardarArchivo("Enigma correspondiente eliminado correctamente.");
+            $this->cerrarBBDD();
+        }
+
+        public function deleteOpciones($id_pregunta){
+            $this->conectarBBDD();
+            $stmt = $this->conexion->prepare('DELETE FROM enigma_opcion WHERE id_pregunta = ?');
+            $stmt->bind_param("i",$id_pregunta);
+            $stmt->execute();
+            $this->bitacora->guardarArchivo("Opciones del enigma correspondiente eliminadas correctamente.");
+            $this->cerrarBBDD();
         }
     }
 
-?>
