@@ -28,10 +28,10 @@
                 </div>
             </header>
 
-            <section class="row">
+            <section class="row fondoRegistro">
                 <div class="col-e-12">
                     <form action="../Controlador/registro_IS.php" method="POST" class="col-m-12 col-e-4  padTop padBottom offset-e-4 offset-m-0 ">
-                        <fieldset class="padBottom">
+                        <fieldset class="padBottom fondoFieldsetRegistro">
                             <legend>Registro:  </legend>
                                 <button class="tooltip">?
                                     <span class="tooltiptext">

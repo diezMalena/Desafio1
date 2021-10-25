@@ -701,4 +701,14 @@ footer {
   color: black;
   border-radius: 0.5em 0.5em 0.5em 0.5em;
 }
+
+.fondoRegistro {
+  background-image: url("../Img/Generales/fondoRegistro.jpg");
+  height: 70%;
+  background-size: none;
+}
+
+.fondoFieldsetRegistro {
+  background-color: #c9e1f3;
+}
 /*# sourceMappingURL=general.css.map */
