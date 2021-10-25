@@ -26,21 +26,114 @@
             </header>
             
 
-            <section class="row">
+            <section class="row sectionAdmin">
                 <div class="col-e-12">
-                    <form action="../../Controlador/controlador_crud.php" method="POST">
-                        Correo <input type="text" name="correo" value="<?=$usuario->getCorreo() ?>" readonly>
-                        Nombre <input type="text" name="nombre" value="<?= $usuario->getNombre() ?>">
-                        Apellidos <input type="text" name="apellidos" value="<?= $usuario->getApellidos() ?>">
-                        Foto <input type="text" name="foto" value="<?= $usuario->getFoto()?>" >
-                        Victorias <input type="text" name="victorias" value="<?= $usuario->getVictorias()?>">
-                        Estado <input type="text" name="estado" value="<?= $usuario->getEstado() ?>">
-                        Activado <input type="text" name="activado" value="<?= $usuario->getActivado() ?>">
-                        Puntuacion <input type="text" name="puntuacion" value="<?=$usuario->getPuntuacion() ?>">
-                        Rol <input type="text" name="rol" value="<?=$usuario->getRol() ?>"readonly >
-                        <input type="submit" value="Aceptar cambios" name="aceptarCambios">
+                    <form action="../../Controlador/controlador_crud.php" method="POST" class="col-m-12 col-e-4  padTop padBottom offset-e-4 offset-m-0 ">
+                        <fieldset class="padBottom">
+                            <legend>Editar usuario: </legend>
+                                <div class="row">
+                                    <div class="col-e-3 col-m-12 col-t-12">
+                                        Correo:
+                                    </div>
+
+                                    <div class="col-e-9 col-m-12 col-t-12">
+                                        <input type="text" name="correo" value="<?=$usuario->getCorreo() ?>" readonly>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-e-3 col-m-12 col-t-12">
+                                        Nombre:
+                                    </div>
+
+                                    <div class="col-e-9 col-m-12 col-t-12">
+                                        <input type="text" name="nombre" value="<?= $usuario->getNombre() ?>">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-e-3 col-m-12 col-t-12">
+                                        Apelllidos:
+                                    </div>
+
+                                    <div class="col-e-9 col-m-12 col-t-12">
+                                        <input type="text" name="apellidos" value="<?= $usuario->getApellidos() ?>">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-e-3 col-m-12 col-t-12">
+                                        Foto:
+                                    </div>
+
+                                    <div class="col-e-9 col-m-12 col-t-12">
+                                        <input type="text" name="foto" value="<?= $usuario->getFoto()?>" >
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-e-3 col-m-12 col-t-12">
+                                        Victorias:
+                                    </div>
+
+                                    <div class="col-e-9 col-m-12 col-t-12">
+                                        <input type="text" name="victorias" value="<?= $usuario->getVictorias()?>">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-e-3 col-m-12 col-t-12">
+                                        Estado:
+                                    </div>
+
+                                    <div class="col-e-9 col-m-12 col-t-12">
+                                        <input type="text" name="estado" value="<?= $usuario->getEstado() ?>">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-e-3 col-m-12 col-t-12">
+                                        Activado:
+                                    </div>
+
+                                    <div class="col-e-9 col-m-12 col-t-12">
+                                        <input type="text" name="activado" value="<?= $usuario->getActivado() ?>">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-e-3 col-m-12 col-t-12">
+                                        Puntuacion:
+                                    </div>
+
+                                    <div class="col-e-9 col-m-12 col-t-12">
+                                        <input type="text" name="puntuacion" value="<?=$usuario->getPuntuacion() ?>">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-e-3 col-m-12 col-t-12">
+                                        Rol:
+                                    </div>
+
+                                    <div class="col-e-9 col-m-12 col-t-12">
+                                        <input type="text" name="rol" value="<?=$usuario->getRol() ?>"readonly >
+                                    </div>
+                                </div>
+
+                                <div class="row padTop">
+                                    <div class="col-e-12 col-m-12 col-t-12 centrado">
+                                        <input type="submit" value="Aceptar cambios" name="aceptarCambios">
+                                    </div>
+                                </div>
+                        </fieldset>
                     </form>
-                    <a href="crudAdmin.php">Volver</a>
+                    
+                    <div class="row">
+                        <div class="col-e-12 col-m-12 col-t-12 centrado">
+                            <button type="button"><a href="crudAdmin.php">Volver</a></button>
+                        </div>
+                    </div>
                 </div>                    
             </section>
 

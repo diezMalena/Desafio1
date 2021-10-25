@@ -20,8 +20,9 @@
             //Si es jugador...
             if($persona->getRol() == 0){
                 header("Location: juego.php");
-            }//Si es administrador...
+            }//Si es administrador o editor...
             else{
+                //En este vector metemos los roles a los que puede acceder este gestor
                 $vectorRoles = $conex->seleccionarRoles($persona->getRol());
                 //Lo metemos en una sesión para llevarnoslo a elegirRol.php.
                 $_SESSION["vectorRoles"] = $vectorRoles;
@@ -42,6 +43,7 @@
 
     //Si el usuario se quiere registrar...
     if(isset($_REQUEST["registrar"])){
+        //Vamos a coger todos los emails de la BBDD:
         $vectorCorreos = $conex->seleccionarCorreos();
         $persona = new Persona($_REQUEST["correo"], $_REQUEST["nombre"], $_REQUEST["apellidos"], $_REQUEST["foto"], $_REQUEST["contraseña"]);
     
@@ -63,7 +65,7 @@
                     $_SESSION["mensajeError"] = $mensajeError; 
                     header("location: ../Vistas/registro.php");
                 }else{
-                    //Me mando a index.php para poder iniciar sesión:
+                    //Si se ha registrado correctamente, lo mando a index.php para poder iniciar sesión:
                     header("location: ../index.php");
                 }
             }
@@ -80,17 +82,17 @@
     if(isset($_REQUEST["aceptarRol"])){
         $rolSeleccionado = $_REQUEST["rol"];
 
-        if($rolSeleccionado == 0){
+        if($rolSeleccionado == 0){ //Usuario estandar
             header("Location: ../Vistas/Jugador/juego.php");
         }
 
-        if($rolSeleccionado == 1){
+        if($rolSeleccionado == 1){ //Editor
             $vectorEnigmas = $conex->seleccionarEnigmas();
             $_SESSION["vectorEnigmas"] = $vectorEnigmas;
             header("Location: ../Vistas/Editor/crudEditor.php");
         }
 
-        if($rolSeleccionado == 2){
+        if($rolSeleccionado == 2){ //Admin
             $vectorUsuarios = $conex->seleccionarUsuarios();
             $_SESSION["vectorUsuarios"] = $vectorUsuarios;
             header("Location: ../Vistas/Admin/crudAdmin.php");

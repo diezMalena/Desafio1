@@ -28,22 +28,34 @@
             </header>
             
 
-            <section class="row">
+            <section class="row sectionIndex">
                 <div class="col-e-12">
-                    <form action="../Controlador/registro_IS.php" method="POST" class="col-m-12 col-e-4 padTop padBottom offset-e-4 offset-m-0 ">
-                        <fieldset class="padBottom">
+                    <form action="../Controlador/registro_IS.php" method="POST" class="col-m-12 col-e-3 padTop padBottom offset-e-4 offset-m-0 ">
+                        <fieldset class="padBottom centrado fondoFieldset">
                             <legend>Elige tu rol:   </legend>
-                            <select name="rol">
-                                <?php
-                                    foreach($vectorRoles as $rol){
-                                        echo '<option value="'.$rol->getId().'">'.$rol->getNombre().'</option>';
-                                    }
-                                ?>
-                            </select>
-                            <input type="submit" value="Aceptar" name="aceptarRol">
-                            <a href="../index.php">Volver</a>
+                                <div class="row">
+                                    <div class="col-e-12 col-m-12 padBottom">
+                                        <select name="rol">
+                                            <?php
+                                                foreach($vectorRoles as $rol){
+                                                    echo '<option value="'.$rol->getId().'">'.$rol->getNombre().'</option>';
+                                                }
+                                            ?>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-e-6 col-m-12">
+                                        <input type="submit" value="Aceptar" name="aceptarRol" class="botonElegirRol"/>
+                                    </div>
+                                    <div class="col-e-6 col-m-12">
+                                        <button type="button" class="botonElegirRol"><a href="../index.php">Volver</a></button>                           
+                                    </div>
+                                </div>
                         </fieldset>    
                     </form>
+                    
                 </div>
                                     
             </section>

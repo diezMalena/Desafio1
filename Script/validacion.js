@@ -8,7 +8,7 @@ function validarEmail(){
 
 
     //Vamos a comprobar que lo que escribe el usuario es válido:
-    email.addEventListener('input', function(event){
+    email.addEventListener(onblur, function(event){
 
         if(email.validity.valid){
             /*Si lo último ha sido un mensaje de error y el email esta vez

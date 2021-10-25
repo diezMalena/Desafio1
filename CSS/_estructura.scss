@@ -16,6 +16,23 @@ section{
     height: 70%;
 }
 
+.sectionIndex{
+    background-image: url('../Img/Generales/fondo.png');
+    height: 70%;
+}
+
+.sectionEditor{
+    background-image: url('../Img/Generales/fondoEditor.jpg');
+    height: 70%;
+    background-size: cover;
+}
+
+.sectionAdmin{
+    background-image: url('../Img/Generales/fondoAdmin.jpg');
+    height: 70%;
+    background-size: none;
+}
+
 form{
     font-family: 'Bitter', serif;
     position: relative;
@@ -28,6 +45,11 @@ fieldset{
     border-top-left-radius: 20px;
     border-bottom-right-radius: 20px;
     position: relative;
+}
+
+
+.fondoFieldset{
+    background-color: lightpink;
 }
 
 .alineado{
@@ -44,4 +66,26 @@ footer{
     bottom:0;
     left:0;
     width:100%;
+}
+
+.etiquetaEnigma{
+    background-color: rgb(177, 194, 204);
+    color: black;
+    border-radius: 0.5em 0.5em 0.5em 0.5em;
+}
+
+.etiquetaAdmin{
+    background-color: rgb(177, 194, 204);
+    color: black;
+    border-radius: 0.5em 0.5em 0.5em 0.5em;
+}
+
+.fondoRegistro{
+    background-image: url('../Img/Generales/fondoRegistro.jpg');
+    height: 70%;
+    background-size: none;
+}
+
+.fondoFieldsetRegistro{
+    background-color:#c9e1f3;
 }

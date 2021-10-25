@@ -27,10 +27,10 @@
             </header>
             
 
-            <section class="row">
+            <section class="row sectionIndex">
                 <div class="col-e-12">
                     <form action="./Controlador/registro_IS.php" method="POST" class="col-m-12 col-e-4 padTop padBottom offset-e-4 offset-m-0 ">
-                        <fieldset class="padBottom">
+                        <fieldset class="padBottom fondoFieldset">
                             <legend>Introduce tus datos:   </legend>
                                 <button class="tooltip">?
                                     <span class="tooltiptext">
@@ -77,7 +77,7 @@
 
                             <div class="row">
                                 <div class="col-e-12 centrado padBottom">
-                                    <input type="submit" value="iniciar sesión" name="iniciarSesion"> 
+                                    <input type="submit" value="Iniciar sesión" name="iniciarSesion" class="botonIS"> 
                                 </div>
                             </div>
 

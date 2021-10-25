@@ -1,0 +1,165 @@
+{
+  "todo": [
+    {
+      "assignedTo": {
+        "name": "Malena"
+      },
+      "creation_time": "2021-10-25T07:44:44.984Z",
+      "description": {
+        "content": "Integrar ReCaptcha en todos los formularios.",
+        "mime": "text/markdown"
+      },
+      "id": "11",
+      "references": [],
+      "title": "Integrar ReCaptcha"
+    },
+    {
+      "assignedTo": {
+        "name": "Malena"
+      },
+      "creation_time": "2021-10-25T07:28:10.663Z",
+      "description": {
+        "content": "Página en la que se pedirá una direccion de correo para enviar un email con una nueva contraseña.",
+        "mime": "text/markdown"
+      },
+      "id": "3",
+      "references": [],
+      "title": "Página He olvidado la contraseña"
+    },
+    {
+      "assignedTo": {
+        "name": "Malena"
+      },
+      "creation_time": "2021-10-25T07:45:18.709Z",
+      "description": {
+        "content": "Hacer las validaciones de emails necesarios con JavaScript e implementarlas en las páginas correspondientes.",
+        "mime": "text/markdown"
+      },
+      "id": "12",
+      "references": [],
+      "title": "Validaciones JS"
+    }
+  ],
+  "in-progress": [
+    {
+      "assignedTo": {
+        "name": "Malena"
+      },
+      "creation_time": "2021-10-25T07:39:32.925Z",
+      "description": {
+        "content": "En esta página el editor selecciona un enigma para editar, y tendrá todos los campos de los enigmas para editarlos y guardar los cambios.\nIncluirá los botones Aceptar cambios y Volver.",
+        "mime": "text/markdown"
+      },
+      "id": "9",
+      "references": [],
+      "title": "Página EditarEnigma"
+    }
+  ],
+  "testing": [],
+  "done": [
+    {
+      "assignedTo": {
+        "name": "Malena"
+      },
+      "creation_time": "2021-10-25T07:34:41.543Z",
+      "description": {
+        "content": "Página del Admin en la que tendrá la opción de crear Editores y Admins.\nIncluirá los botones Añadir y Volver.",
+        "mime": "text/markdown"
+      },
+      "id": "6",
+      "references": [],
+      "title": "Página Añadir otros gestores"
+    },
+    {
+      "assignedTo": {
+        "name": "Malena"
+      },
+      "creation_time": "2021-10-25T07:40:41.974Z",
+      "description": {
+        "content": "En esta página el Editor podrá añadir un nuevo enigma con sus 4 opciones y la opción correcta.\nTendrá los botones Añadir enigma y Volver.",
+        "mime": "text/markdown"
+      },
+      "id": "10",
+      "references": [],
+      "title": "Página AñadirEnigma"
+    },
+    {
+      "assignedTo": {
+        "name": "Malena"
+      },
+      "creation_time": "2021-10-25T07:31:24.655Z",
+      "description": {
+        "content": "Se le mostrará al Admin los usuarios registrados en la BBDD y tendrá la opción de modificar y borrar los campos de estos.\nIncluirá los botones Borrar y Editar por cada usuario.\nTambién tendrá los botones Añadir otros gestores, Cerrar sesión y Volver.",
+        "mime": "text/markdown"
+      },
+      "id": "5",
+      "references": [],
+      "title": "Página CrudAdmin"
+    },
+    {
+      "assignedTo": {
+        "name": "Malena"
+      },
+      "creation_time": "2021-10-25T07:38:27.428Z",
+      "description": {
+        "content": "Esta página corresponde al Editor y se le mostrarán todos los enigmas que hay disponibles en la BBDD.\nCada enigma tiene su propio botón Borrar y Editar.\nTambien tendrá los botones Añadir enigmas y Volver",
+        "mime": "text/markdown"
+      },
+      "id": "8",
+      "references": [],
+      "title": "Página CrudEditor"
+    },
+    {
+      "assignedTo": {
+        "name": "Malena"
+      },
+      "creation_time": "2021-10-25T07:36:41.324Z",
+      "description": {
+        "content": "Esta página tendrá los datos del usuario que el Administrador ha seleccionado.\nTodos los campos serán editables menos el email.\nIncluirá un boton Aceptar cambios.",
+        "mime": "text/markdown"
+      },
+      "id": "7",
+      "references": [],
+      "title": "Página EditarUsuario(desde Admin)"
+    },
+    {
+      "assignedTo": {
+        "name": "Malena"
+      },
+      "creation_time": "2021-10-25T07:29:04.491Z",
+      "description": {
+        "content": "En esta página tanto los Administradores como los Editores tendrán la opción de elegir entre los siguientes roles:\nAdmin: Usuario, Editor y Admin.\nEditor: Usuario y Admin.",
+        "mime": "text/markdown"
+      },
+      "id": "4",
+      "references": [],
+      "title": "Página Elegir Rol"
+    },
+    {
+      "assignedTo": {
+        "name": "Malena"
+      },
+      "creation_time": "2021-10-25T07:23:57.178Z",
+      "description": {
+        "content": "Página de inicio de sesión. Debe incluir campo email y contraseña, boton de aceptar, opcion de registrarse y opcion de he olvidado la contraseña.",
+        "mime": "text/markdown"
+      },
+      "id": "1",
+      "references": [],
+      "title": "Página LogIn"
+    },
+    {
+      "assignedTo": {
+        "name": "Malena"
+      },
+      "creation_time": "2021-10-25T07:27:06.867Z",
+      "description": {
+        "content": "Página en la que se pedirán diversos campos a los usuarios para poderse registrar, con botones Registrarse y Volver.",
+        "mime": "text/markdown"
+      },
+      "id": "2",
+      "references": [],
+      "title": "Página Registro"
+    }
+  ]
+}
