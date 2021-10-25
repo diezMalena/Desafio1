@@ -1,6 +1,12 @@
 <?php
     require_once (dirname(__DIR__).'/BBDD/conexion.php');
     require_once (dirname(__DIR__).'/Modelo/Persona.php');
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\SMTP;
+
+    require_once 'phpmailer/src/Exception.php';
+    require_once 'phpmailer/src/PHPMailer.php';
+    require_once 'phpmailer/src/SMTP.php';
 
     session_start();
     $conex = new Conexion();
@@ -103,5 +109,40 @@
         //Vamos a borrar la sesion de la persona que inició sesion:
         unset($_SESSION["persona"]);
         header("Location: ../index.php");
+    }
+
+    if(isset($_REQUEST["olvideContraseña"])){
+        $correoDestino = $_REQUEST["correo"];
+        //Si existe el correo en la BBDD es porque esta registrado y podra restaurar su contraseña:
+        if($correoDestino == $conex->cogerCorreo($correoDestino)){
+            $enlace = "http://localhost/dashboard/ServidorLocalhost/DESAFIO1/Repositorio/Desafio1/Vistas/restaurarContraseña.php?correo='".$correoDestino."'";
+            
+            $mail = new PHPMailer();
+            try {
+                $mail->isSMTP();
+                $mail->Host = 'smtp.gmail.com';  
+                $mail->SMTPAuth = true;
+                $mail->Username = 'auxiliardaw2@gmail.com';                 
+                $mail->Password = 'Chubaca20';                           
+                $mail->SMTPSecure = 'tls';                                  
+                $mail->Port = 587;                                    
+                
+
+                $mail->setFrom('AuxiliarDAW2@gmail.com'); 
+                $mail->addAddress($correoDestino);     
+
+                $mail->isHTML(true);
+                $mail->Subject = 'Restauracion de password.'; 
+                $mail->Body = 'Accede a este enlace para poder cambiar tu contraseña: <a href="'.$enlace.'">Cambiar contraseña</a>';    
+
+                $mail->send();
+                echo 'Mensaje enviado';
+            } catch (Exception $e) {
+            }
+        }
+    }
+
+    if(isset($_REQUEST["cambiarContraseña"])){
+
     }
 ?>

@@ -122,6 +122,23 @@
             return $vectorUsuarios;
         }
 
+        public function cogerCorreo($correo){
+            $this->conectarBBDD();
+            $stmt = $this->conexion->prepare('SELECT correo FROM usuario WHERE correo = ?');
+            $persona = null;
+            $stmt->bind_param("s",$correo);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            while($fila = $result->fetch_assoc()){
+                $this->bitacora->guardarArchivo("Usuarios recogidos correctamente.");
+                $correo = $fila["correo"];
+            }
+            $stmt->close();
+            $this->cerrarBBDD();
+            return $correo;
+        }
+
+
         public function seleccionarEnigmas(){
             $this->conectarBBDD();
             //Cojo los enigmas:
