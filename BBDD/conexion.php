@@ -304,8 +304,8 @@
             $this->bitacora->guardarArchivo("Enigma actualizado correctamente.");
         }
 
-        public function editarOpcionesEnigma($id_pregunta,$vectorId_opciones, $opciones, $opcionCorrecta){
-            $stmt = $this->conexion->prepare('UPDATE enigma_opcion SET descripcion = ?, opcion_correcta = ? WHERE id_pregunta = ?');
+       public function editarOpcionesEnigma($id_pregunta,$vectorId_opciones, $opciones, $opcionCorrecta){
+             /*$stmt = $this->conexion->prepare('UPDATE enigma_opcion SET descripcion = ?, opcion_correcta = ? WHERE id_pregunta = ?');
             $ultimoId = $this->ultimoId_Pregunta();
             foreach($opciones as $i => $op){ 
                 //Si la opcion[i] tiene el radio button marcado, en la BBDD pondremos un 1 para saber que es la correcta:
@@ -315,7 +315,7 @@
                 }
                 $stmt->bind_param("isi", $ultimoId, $op, $correcta);
                 $stmt->execute();
-            } //Esta funcion esta incompleta.
+            } Esta funcion esta incompleta.*/
         }
     }
 

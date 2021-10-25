@@ -27,6 +27,12 @@ section{
     background-size: cover;
 }
 
+.sectionAdmin{
+    background-image: url('../Img/Generales/fondoAdmin.jpg');
+    height: 70%;
+    background-size: none;
+}
+
 form{
     font-family: 'Bitter', serif;
     position: relative;
@@ -63,6 +69,12 @@ footer{
 }
 
 .etiquetaEnigma{
+    background-color: rgb(177, 194, 204);
+    color: black;
+    border-radius: 0.5em 0.5em 0.5em 0.5em;
+}
+
+.etiquetaAdmin{
     background-color: rgb(177, 194, 204);
     color: black;
     border-radius: 0.5em 0.5em 0.5em 0.5em;

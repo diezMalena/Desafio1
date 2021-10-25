@@ -466,7 +466,7 @@ table {
 }
 
 .padTop {
-  padding-top: 30px;
+  padding-top: 25px;
 }
 
 .padTarjeta {
@@ -475,6 +475,10 @@ table {
 
 .marginTarjeta {
   margin: 12px;
+}
+
+.marginBottom {
+  margin-bottom: 12px;
 }
 
 .divMenuHorizontal {
@@ -647,6 +651,12 @@ section {
   background-size: cover;
 }
 
+.sectionAdmin {
+  background-image: url("../Img/Generales/fondoAdmin.jpg");
+  height: 70%;
+  background-size: none;
+}
+
 form {
   font-family: 'Bitter', serif;
   position: relative;
@@ -681,6 +691,12 @@ footer {
 }
 
 .etiquetaEnigma {
+  background-color: #b1c2cc;
+  color: black;
+  border-radius: 0.5em 0.5em 0.5em 0.5em;
+}
+
+.etiquetaAdmin {
   background-color: #b1c2cc;
   color: black;
   border-radius: 0.5em 0.5em 0.5em 0.5em;
