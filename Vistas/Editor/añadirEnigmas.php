@@ -69,7 +69,7 @@
                                 </div>
                                 <div class="col-e-9 col-m-12">
                                     <input class="col-e-10" type="text" name="op[]" value="" required>
-                                    <input type="radio" name="opCorrecta" value="3">
+                                    <input type="radio" name="opCorrecta" value="3" required>
                                 </div>
                             </div>
 

@@ -14,6 +14,10 @@
                 echo $_SESSION["mensajeError"];
                 unset($_SESSION["mensajeError"]);
             }
+            if(isset($_SESSION["mensajeRecibido"])){
+                echo $_SESSION["mensajeRecibido"];
+                unset($_SESSION["mensajeRecibido"]);
+            }
         ?>
         <div class="container">
             <header class="row">
@@ -73,24 +77,22 @@
                                 </div>
                             </div>
 
-                            <br>
 
-                            <div class="row">
-                                <div class="col-e-12 centrado padBottom">
+                            <div class="row padTop padBottom">
+                                <div class="col-e-12 centrado ">
                                     <input type="submit" value="Iniciar sesión" name="iniciarSesion" class="botonIS"> 
                                 </div>
                             </div>
 
-                            <div class="row">
+                            <div class="row padBottom">
                                 <div class="col-e-12 centrado">
                                     <p> ¿No tienes cuenta?  <a href="./Vistas/registro.php">Registrarse</a> </p> 
                                 </div>
                             </div>
 
-                            <br>
                             <div class="row">
                                 <div class="col-e-12 centrado">
-                                    <p> <a href="olvideContraseña.php">He olvidado la contraseña</a> </p>
+                                    <p> <a href="./Vistas/olvideContraseña.php">He olvidado la contraseña</a> </p>
                                 </div>
                             </div>
                     </form>
