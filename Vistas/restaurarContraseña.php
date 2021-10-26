@@ -30,7 +30,7 @@
             <section class="row sectionIndex">
                 <div class="col-e-12">
                     <form action="../Controlador/registro_IS.php" method="POST" class="col-m-12 col-e-4 padTop padBottom offset-e-4 offset-m-0 ">
-                        <input type="hidden" value="<?=$_REQUEST["correo"]  //En un campo oculto meto el correo al que le cambio la contraseña?>" name="correo">
+                        <input type="hidden" value=<?=$_REQUEST["correo"]  //En un campo oculto meto el correo al que le cambio la contraseña?> name="correo">
                         <fieldset class="padBottom fondoFieldset">
                             <legend>Introduce una nueva contraseña:   </legend>
                     

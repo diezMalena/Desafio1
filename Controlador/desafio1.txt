@@ -1513,3 +1513,154 @@ Conexion a la Base de Datos cerrada correctamente.
 Conexión a la Base de Datos correcta.
 Usuarios recogidos correctamente.
 Conexion a la Base de Datos cerrada correctamente.
+Conexión a la Base de Datos correcta.
+Se ha iniciado sesión correctamente.
+Conexion a la Base de Datos cerrada correctamente.
+Conexión a la Base de Datos correcta.
+Roles seleccionados correctamente.
+Roles seleccionados correctamente.
+Conexion a la Base de Datos cerrada correctamente.
+Conexión a la Base de Datos correcta.
+Conexion a la Base de Datos cerrada correctamente.
+Enigmas con sus opciones recogidos correctamente.
+Conexión a la Base de Datos correcta.
+Conexion a la Base de Datos cerrada correctamente.
+Conexión a la Base de Datos correcta.
+Conexion a la Base de Datos cerrada correctamente.
+Conexión a la Base de Datos correcta.
+Conexion a la Base de Datos cerrada correctamente.
+Conexión a la Base de Datos correcta.
+Conexion a la Base de Datos cerrada correctamente.
+Enigmas con sus opciones recogidos correctamente.
+Conexión a la Base de Datos correcta.
+Conexion a la Base de Datos cerrada correctamente.
+Enigmas con sus opciones recogidos correctamente.
+Conexión a la Base de Datos correcta.
+Conexion a la Base de Datos cerrada correctamente.
+Enigma actualizado correctamente.
+Conexión a la Base de Datos correcta.
+Conexion a la Base de Datos cerrada correctamente.
+Enigmas con sus opciones recogidos correctamente.
+Conexión a la Base de Datos correcta.
+Conexion a la Base de Datos cerrada correctamente.
+Conexión a la Base de Datos correcta.
+Conexion a la Base de Datos cerrada correctamente.
+Conexión a la Base de Datos correcta.
+Conexion a la Base de Datos cerrada correctamente.
+Conexión a la Base de Datos correcta.
+Conexion a la Base de Datos cerrada correctamente.
+Enigmas con sus opciones recogidos correctamente.
+Conexión a la Base de Datos correcta.
+Opciones del enigma correspondiente eliminadas correctamente.
+Conexion a la Base de Datos cerrada correctamente.
+Conexión a la Base de Datos correcta.
+Enigma correspondiente eliminado correctamente.
+Conexion a la Base de Datos cerrada correctamente.
+Conexión a la Base de Datos correcta.
+Conexion a la Base de Datos cerrada correctamente.
+Enigmas con sus opciones recogidos correctamente.
+Conexión a la Base de Datos correcta.
+Se ha iniciado sesión correctamente.
+Conexion a la Base de Datos cerrada correctamente.
+Conexión a la Base de Datos correcta.
+Roles seleccionados correctamente.
+Roles seleccionados correctamente.
+Roles seleccionados correctamente.
+Conexion a la Base de Datos cerrada correctamente.
+Conexión a la Base de Datos correcta.
+Usuarios recogidos correctamente.
+Conexion a la Base de Datos cerrada correctamente.
+Conexión a la Base de Datos correcta.
+Usuarios recogidos correctamente.
+Conexion a la Base de Datos cerrada correctamente.
+Conexión a la Base de Datos correcta.
+Usuarios recogidos correctamente.
+Conexion a la Base de Datos cerrada correctamente.
+Conexión a la Base de Datos correcta.
+Conexion a la Base de Datos cerrada correctamente.
+Contraseña actualizada correctamente.
+Conexión a la Base de Datos correcta.
+Usuarios recogidos correctamente.
+Usuarios recogidos correctamente.
+Usuarios recogidos correctamente.
+Conexion a la Base de Datos cerrada correctamente.
+Conexión a la Base de Datos correcta.
+Conexion a la Base de Datos cerrada correctamente.
+Conexión a la Base de Datos correcta.
+Usuarios recogidos correctamente.
+Conexion a la Base de Datos cerrada correctamente.
+Conexión a la Base de Datos correcta.
+Usuarios recogidos correctamente.
+Conexion a la Base de Datos cerrada correctamente.
+Conexión a la Base de Datos correcta.
+Conexion a la Base de Datos cerrada correctamente.
+Contraseña actualizada correctamente.
+Conexión a la Base de Datos correcta.
+Conexion a la Base de Datos cerrada correctamente.
+Conexión a la Base de Datos correcta.
+Usuarios recogidos correctamente.
+Conexion a la Base de Datos cerrada correctamente.
+Conexión a la Base de Datos correcta.
+Conexion a la Base de Datos cerrada correctamente.
+Contraseña actualizada correctamente.
+Conexión a la Base de Datos correcta.
+Conexion a la Base de Datos cerrada correctamente.
+Contraseña actualizada correctamente.
+Conexión a la Base de Datos correcta.
+Usuarios recogidos correctamente.
+Conexion a la Base de Datos cerrada correctamente.
+Conexión a la Base de Datos correcta.
+Conexion a la Base de Datos cerrada correctamente.
+Contraseña actualizada correctamente.
+Conexión a la Base de Datos correcta.
+Usuarios recogidos correctamente.
+Conexion a la Base de Datos cerrada correctamente.
+Conexión a la Base de Datos correcta.
+Conexion a la Base de Datos cerrada correctamente.
+Contraseña actualizada correctamente.
+Conexión a la Base de Datos correcta.
+Se ha iniciado sesión correctamente.
+Conexion a la Base de Datos cerrada correctamente.
+Conexión a la Base de Datos correcta.
+Roles seleccionados correctamente.
+Roles seleccionados correctamente.
+Roles seleccionados correctamente.
+Conexion a la Base de Datos cerrada correctamente.
+Conexión a la Base de Datos correcta.
+Se ha iniciado sesión correctamente.
+Conexion a la Base de Datos cerrada correctamente.
+Conexión a la Base de Datos correcta.
+Roles seleccionados correctamente.
+Roles seleccionados correctamente.
+Roles seleccionados correctamente.
+Conexion a la Base de Datos cerrada correctamente.
+Conexión a la Base de Datos correcta.
+Conexion a la Base de Datos cerrada correctamente.
+Enigmas con sus opciones recogidos correctamente.
+Conexión a la Base de Datos correcta.
+Conexion a la Base de Datos cerrada correctamente.
+Enigmas con sus opciones recogidos correctamente.
+Conexión a la Base de Datos correcta.
+Conexion a la Base de Datos cerrada correctamente.
+Enigma actualizado correctamente.
+Conexión a la Base de Datos correcta.
+Conexion a la Base de Datos cerrada correctamente.
+Enigmas con sus opciones recogidos correctamente.
+Conexión a la Base de Datos correcta.
+Usuarios recogidos correctamente.
+Usuarios recogidos correctamente.
+Usuarios recogidos correctamente.
+Conexion a la Base de Datos cerrada correctamente.
+Conexión a la Base de Datos correcta.
+Rol de la persona seleccionada eliminada correctamente.
+Conexion a la Base de Datos cerrada correctamente.
+Conexión a la Base de Datos correcta.
+Persona seleccionada eliminada del equipo correctamente.
+Conexion a la Base de Datos cerrada correctamente.
+Conexión a la Base de Datos correcta.
+Conexion a la Base de Datos cerrada correctamente.
+Persona eliminada correctamente.
+Conexión a la Base de Datos correcta.
+Usuarios recogidos correctamente.
+Usuarios recogidos correctamente.
+Conexion a la Base de Datos cerrada correctamente.

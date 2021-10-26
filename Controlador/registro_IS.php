@@ -136,13 +136,32 @@
                 $mail->Body = 'Accede a este enlace para poder cambiar tu contraseña: <a href="'.$enlace.'">Cambiar contraseña</a>';    
 
                 $mail->send();
-                echo 'Mensaje enviado';
+                //echo 'Mensaje enviado';
+                $mensajeLlegada = 'El email ha sido enviado.';
+                $_SESSION["mensajeLlegada"] = $mensajeLlegada;
+                header("Location: ../Vistas/olvideContraseña.php");
             } catch (Exception $e) {
             }
+        }else{
+            $mensajeError = 'El email introducido no es correcto.';
+            $_SESSION["mensajeError"] = $mensajeError; 
+            header("location: ../Vistas/restaurarContraseña.php");
         }
     }
 
     if(isset($_REQUEST["cambiarContraseña"])){
-
+        $correo = $_REQUEST["correo"];
+        $contraseña = $_REQUEST["contraseña"];
+        $contraseña2 = $_REQUEST["contraseña2"];
+        if($contraseña == $contraseña2){
+            $conex->updateContraseña($correo, $contraseña);
+            $mensajeRecibido = 'La contraseña ha sido actualizada.';
+            $_SESSION["mensajeRecibido"] = $mensajeRecibido; 
+            header("Location: ../index.php");
+        }else{
+            $mensajeError = 'Las contraseñas no coinciden, vuelve a intentarlo.';
+            $_SESSION["mensajeError"] = $mensajeError; 
+            header("location: ../Vistas/restaurarContraseña.php");
+        }
     }
 ?>

@@ -14,6 +14,10 @@
                 echo $_SESSION["mensajeError"];
                 unset($_SESSION["mensajeError"]);
             }
+            if(isset($_SESSION["mensajeRecibido"])){
+                echo $_SESSION["mensajeRecibido"];
+                unset($_SESSION["mensajeRecibido"]);
+            }
         ?>
         <div class="container">
             <header class="row">

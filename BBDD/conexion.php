@@ -365,5 +365,15 @@
             $this->bitacora->guardarArchivo("Opciones del enigma correspondiente eliminadas correctamente.");
             $this->cerrarBBDD();
         }
+
+        public function updateContraseña($correo, $contraseña){
+            $this->conectarBBDD();
+            $stmt = $this->conexion->prepare('UPDATE usuario SET contraseña = ? WHERE correo = ?');
+            $stmt->bind_param("ss",$contraseña,$correo);
+            $stmt->execute();
+            $stmt->close();
+            $this->cerrarBBDD();
+            $this->bitacora->guardarArchivo("Contraseña actualizada correctamente.");
+        }
     }
 
