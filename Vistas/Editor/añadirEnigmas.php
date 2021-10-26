@@ -22,19 +22,19 @@
                             <legend>Añadir enigmas:  </legend>
                     
                             <div class="row">
-                                <div class="col-e-3 col-m-12">
+                                <div class="col-e-3 col-m-12 col-o-12 col-t-12">
                                     Frase:
                                 </div>
-                                <div class="col-e-9 col-m-12">
+                                <div class="col-e-9 col-m-12 col-o-12 col-t-12">
                                     <input class="col-e-12" type="text" name="frase" required>
                                 </div>
                             </div>
 
                             <div class="row">
-                                <div class="col-e-3 col-m-12">
+                                <div class="col-e-3 col-m-12 col-o-12 col-t-12">
                                     Opcion 1: 
                                 </div>
-                                <div class="col-e-9 col-m-12">
+                                <div class="col-e-9 col-m-12 col-o-12 col-t-12">
                                     <input class="col-e-10" type="text" name="op[]" value="" required>
                                     <input type="radio" name="opCorrecta" value="0">
                                 </div>
@@ -42,10 +42,10 @@
 
 
                             <div class="row">
-                                <div class="col-e-3 col-m-12">
+                                <div class="col-e-3 col-m-12 col-o-12 col-t-12">
                                     Opcion 2: 
                                 </div>
-                                <div class="col-e-9 col-m-12">
+                                <div class="col-e-9 col-m-12 col-o-12 col-t-12">
                                     <input class="col-e-10" type="text" name="op[]" value="" required>
                                     <input type="radio" name="opCorrecta" value="1">
                                 </div>
@@ -53,10 +53,10 @@
                            
                             
                             <div class="row">
-                                <div class="col-e-3 col-m-12">
+                                <div class="col-e-3 col-m-12 col-o-12 col-t-12">
                                     Opcion 3: 
                                 </div>
-                                <div class="col-e-9 col-m-12">
+                                <div class="col-e-9 col-m-12 col-o-12 col-t-12">
                                     <input class="col-e-10" type="text" name="op[]" value="" required>
                                     <input type="radio" name="opCorrecta" value="2">
                                 </div>
@@ -64,10 +64,10 @@
 
                             
                             <div class="row">
-                                <div class="col-e-3 col-m-12">
+                                <div class="col-e-3 col-m-12 col-o-12 col-t-12">
                                     Opcion 4: 
                                 </div>
-                                <div class="col-e-9 col-m-12">
+                                <div class="col-e-9 col-m-12 col-o-12 col-t-12">
                                     <input class="col-e-10" type="text" name="op[]" value="" required>
                                     <input type="radio" name="opCorrecta" value="3" required>
                                 </div>

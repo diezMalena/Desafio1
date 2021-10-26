@@ -21,20 +21,25 @@
 
         //Si la persona está logueada...
         if(isset($persona)){
-            $_SESSION["persona"] = $persona;
-        
-            //Si es jugador...
-            if($persona->getRol() == 0){
-                header("Location: juego.php");
-            }//Si es administrador o editor...
-            else{
-                //En este vector metemos los roles a los que puede acceder este gestor
-                $vectorRoles = $conex->seleccionarRoles($persona->getRol());
-                //Lo metemos en una sesión para llevarnoslo a elegirRol.php.
-                $_SESSION["vectorRoles"] = $vectorRoles;
-                header("Location: ../Vistas/elegirRol.php");
+            if($persona->getActivado() == 1){
+                $_SESSION["persona"] = $persona;
+                //Si es jugador...
+                if($persona->getRol() == 0){
+                    header("Location: juego.php");
+                }//Si es administrador o editor...
+                else{
+                    //En este vector metemos los roles a los que puede acceder este gestor
+                    $vectorRoles = $conex->seleccionarRoles($persona->getRol());
+                    //Lo metemos en una sesión para llevarnoslo a elegirRol.php.
+                    $_SESSION["vectorRoles"] = $vectorRoles;
+                    header("Location: ../Vistas/elegirRol.php");
+                }
+            }else{
+                $mensajeError = 'El usuario no está verificado.';
+                $_SESSION["mensajeError"] = $mensajeError;
+                header("Location: ../index.php");
             }
-
+            
         //Si la persona no existe...    
         }else{
             //Mostramos un mensaje al recargar la pagina que nos diga que el usuario o la contraseña son incorrectas:
@@ -71,6 +76,32 @@
                     $_SESSION["mensajeError"] = $mensajeError; 
                     header("location: ../Vistas/registro.php");
                 }else{
+                    //Cojo el correo con el que nos registramos:
+                    $correoDestino = $_REQUEST["correo"];
+                    //verificarCorreo es como pulsar un boton submit del formulario, y le pasamos el correo para verificar a ese usuario y poner en la BBDD un 1.
+                    $enlace = "http://localhost/dashboard/ServidorLocalhost/DESAFIO1/Repositorio/Desafio1/Vistas/registro_IS.php?verificarCorreo='".$correoDestino."'";
+            
+                    $mail = new PHPMailer();
+                    try {
+                        $mail->isSMTP();
+                        $mail->Host = 'smtp.gmail.com';  
+                        $mail->SMTPAuth = true;
+                        $mail->Username = 'auxiliardaw2@gmail.com';                 
+                        $mail->Password = 'Chubaca20';                           
+                        $mail->SMTPSecure = 'tls';                                  
+                        $mail->Port = 587;                                    
+                        
+
+                        $mail->setFrom('AuxiliarDAW2@gmail.com'); 
+                        $mail->addAddress($correoDestino);     
+
+                        $mail->isHTML(true);
+                        $mail->Subject = 'Verificación de cuenta.'; 
+                        $mail->Body = 'Accede a este enlace para poder verificar tu cuenta: <a href="'.$enlace.'">Verificar cuenta</a>';    
+
+                        $mail->send();
+                    } catch (Exception $e) {
+                    }
                     //Si se ha registrado correctamente, lo mando a index.php para poder iniciar sesión:
                     header("location: ../index.php");
                 }
@@ -84,6 +115,13 @@
             header("location: registro.php");
         }
     }
+
+    if(isset($_REQUEST["verificarCorreo"])){
+        $correo = $_REQUEST["verificarCorreo"];
+        $conex->verificarCorreo($correo);
+        header("location: ../index.php");
+    }
+
 
     if(isset($_REQUEST["aceptarRol"])){
         $rolSeleccionado = $_REQUEST["rol"];
@@ -164,4 +202,6 @@
             header("location: ../Vistas/restaurarContraseña.php");
         }
     }
+
+    
 ?>

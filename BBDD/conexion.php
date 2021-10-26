@@ -375,5 +375,15 @@
             $this->cerrarBBDD();
             $this->bitacora->guardarArchivo("Contraseña actualizada correctamente.");
         }
+
+        public function verificarCorreo($correo){
+            $this->conectarBBDD();
+            $stmt = $this->conexion->prepare('UPDATE usuario SET activado = 1 WHERE correo = ?');
+            $stmt->bind_param("s",$correo);
+            $stmt->execute();
+            $stmt->close();
+            $this->cerrarBBDD();
+            $this->bitacora->guardarArchivo("Usuario activado correctamente.");
+        }
     }
 

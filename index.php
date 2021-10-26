@@ -1,12 +1,12 @@
 <html>
     <head>
         <title>Escape Web</title>
-        <script src="Script/validacion.js"></script>
         <link rel="stylesheet" href="./CSS/general.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@1,500&display=swap">
+        <script src="./Script/validacionLogin.js"></script>
     </head>
 
-    <body>
+    <body onload="validacion()">
         <?php
             require_once './BBDD/conexion.php';
             session_start();
@@ -33,9 +33,11 @@
 
             <section class="row sectionIndex">
                 <div class="col-e-12">
-                    <form action="./Controlador/registro_IS.php" method="POST" class="col-m-12 col-e-4 padTop padBottom offset-e-4 offset-m-0 ">
+                    <form novalidate action="./Controlador/registro_IS.php" method="POST" class="col-m-12 col-e-4 col-t-12 col-o-8 padTop padBottom offset-e-4 offset-m-0 offset-t-0 offset-o-2">
                         <fieldset class="padBottom fondoFieldset">
                             <legend>Introduce tus datos:   </legend>
+                            <div class="row">
+                                <div class="col-e-12 col-m-12 col-t-12 col-o-12">
                                 <button class="tooltip">?
                                     <span class="tooltiptext">
                                         <p>
@@ -55,32 +57,36 @@
                                         </p>
                                     </span>
                                 </button>
+                                </div>
+                            </div>
+                                
                     
                             <div class="row">
-                                <div class="col-e-6 col-m-12">
+                                <div class="col-e-4 col-m-12">
                                     <label for="mail">
                                         <span>E-mail:</span>
-                                        <span class="error" aria-live="polite"></span>
                                     </label>
                                 </div>
-                                <div class="col-e-5 col-m-12">
-                                    <input type="email" name="correo" id="mail" required minlength="5">
+                                <div class="col-e-8 col-m-12">
+                                    <input type="email" class="col-e-12" name="correo" id="mail" required minlength="5">
+                                    <span class="error" aria-live="polite"></span>
                                 </div>
                             </div>
 
                             <div class="row">
-                                <div class="col-e-6 col-m-12">
+                                <div class="col-e-4 col-m-12">
                                 Contraseña:  
                                 </div>
-                                <div class="col-e-6 col-m-12">
-                                    <input type="password" name="contraseña" value="" required minlength="5">
+                                <div class="col-e-8 col-m-12">
+                                    <input class="col-e-12" type="password" id="password" name="contraseña" value="" required minlength="5">
+                                    <span id="passE" class="error" aria-live="polite"></span>
                                 </div>
                             </div>
 
 
                             <div class="row padTop padBottom">
                                 <div class="col-e-12 centrado ">
-                                    <input type="submit" value="Iniciar sesión" name="iniciarSesion" class="botonIS"> 
+                                    <input type="submit" value="Iniciar sesión" id="iniciarSesion" name="iniciarSesion" class="botonIS"> 
                                 </div>
                             </div>
 
