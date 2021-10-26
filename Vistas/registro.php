@@ -1,10 +1,10 @@
 <html>
     <head>
         <title>Registrarse</title>
-        <script src="Script/validacion.js"></script>
         <link rel="stylesheet" href="../CSS/general.css">
+        <script src="../Script/validacionRegistro.js"></script>
     </head>
-    <body onload="validarEmail()">
+    <body onload="validacion()">
         <?php
             session_start();
             if(isset($_SESSION["mensajeError"])){
@@ -25,9 +25,12 @@
 
             <section class="row fondoRegistro">
                 <div class="col-e-12">
-                    <form action="../Controlador/registro_IS.php" method="POST" class="col-m-12 col-e-4  padTop padBottom offset-e-4 offset-m-0 ">
+                    <form novalidate name="formularioRegistro" action="../Controlador/registro_IS.php" method="POST" class="col-m-12 col-e-4 col-t-12 col-o-8 padTop padBottom offset-e-4 offset-m-0 offset-t-0 offset-o-2">
                         <fieldset class="padBottom fondoFieldsetRegistro">
                             <legend>Registro:  </legend>
+
+                            <div class="row">
+                                <div class="col-e-12 col-m-12 col-t-12 col-o-12">
                                 <button class="tooltip">?
                                     <span class="tooltiptext">
                                         <p>
@@ -37,70 +40,76 @@
                                         </p>
                                     </span>
                                 </button>
+                                </div>
+                            </div>
                     
                             <div class="row">
-                                <div class="col-e-6 col-m-12">
-                                    <label for="mail" novalidate>
+                                <div class="col-e-4 col-m-12">
+                                    <label for="mail">
                                         <span>E-mail:</span>
-                                        <span class="error" aria-live="polite"></span>
                                     </label>
                                 </div>
-                                <div class="col-e-5 col-m-12">
-                                    <input type="email" name="correo" id="mail" required minlength="5">
+                                <div class="col-e-8 col-m-12">
+                                    <input type="email" class="col-e-12" name="correo" id="mail" required minlength="5">
+                                    <span class="error" aria-live="polite"></span>
                                 </div>
                             </div>
 
                             <div class="row">
-                                <div class="col-e-6 col-m-12">
+                                <div class="col-e-4 col-m-12">
                                     Nombre: 
                                 </div>
-                                <div class="col-e-6 col-m-12">
-                                    <input type="text" name="nombre" value="" required>
+                                <div class="col-e-8 col-m-12">
+                                    <input type="text" id="nombre" class="col-e-12" name="nombre" value="" required>
+                                    <span id="nombreError" class="error" aria-live="polite"></span>
                                 </div>
                             </div>
 
 
                             <div class="row">
-                                <div class="col-e-6 col-m-12">
+                                <div class="col-e-4 col-m-12">
                                     Apellidos:  
                                 </div>
-                                <div class="col-e-6 col-m-12">
-                                    <input type="text" name="apellidos" value="" required>
+                                <div class="col-e-8 col-m-12">
+                                    <input type="text" class="col-e-12" id="apellidos" name="apellidos" value="" required>
+                                    <span id="apellidosError" class="error" aria-live="polite"></span>
                                 </div>
                             </div>
                            
                             
                             <div class="row">
-                                <div class="col-e-6 col-m-12">
+                                <div class="col-e-4 col-m-12">
                                     Foto: 
                                 </div>
-                                <div class="col-e-6 col-m-12">
-                                    <input type="text" name="foto" value="">
+                                <div class="col-e-8 col-m-12">
+                                    <input class="col-e-12" type="text" name="foto" value="">
                                 </div>
                             </div>
 
                             
 
                             <div class="row">
-                                <div class="col-e-6 col-m-12">
+                                <div class="col-e-4 col-m-12">
                                     Contraseña: 
                                 </div>
-                                <div class="col-e-6 col-m-12">
-                                    <input type="password" name="contraseña" value="" required minlength="5">
+                                <div class="col-e-8 col-m-12">
+                                    <input type="password" id="contraseña" class="col-e-12" id="contraseña1" name="contraseña" value="" required minlength="5">
+                                    <span id="contraseñaError" class="error" aria-live="polite"></span>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-e-6 col-m-12">
+                                <div class="col-e-4 col-m-12">
                                     Repite la contraseña: 
                                 </div>
-                                <div class="col-e-6 col-m-12">
-                                    <input type="password" name="contraseña2" value="" required minlength="5">
+                                <div class="col-e-8 col-m-12">
+                                    <input type="password" id="contraseña2" class="col-e-12" id="contraseña2" name="contraseña2" value="" required minlength="5">
+                                    <span id="contraseñaError2" class="error" aria-live="polite"></span>
                                 </div>
                             </div>  
                                 <br>
                             <div class="row">
                                 <div class="col-e-6 col-m-12">
-                                    <input type="submit" name="registrar" value="Registrarse">
+                                    <input type="submit" name="registrar" value="Registrarse" id="registrarse">
                                 </div>
 
                                 <div class="col-e-6 col-m-12">

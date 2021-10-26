@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -591,6 +592,11 @@ button > a {
   visibility: visible;
 }
 
+.botonEditar {
+  background-image: url("../Img/Iconos/editar.jpg");
+  background-size: none;
+}
+
 .imgResponsive {
   width: 120px;
   height: auto;
@@ -626,6 +632,58 @@ form.secundario {
   color: black;
 }
 
+/*input[type=email]{
+    -webkit-appearance: none;
+    appearance: none;
+  
+    width: 100%;
+    border: 1px solid #333;
+    margin: 0;
+  
+    font-family: inherit;
+    font-size: 90%;
+  
+    box-sizing: border-box;
+  }
+  
+   Este es nuestro diseño para los campos no válidos 
+  input:invalid{
+    border-color: #900;
+    background-color: #FDD;
+  }
+  
+  input:focus:invalid {
+    outline: none;
+  }
+  
+   Este es el diseño para nuestros mensajes de error 
+  .error {
+    width : 100%;
+    padding: 0;
+  
+    font-size: 80%;
+    color: white;
+    background-color: #900;
+    border-radius: 0 0 5px 5px;
+  
+    box-sizing: border-box;
+  }
+  
+  .error.active {
+    padding: 0.3em;
+  }
+  
+  .noerror {
+    width : 100%;
+    padding: 0;
+  
+    font-size: 80%;
+    color: white;
+    background-color: #090;
+    border-radius: 0 0 5px 5px;
+  
+    box-sizing: border-box;
+  }*/
 html, body {
   height: 100%;
 }

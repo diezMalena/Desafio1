@@ -49,30 +49,30 @@
                             $cad =  '<div class="etiquetaEnigma col-e-5 col-m-12 padTarjeta marginTarjeta">
                                         <form action="../../Controlador/controlador_editor.php" method="POST">
                                             <div class="row">
-                                                <div class="col-e-3 col-m-12 col-t-12">
+                                                <div class="col-e-3 col-m-12 col-t-12 col-o-12">
                                                     ID_Pregunta:
                                                 </div>
 
-                                                <div class="col-e-9 col-m-12 col-t-12">
+                                                <div class="col-e-9 col-m-12 col-t-12 col-o-12">
                                                     <input class="col-e-12 col-m-12" type="text" name="id_pregunta" value="'.$enigma->getId_pregunta().'" readonly>
                                                 </div>
                                             </div>
                                             
                                             <div class="row">
-                                                <div class="col-e-3 col-m-12 col-t-12">
+                                                <div class="col-e-3 col-m-12 col-t-12 col-o-12">
                                                     Frase:
                                                 </div>
 
-                                                <div class="col-e-9 col-m-12 col-t-12">
+                                                <div class="col-e-9 col-m-12 col-t-12 col-o-12">
                                                     <input type="text" class="col-e-12 col-m-12" name="frase" value="'. $enigma->getFrase() .'" readonly>
                                                 </div>
                                             </div>
                                             
                                             <div class="row">
-                                                <div class="col-e-3 col-m-12 col-t-12">
+                                                <div class="col-e-3 col-m-12 col-t-12 col-o-12">
                                                     Opciones: 
                                                 </div>
-                                                <div class="col-e-9 col-m-12 col-t-12">
+                                                <div class="col-e-9 col-m-12 col-t-12 ">
                                                     <select name="opciones">';
                                                         foreach($enigma->getVectorOpciones() as $opcion){
                                                             $cad .= '<option>"'.$opcion->getDescripcion().'"</option>';
@@ -87,7 +87,7 @@
                                                 </div>
 
                                                 <div class="col-e-8 col-m-4 derecha">
-                                                    <input type="submit" name="editarEditor" value="Editar">
+                                                    <input type="submit" class="botonEditar" name="editarEditor" value="Editar">
                                                 </div>
                                             </div>                        
                                         </form>
