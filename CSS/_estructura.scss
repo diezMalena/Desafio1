@@ -13,6 +13,7 @@ header{
 
 section{
     background-color: $colorSection;
+    overflow: auto;
     height: 70%;
 }
 
@@ -31,6 +32,12 @@ section{
     background-image: url('../Img/Generales/fondoAdmin.jpg');
     height: 70%;
     background-size: none;
+}
+
+.sectionRanking{
+    background-image: url('../Img/Generales/fondoRanking.jpg');
+    height: 70%;
+    background-size:cover;
 }
 
 form{
@@ -88,4 +95,12 @@ footer{
 
 .fondoFieldsetRegistro{
     background-color:#c9e1f3;
+}
+
+.colorClaro{
+    background-color: $colorClaro;
+}
+
+.colorOscuro{
+    background-color: $colorOscuro;
 }

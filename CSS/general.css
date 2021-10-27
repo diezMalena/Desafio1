@@ -695,6 +695,7 @@ header {
 
 section {
   background-color: #E2C275;
+  overflow: auto;
   height: 70%;
 }
 
@@ -713,6 +714,12 @@ section {
   background-image: url("../Img/Generales/fondoAdmin.jpg");
   height: 70%;
   background-size: none;
+}
+
+.sectionRanking {
+  background-image: url("../Img/Generales/fondoRanking.jpg");
+  height: 70%;
+  background-size: cover;
 }
 
 form {
@@ -768,5 +775,13 @@ footer {
 
 .fondoFieldsetRegistro {
   background-color: #c9e1f3;
+}
+
+.colorClaro {
+  background-color: #b8b8b8;
+}
+
+.colorOscuro {
+  background-color: #b3a7a7;
 }
 /*# sourceMappingURL=general.css.map */

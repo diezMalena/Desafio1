@@ -12,7 +12,7 @@ class Persona{
     private $rol;
 
 
-    function __construct($correo, $nombre, $apellidos, $contraseña = "", $foto, $victorias = 0, $estado = 0, $activado = 0, $puntuacion = 0, $rol = 0) {
+    function __construct($correo = "", $nombre = "", $apellidos = "", $contraseña = "", $foto = "", $victorias = 0, $estado = 0, $activado = 0, $puntuacion = 0, $rol = 0) {
         $this->correo = $correo;
         $this->nombre = $nombre;
         $this->apellidos = $apellidos;
