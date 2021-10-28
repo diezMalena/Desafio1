@@ -64,3 +64,19 @@ button > a{
     background-image: url('../Img/Iconos/editar.jpg');
     background-size: none;
 }
+
+
+.button.button-primary, button.button-primary, input[type="submit"].button-primary, input[type="reset"].button-primary, input[type="button"].button-primary {
+    color: rgb(0, 0, 0);
+    background-color: rgb(209, 54, 54);
+    border-color:rgb(99, 22, 22);
+    height: 14%;
+    width: 100%;
+    font-size: 20px;
+}
+
+.button.button-primary:hover, button.button-primary:hover, input[type="submit"].button-primary:hover, input[type="reset"].button-primary:hover, input[type="button"].button-primary:hover, .button.button-primary:focus, button.button-primary:focus, input[type="submit"].button-primary:focus, input[type="reset"].button-primary:focus, input[type="button"].button-primary:focus {
+    color: var(--color-cuaterciario);
+    background-color: rgb(185, 142, 142);
+    border-color:rgb(218, 147, 147);
+}

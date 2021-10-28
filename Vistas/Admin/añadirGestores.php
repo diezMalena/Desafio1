@@ -17,7 +17,7 @@
                     <img src="../../Img/Generales/barco.png" class="imgResponsive">
                 </div>
 
-                <div class="col-e-6 col-m-6 centrado">
+                <div class="col-e-6 col-m-8 offset-e-1 edicionTitulo">
                     <h1>ESCAPE WEB</h1>
                 </div>
             </header>

@@ -23,6 +23,7 @@
         if(isset($persona)){
             if($persona->getActivado() == 1){
                 $conex->usuarioConectado($persona->getCorreo());
+                $persona->setEstado(1);
                 $_SESSION["persona"] = $persona;
                 //Si es jugador...
                 if($persona->getRol() == 0){

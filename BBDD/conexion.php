@@ -405,6 +405,24 @@
             return $vectorUsuarios;
         }
 
+        public function seleccionarUsuariosEstado(){
+            $this->conectarBBDD();
+            $stmt = $this->conexion->prepare('SELECT correo, estado FROM usuario');
+            $persona = null;
+            $vectorUsuarios = [];
+            $stmt->execute();
+            $result = $stmt->get_result();
+            while($fila = $result->fetch_assoc()){
+                $this->bitacora->guardarArchivo("Usuarios recogidos correctamente.");
+                //Tenemos el objeto Persona con correo y puntuación:
+                $persona = new Persona($fila["correo"], null, null, null, null, null, $fila["estado"],null, null);
+                $vectorUsuarios[] = $persona;
+            }
+            $stmt->close();
+            $this->cerrarBBDD();
+            return $vectorUsuarios;
+        }
+
         public function usuarioConectado($correo){
             $this->conectarBBDD();
             $stmt = $this->conexion->prepare('UPDATE usuario SET estado = ? WHERE correo = ?');

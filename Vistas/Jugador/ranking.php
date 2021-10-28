@@ -20,7 +20,7 @@
                     <img src="../../Img/Generales/barco.png" class="imgResponsive">
                 </div>
 
-                <div class="col-e-6 col-m-6 edicionTitulo">
+                <div class="col-e-6 col-m-8 offset-e-1 edicionTitulo">
                     <h1>ESCAPE WEB</h1>
                 </div>
             </header>
@@ -64,7 +64,11 @@
                     }
                 echo $cad;
                 }?>
-                <button type="button"><a href="perfilJugador.php">Volver a mi perfil</a></button>
+                <div class="row padTop">
+                    <div class="col-e-3 col-o-12 col-t-10 col-m-10 offset-e-5 offset-m-1 offset-o-1 offset-t-1">
+                        <button type="button"><a href="perfilJugador.php">Volver a mi perfil</a></button>
+                    </div>
+                </div>
             </section>
                 
 

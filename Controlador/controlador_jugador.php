@@ -10,3 +10,14 @@
         $_SESSION["vectorUsuarios"] = $vectorUsuarios;
         header("Location: ../Vistas/Jugador/ranking.php");
     }
+
+
+    if(isset($_REQUEST["jugadoresOnline"])){
+        $vectorUsuarios = $conex->seleccionarUsuariosEstado();
+        $_SESSION["vectorUsuarios"] = $vectorUsuarios;
+        header("Location: ../Vistas/Jugador/jugadoresOnline.php");
+    }
+
+    if(isset($_REQUEST["editarPerfil"])){
+        header("Location: ../Vistas/Jugador/editarJugador.php");
+    }

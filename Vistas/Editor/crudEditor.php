@@ -21,7 +21,7 @@
                     <img src="../../Img/Generales/barco.png" class="imgResponsive">
                 </div>
 
-                <div class="col-e-6 col-m-6 edicionTitulo">
+                <div class="col-e-6 col-m-8 offset-e-1 edicionTitulo">
                     <h1>ESCAPE WEB</h1>
                 </div>
             </header>
@@ -43,7 +43,7 @@
                         </form>
                     </div>
                 </div>
-                <div class="col-e-11 offset-e-1">
+                <div class="col-e-11 offset-e-1 offset-o-1 offset-t-0 offset-m-0">
                     <?php
                         foreach($vectorEnigmas as $enigma){
                             $cad =  '<div class="etiquetaEnigma col-e-5 col-m-12 padTarjeta marginTarjeta">

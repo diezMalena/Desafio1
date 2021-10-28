@@ -13,8 +13,6 @@ header{
 
 section{
     background-color: $colorSection;
-    overflow: auto;
-    height: 70%;
 }
 
 .sectionIndex{
@@ -40,6 +38,10 @@ section{
     background-size:cover;
 }
 
+nav{
+    min-height: 70%;
+}
+
 form{
     font-family: 'Bitter', serif;
     position: relative;
@@ -59,6 +61,10 @@ fieldset{
     background-color: lightpink;
 }
 
+.fondoFieldsetUsuario{
+    background-color: rgb(231, 186, 127);
+}
+
 .alineado{
     display: inline-block;
     width: 80px;
@@ -67,7 +73,7 @@ fieldset{
 footer{
     height:10%;
     line-height:50px;
-    background:$colorHeader;
+    background-color:$colorHeader;
     color:white;
     text-align:center;
     bottom:0;
@@ -90,11 +96,23 @@ footer{
 .fondoRegistro{
     background-image: url('../Img/Generales/fondoRegistro.jpg');
     height: 70%;
-    background-size: none;
+    background-size: cover;
 }
 
 .fondoFieldsetRegistro{
     background-color:#c9e1f3;
+}
+
+.fondoUsuario{
+    background-image: url('../Img/Generales/fondoUsuario.jpg');
+    height: 70%;
+    background-size: cover;
+}
+
+.fondoOnline{
+    background-image: url('../Img/Generales/fondoOnline.jpg');
+    height: 70%;
+    background-size: cover;
 }
 
 .colorClaro{
@@ -104,3 +122,29 @@ footer{
 .colorOscuro{
     background-color: $colorOscuro;
 }
+
+.colorClaroOnline{
+    background-color: $colorClaroOnline;
+}
+
+.colorOscuroOnline{
+    background-color: $colorOscuroOnline;
+}
+
+.etiquetaUsuario{
+    color: rgb(255, 255, 255);
+    border-radius: 0.5em 0.5em 0.5em 0.5em;
+}
+
+
+.desconectado{
+    border-radius: 1em 1em 1em 1em;
+    background-color: red;
+}
+
+.conectado{
+    border-radius: 1em 1em 1em 1em;
+    background-color: green;
+}
+
+

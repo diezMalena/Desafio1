@@ -3,7 +3,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-@import url("https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bitter&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bitter&family=Vollkorn:wght@400;600&display=swap");
 html, body, div, span, applet, object, iframe,
@@ -466,6 +466,10 @@ table {
   padding-bottom: 40px;
 }
 
+.padBottom20 {
+  padding-bottom: 20px;
+}
+
 .padTop {
   padding-top: 25px;
 }
@@ -482,58 +486,62 @@ table {
   margin-bottom: 12px;
 }
 
+.marginTop {
+  margin-top: 50px;
+}
+
 .divMenuHorizontal {
   margin-left: 26%;
 }
 
 .edicionTitulo {
   margin-top: 20px;
-  padding-left: 50px;
 }
 
 p {
-  font-family: Verdana;
   color: black;
 }
 
 h1 {
-  font-family: 'Vollkorn', italic;
   font-size: 3.4rem;
   color: #E2C275;
 }
 
 h2 {
-  font-family: 'Vollkorn', italic;
   font-size: 1.7rem;
   color: #E2C275;
 }
 
 h3 {
-  font-family: 'Vollkorn', italic;
   font-size: 1.13333rem;
   color: #E2C275;
 }
 
 h4 {
-  font-family: 'Vollkorn', italic;
   font-size: 0.85rem;
   color: #E2C275;
 }
 
 h5 {
-  font-family: 'Vollkorn', italic;
   font-size: 0.68rem;
   color: #E2C275;
 }
 
 h6 {
-  font-family: 'Vollkorn', italic;
   font-size: 0.56667rem;
   color: #E2C275;
 }
 
 p > a:hover {
   color: #753422;
+}
+
+.letraGrande {
+  font-size: 16px;
+}
+
+html {
+  font-family: 'Bitter', serif;
 }
 
 .botonIS {
@@ -595,6 +603,21 @@ button > a {
 .botonEditar {
   background-image: url("../Img/Iconos/editar.jpg");
   background-size: none;
+}
+
+.button.button-primary, button.button-primary, input[type="submit"].button-primary, input[type="reset"].button-primary, input[type="button"].button-primary {
+  color: black;
+  background-color: #d13636;
+  border-color: #631616;
+  height: 14%;
+  width: 100%;
+  font-size: 20px;
+}
+
+.button.button-primary:hover, button.button-primary:hover, input[type="submit"].button-primary:hover, input[type="reset"].button-primary:hover, input[type="button"].button-primary:hover, .button.button-primary:focus, button.button-primary:focus, input[type="submit"].button-primary:focus, input[type="reset"].button-primary:focus, input[type="button"].button-primary:focus {
+  color: var(--color-cuaterciario);
+  background-color: #b98e8e;
+  border-color: #da9393;
 }
 
 .imgResponsive {
@@ -695,8 +718,6 @@ header {
 
 section {
   background-color: #E2C275;
-  overflow: auto;
-  height: 70%;
 }
 
 .sectionIndex {
@@ -722,6 +743,10 @@ section {
   background-size: cover;
 }
 
+nav {
+  min-height: 70%;
+}
+
 form {
   font-family: 'Bitter', serif;
   position: relative;
@@ -739,6 +764,10 @@ fieldset {
   background-color: lightpink;
 }
 
+.fondoFieldsetUsuario {
+  background-color: #e7ba7f;
+}
+
 .alineado {
   display: inline-block;
   width: 80px;
@@ -747,7 +776,7 @@ fieldset {
 footer {
   height: 10%;
   line-height: 50px;
-  background: #321F28;
+  background-color: #321F28;
   color: white;
   text-align: center;
   bottom: 0;
@@ -770,11 +799,23 @@ footer {
 .fondoRegistro {
   background-image: url("../Img/Generales/fondoRegistro.jpg");
   height: 70%;
-  background-size: none;
+  background-size: cover;
 }
 
 .fondoFieldsetRegistro {
   background-color: #c9e1f3;
+}
+
+.fondoUsuario {
+  background-image: url("../Img/Generales/fondoUsuario.jpg");
+  height: 70%;
+  background-size: cover;
+}
+
+.fondoOnline {
+  background-image: url("../Img/Generales/fondoOnline.jpg");
+  height: 70%;
+  background-size: cover;
 }
 
 .colorClaro {
@@ -783,5 +824,28 @@ footer {
 
 .colorOscuro {
   background-color: #b3a7a7;
+}
+
+.colorClaroOnline {
+  background-color: #1f1d1d;
+}
+
+.colorOscuroOnline {
+  background-color: #141313;
+}
+
+.etiquetaUsuario {
+  color: white;
+  border-radius: 0.5em 0.5em 0.5em 0.5em;
+}
+
+.desconectado {
+  border-radius: 1em 1em 1em 1em;
+  background-color: red;
+}
+
+.conectado {
+  border-radius: 1em 1em 1em 1em;
+  background-color: green;
 }
 /*# sourceMappingURL=general.css.map */

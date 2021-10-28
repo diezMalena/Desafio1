@@ -21,7 +21,7 @@
                     <img src="../../Img/Generales/barco.png" class="imgResponsive">
                 </div>
 
-                <div class="col-e-6 col-m-6 edicionTitulo">
+                <div class="col-e-6 col-m-8 offset-e-1 edicionTitulo">
                     <h1>ESCAPE WEB</h1>
                 </div>
             </header>
@@ -44,7 +44,7 @@
                     </div>
                 </div>
 
-                <div class="col-e-11 offset-e-1">
+                <div class="col-e-11 offset-e-1 offset-o-1 offset-t-0 offset-m-0">
                     <?php
                         foreach($vectorUsuarios as $usuario){
                             $cad = '<div class="etiquetaAdmin col-e-5 col-m-12 padTarjeta marginTarjeta">
@@ -123,10 +123,10 @@
                                             </div>
 
                                             <div class="row">
-                                                <div class=" col-e-4 col-m-8 izquierda padTop">
+                                                <div class=" col-e-4 col-m-6 izquierda padTop">
                                                     <input type="submit"  name="borrar" value="Borrar">
                                                 </div>
-                                                <div class=" col-e-4 col-m-8 derecha padTop">
+                                                <div class=" col-e-4 col-m-6 derecha padTop">
                                                     <input type="submit" name="editarAdmin" value="Editar">
                                                 </div>
                                             </div>
