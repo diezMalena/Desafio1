@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bitter&family=Vollkorn:wght@400;600&display=swap');
 html,
 body {
+    font-family: 'Bitter', serif;
     height: 100%;
 }
 
@@ -12,7 +13,6 @@ header {
 }
 
 section {
-    background-color: $colorSection;
     padding-top: 5px;
 }
 
@@ -40,7 +40,6 @@ nav {
 }
 
 form {
-    font-family: 'Bitter', serif;
     position: relative;
 }
 
