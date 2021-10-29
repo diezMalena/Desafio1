@@ -378,12 +378,71 @@
 
         public function verificarCorreo($correo){
             $this->conectarBBDD();
-            $stmt = $this->conexion->prepare('UPDATE usuario SET activado = 1 WHERE correo = ?');
-            $stmt->bind_param("s",$correo);
+            $stmt = $this->conexion->prepare('UPDATE usuario SET activado = ? WHERE correo = ?');
+            $activado = 1;
+            $stmt->bind_param("is",$activado,$correo);
             $stmt->execute();
             $stmt->close();
             $this->cerrarBBDD();
             $this->bitacora->guardarArchivo("Usuario activado correctamente.");
+        }
+
+        public function seleccionarUsuariosRanking(){
+            $this->conectarBBDD();
+            $stmt = $this->conexion->prepare('SELECT correo, puntuacion FROM usuario  ORDER BY puntuacion DESC');
+            $persona = null;
+            $vectorUsuarios = [];
+            $stmt->execute();
+            $result = $stmt->get_result();
+            while($fila = $result->fetch_assoc()){
+                $this->bitacora->guardarArchivo("Usuarios recogidos correctamente.");
+                //Tenemos el objeto Persona con correo y puntuación:
+                $persona = new Persona($fila["correo"], null, null,null, null, null, null,null, $fila["puntuacion"], null);
+                $vectorUsuarios[] = $persona;
+            }
+            $stmt->close();
+            $this->cerrarBBDD();
+            return $vectorUsuarios;
+        }
+
+        public function seleccionarUsuariosEstado(){
+            $this->conectarBBDD();
+            $stmt = $this->conexion->prepare('SELECT correo, estado FROM usuario');
+            $persona = null;
+            $vectorUsuarios = [];
+            $stmt->execute();
+            $result = $stmt->get_result();
+            while($fila = $result->fetch_assoc()){
+                $this->bitacora->guardarArchivo("Usuarios recogidos correctamente.");
+                //Tenemos el objeto Persona con correo y puntuación:
+                $persona = new Persona($fila["correo"], null, null, null, null, null, $fila["estado"],null, null);
+                $vectorUsuarios[] = $persona;
+            }
+            $stmt->close();
+            $this->cerrarBBDD();
+            return $vectorUsuarios;
+        }
+
+        public function usuarioConectado($correo){
+            $this->conectarBBDD();
+            $stmt = $this->conexion->prepare('UPDATE usuario SET estado = ? WHERE correo = ?');
+            $estado = 1;
+            $stmt->bind_param("is",$estado,$correo);
+            $stmt->execute();
+            $stmt->close();
+            $this->cerrarBBDD();
+            $this->bitacora->guardarArchivo("Usuario ".$correo." conectado.");
+        }
+
+        public function usuarioDesconectado($correo){
+            $this->conectarBBDD();
+            $stmt = $this->conexion->prepare('UPDATE usuario SET estado = ? WHERE correo = ?');
+            $estado = 0;
+            $stmt->bind_param("is",$estado,$correo);
+            $stmt->execute();
+            $stmt->close();
+            $this->cerrarBBDD();
+            $this->bitacora->guardarArchivo("Usuario ".$correo." desconectado.");
         }
     }
 

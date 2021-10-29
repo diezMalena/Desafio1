@@ -22,10 +22,12 @@
         //Si la persona está logueada...
         if(isset($persona)){
             if($persona->getActivado() == 1){
+                $conex->usuarioConectado($persona->getCorreo());
+                $persona->setEstado(1);
                 $_SESSION["persona"] = $persona;
                 //Si es jugador...
                 if($persona->getRol() == 0){
-                    header("Location: juego.php");
+                    header("Location: ../Vistas/Jugador/perfilJugador.php");
                 }//Si es administrador o editor...
                 else{
                     //En este vector metemos los roles a los que puede acceder este gestor
@@ -75,11 +77,13 @@
                     $mensajeError = 'La persona que intentas registrar ya está registrada.';
                     $_SESSION["mensajeError"] = $mensajeError; 
                     header("location: ../Vistas/registro.php");
+                
+                //Si podemos insertar a esa persona en la BBDD...
                 }else{
                     //Cojo el correo con el que nos registramos:
                     $correoDestino = $_REQUEST["correo"];
                     //verificarCorreo es como pulsar un boton submit del formulario, y le pasamos el correo para verificar a ese usuario y poner en la BBDD un 1.
-                    $enlace = "http://localhost/dashboard/ServidorLocalhost/DESAFIO1/Repositorio/Desafio1/Vistas/registro_IS.php?verificarCorreo='".$correoDestino."'";
+                    $enlace = "http://localhost/dashboard/ServidorLocalhost/DESAFIO1/Repositorio/Desafio1/Controlador/registro_IS.php?verificarCorreo=".$correoDestino;
             
                     $mail = new PHPMailer();
                     try {
@@ -96,7 +100,7 @@
                         $mail->addAddress($correoDestino);     
 
                         $mail->isHTML(true);
-                        $mail->Subject = 'Verificación de cuenta.'; 
+                        $mail->Subject = 'Verificacion de cuenta.'; 
                         $mail->Body = 'Accede a este enlace para poder verificar tu cuenta: <a href="'.$enlace.'">Verificar cuenta</a>';    
 
                         $mail->send();
@@ -112,7 +116,7 @@
             //Tengo que mostrar el mensaje en la página de registro, con lo cual allí hago un isset y la muestro.
             $mensajeError = 'Las contraseñas no coinciden. Registro fallido.';
             $_SESSION["mensajeError"] = $mensajeError; 
-            header("location: registro.php");
+            header("location: ../Vistas/registro.php");
         }
     }
 
@@ -127,7 +131,7 @@
         $rolSeleccionado = $_REQUEST["rol"];
 
         if($rolSeleccionado == 0){ //Usuario estandar
-            header("Location: ../Vistas/Jugador/juego.php");
+            header("Location: ../Vistas/Jugador/perfilJugador.php");
         }
 
         if($rolSeleccionado == 1){ //Editor
@@ -145,6 +149,8 @@
 
     if(isset($_REQUEST["cerrarSesion"])){
         //Vamos a borrar la sesion de la persona que inició sesion:
+        $persona = $_SESSION["persona"];
+        $conex->usuarioDesconectado($persona->getCorreo());
         unset($_SESSION["persona"]);
         header("Location: ../index.php");
     }

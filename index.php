@@ -10,14 +10,6 @@
         <?php
             require_once './BBDD/conexion.php';
             session_start();
-            if(isset($_SESSION["mensajeError"])){
-                echo $_SESSION["mensajeError"];
-                unset($_SESSION["mensajeError"]);
-            }
-            if(isset($_SESSION["mensajeRecibido"])){
-                echo $_SESSION["mensajeRecibido"];
-                unset($_SESSION["mensajeRecibido"]);
-            }
         ?>
         <div class="container">
             <header class="row">
@@ -25,7 +17,7 @@
                     <img src="./Img/Generales/barco.png" class="imgResponsive">
                 </div>
 
-                <div class="col-e-6 col-m-6 edicionTitulo">
+                <div class="col-e-8 col-m-6 edicionTitulo centrado">
                     <h1>ESCAPE WEB</h1>
                 </div>
             </header>
@@ -86,7 +78,22 @@
 
                             <div class="row padTop padBottom">
                                 <div class="col-e-12 centrado ">
-                                    <input type="submit" value="Iniciar sesión" id="iniciarSesion" name="iniciarSesion" class="botonIS"> 
+                                    <input type="submit" value="Iniciar sesión" id="iniciarSesion" name="iniciarSesion" class="col-e-12 col-m-12 button buttonPrimario"> 
+                                </div>
+                            </div>
+
+                            <div class="row  padBottom">
+                                <div class="col-e-12 centrado ">
+                                <?php 
+                                    if(isset($_SESSION["mensajeError"])){
+                                        echo $_SESSION["mensajeError"];
+                                        unset($_SESSION["mensajeError"]);
+                                    }
+                                    if(isset($_SESSION["mensajeRecibido"])){
+                                        echo $_SESSION["mensajeRecibido"];
+                                        unset($_SESSION["mensajeRecibido"]);
+                                    }
+                                ?>
                                 </div>
                             </div>
 

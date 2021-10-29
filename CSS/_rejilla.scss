@@ -1,8 +1,9 @@
 //3 puntos de corte, 480px, 768px y 1280px:
 $maxColumnas: 12;
 $colorMain:rgb(5, 88, 54);
-
-*{box-sizing: border-box; }
+* {
+    box-sizing: border-box;
+}
 
 .container {
     position: relative;
@@ -19,127 +20,129 @@ $colorMain:rgb(5, 88, 54);
     //border: 1px solid orange;
 }
 
-
 @mixin paginaResponsive ($puntoCorte) {
-    @if $puntoCorte == movil{
+    @if $puntoCorte==movil {
         @media only screen and ( max-width: 480px) {
             @content;
         }
     }
-
-    @if $puntoCorte == tablet{
+    @if $puntoCorte==tablet {
         @media ( max-width: 768px) {
             @content;
         }
     }
-
-    @if $puntoCorte == ordenador{
+    @if $puntoCorte==ordenador {
         @media ( max-width: 1280px) {
             @content;
         }
     }
-    @if $puntoCorte == extra{
-        @media ( max-width: 2000px){
+    @if $puntoCorte==extra {
+        @media ( max-width: 2000px) {
             @content;
         }
     }
 }
 
-
-
-    
-
-
-
-
-@include paginaResponsive(extra){
+@include paginaResponsive(extra) {
     @for $i from 0 through $maxColumnas {
-        .col-e-#{$i}{
+        .col-e-#{$i} {
             width: (100% / $maxColumnas)*$i;
             float: left;
         }
-        .offset-e-#{$i}{
+        .offset-e-#{$i} {
             margin-left: (100% / $maxColumnas)*$i;
         }
     }
 }
 
-@include paginaResponsive(ordenador){
+@include paginaResponsive(ordenador) {
     @for $i from 0 through $maxColumnas {
-        .col-o-#{$i}{
+        .col-o-#{$i} {
             width: (100% / $maxColumnas)*$i;
             float: left;
         }
-        .offset-o-#{$i}{
+        .offset-o-#{$i} {
             margin-left: (100% / $maxColumnas)*$i;
         }
     }
 }
 
-@include paginaResponsive(tablet){
+@include paginaResponsive(tablet) {
     @for $i from 0 through $maxColumnas {
-        .col-t-#{$i}{
+        .col-t-#{$i} {
             width: (100% / $maxColumnas)*$i;
             float: left;
         }
-        .offset-t-#{$i}{
+        .offset-t-#{$i} {
             margin-left: (100% / $maxColumnas)*$i;
         }
     }
 }
 
-@include paginaResponsive(movil){
+@include paginaResponsive(movil) {
     @for $i from 0 through $maxColumnas {
-        .col-m-#{$i}{
+        .col-m-#{$i} {
             width: (100% / $maxColumnas)*$i;
             float: left;
         }
-        .offset-m-#{$i}{
+        .offset-m-#{$i} {
             margin-left: (100% / $maxColumnas)*$i;
         }
     }
 }
 
-.izquierda{
+.izquierda {
     text-align: left;
 }
 
-.centrado{
+.centrado {
     text-align: center;
 }
 
-.derecha{
+.derecha {
     text-align: right;
 }
 
-
-.padBottom{
+.padBottom {
     padding-bottom: 40px;
 }
 
-.padTop{
+.padBottom20 {
+    padding-bottom: 20px;
+}
+
+.padTop {
     padding-top: 25px;
 }
 
-.padTarjeta{
+.padTarjeta {
     padding: 7px;
 }
 
-.marginTarjeta{
+.marginTarjeta {
     margin: 12px;
 }
 
-.marginBottom{
+.marginBottom {
     margin-bottom: 12px;
 }
 
-.divMenuHorizontal{
+.marginTop {
+    margin-top: 50px;
+}
+
+.divMenuHorizontal {
     margin-left: 26%;
 }
 
-
-.edicionTitulo{
+.edicionTitulo {
     margin-top: 20px;
-    padding-left: 50px;
 }
 
+.floatIzq {
+    float: left;
+}
+
+.floatDer {
+    float: right;
+}

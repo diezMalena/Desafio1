@@ -3,7 +3,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-@import url("https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bitter&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bitter&family=Vollkorn:wght@400;600&display=swap");
 html, body, div, span, applet, object, iframe,
@@ -466,6 +466,10 @@ table {
   padding-bottom: 40px;
 }
 
+.padBottom20 {
+  padding-bottom: 20px;
+}
+
 .padTop {
   padding-top: 25px;
 }
@@ -482,52 +486,56 @@ table {
   margin-bottom: 12px;
 }
 
+.marginTop {
+  margin-top: 50px;
+}
+
 .divMenuHorizontal {
   margin-left: 26%;
 }
 
 .edicionTitulo {
   margin-top: 20px;
-  padding-left: 50px;
+}
+
+.floatIzq {
+  float: left;
+}
+
+.floatDer {
+  float: right;
 }
 
 p {
-  font-family: Verdana;
   color: black;
 }
 
 h1 {
-  font-family: 'Vollkorn', italic;
   font-size: 3.4rem;
   color: #E2C275;
 }
 
 h2 {
-  font-family: 'Vollkorn', italic;
   font-size: 1.7rem;
   color: #E2C275;
 }
 
 h3 {
-  font-family: 'Vollkorn', italic;
   font-size: 1.13333rem;
   color: #E2C275;
 }
 
 h4 {
-  font-family: 'Vollkorn', italic;
   font-size: 0.85rem;
   color: #E2C275;
 }
 
 h5 {
-  font-family: 'Vollkorn', italic;
   font-size: 0.68rem;
   color: #E2C275;
 }
 
 h6 {
-  font-family: 'Vollkorn', italic;
   font-size: 0.56667rem;
   color: #E2C275;
 }
@@ -536,37 +544,12 @@ p > a:hover {
   color: #753422;
 }
 
-.botonIS {
-  color: black;
-  background-color: #734046;
-  border-color: #775155;
-  height: 40px;
-  width: 120px;
-  font-size: 18px;
-}
-
-.botonIS:hover {
-  color: black;
-  background-color: #7c6265;
-}
-
-.botonElegirRol {
-  color: #FFF;
-  background-color: #734046;
-  border-color: #775155;
-  height: 35px;
-  width: 110px;
+.letraGrande {
   font-size: 16px;
 }
 
-.botonElegirRol:hover {
-  color: black;
-  background-color: #7c6265;
-}
-
-button > a {
-  text-decoration: none;
-  color: black;
+html {
+  font-family: 'Bitter', serif;
 }
 
 .tooltip {
@@ -592,9 +575,49 @@ button > a {
   visibility: visible;
 }
 
-.botonEditar {
-  background-image: url("../Img/Iconos/editar.jpg");
-  background-size: none;
+.button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  height: 46px;
+}
+
+.buttonMini {
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+  height: 26px;
+}
+
+input.button {
+  padding: 0;
+}
+
+.buttonPrimario {
+  background-color: #3d2832;
+  color: white;
+  border: white;
+}
+
+.buttonPrimario:hover {
+  background-color: #725262;
+  color: black;
+  border-radius: 0.2em 0.2em 0.2em 0.2em;
+}
+
+.buttonSecundario {
+  background-color: #A4E555;
+  color: black;
+  border-radius: 1em 1em 1em 1em;
 }
 
 .imgResponsive {
@@ -684,7 +707,8 @@ form.secundario {
   
     box-sizing: border-box;
   }*/
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -695,24 +719,30 @@ header {
 
 section {
   background-color: #E2C275;
-  height: 70%;
+  padding-top: 5px;
 }
 
 .sectionIndex {
   background-image: url("../Img/Generales/fondo.png");
-  height: 70%;
 }
 
 .sectionEditor {
   background-image: url("../Img/Generales/fondoEditor.jpg");
-  height: 70%;
   background-size: cover;
 }
 
 .sectionAdmin {
   background-image: url("../Img/Generales/fondoAdmin.jpg");
-  height: 70%;
-  background-size: none;
+  background-size: cover;
+}
+
+.sectionRanking {
+  background-image: url("../Img/Generales/fondoRanking.jpg");
+  background-size: cover;
+}
+
+nav {
+  min-height: 70%;
 }
 
 form {
@@ -732,26 +762,30 @@ fieldset {
   background-color: lightpink;
 }
 
+.fondoFieldsetUsuario {
+  background-color: #e7ba7f;
+}
+
 .alineado {
   display: inline-block;
   width: 80px;
 }
 
 footer {
-  height: 10%;
-  line-height: 50px;
-  background: #321F28;
-  color: white;
-  text-align: center;
-  bottom: 0;
-  left: 0;
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  height: 30px;
   width: 100%;
+  background-color: #321F28;
 }
 
 .etiquetaEnigma {
   background-color: #b1c2cc;
   color: black;
   border-radius: 0.5em 0.5em 0.5em 0.5em;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .etiquetaAdmin {
@@ -763,10 +797,53 @@ footer {
 .fondoRegistro {
   background-image: url("../Img/Generales/fondoRegistro.jpg");
   height: 70%;
-  background-size: none;
+  background-size: cover;
 }
 
 .fondoFieldsetRegistro {
   background-color: #c9e1f3;
+}
+
+.fondoUsuario {
+  background-image: url("../Img/Generales/fondoUsuario.jpg");
+  height: 70%;
+  background-size: cover;
+}
+
+.fondoOnline {
+  background-image: url("../Img/Generales/fondoOnline.jpg");
+  height: 70%;
+  background-size: cover;
+}
+
+.colorClaro {
+  background-color: #b8b8b8;
+}
+
+.colorOscuro {
+  background-color: #b3a7a7;
+}
+
+.colorClaroOnline {
+  background-color: #1f1d1d;
+}
+
+.colorOscuroOnline {
+  background-color: #141313;
+}
+
+.etiquetaUsuario {
+  color: white;
+  border-radius: 0.5em 0.5em 0.5em 0.5em;
+}
+
+.desconectado {
+  border-radius: 1em 1em 1em 1em;
+  background-color: red;
+}
+
+.conectado {
+  border-radius: 1em 1em 1em 1em;
+  background-color: green;
 }
 /*# sourceMappingURL=general.css.map */

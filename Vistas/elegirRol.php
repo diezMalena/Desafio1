@@ -46,11 +46,11 @@
                                 </div>
 
                                 <div class="row">
-                                    <div class="col-e-6 col-m-12">
-                                        <input type="submit" value="Aceptar" name="aceptarRol" class="botonElegirRol"/>
+                                    <div class="col-e-5 col-m-12 floatIzq">
+                                        <input type="submit" value="Aceptar" name="aceptarRol" class="col-e-12 button buttonPrimario"/>
                                     </div>
-                                    <div class="col-e-6 col-m-12">
-                                        <button type="button" class="botonElegirRol"><a href="../index.php">Volver</a></button>                           
+                                    <div class="col-e-5 col-m-12 floatDer">
+                                        <a href="../index.php" class="col-e-12 button buttonPrimario">Volver</a>                           
                                     </div>
                                 </div>
                         </fieldset>    

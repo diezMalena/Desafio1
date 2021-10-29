@@ -7,10 +7,6 @@
     <body onload="validacion()">
         <?php
             session_start();
-            if(isset($_SESSION["mensajeError"])){
-                echo $_SESSION["mensajeError"];
-                unset($_SESSION["mensajeError"]);
-            }
         ?>
         <div class="container">
             <header class="row">
@@ -106,7 +102,18 @@
                                     <span id="contraseñaError2" class="error" aria-live="polite"></span>
                                 </div>
                             </div>  
-                                <br>
+
+                            <div class="row  padTop padBottom">
+                                <div class="col-e-12 centrado ">
+                                <?php 
+                                    if(isset($_SESSION["mensajeError"])){
+                                        echo $_SESSION["mensajeError"];
+                                        unset($_SESSION["mensajeError"]);
+                                    }
+                                ?>
+                                </div>
+                            </div>
+
                             <div class="row">
                                 <div class="col-e-6 col-m-12">
                                     <input type="submit" name="registrar" value="Registrarse" id="registrarse">

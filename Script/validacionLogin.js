@@ -43,8 +43,6 @@ function validacion(){
             emailError.textContent = 'Debe introducir una dirección de correo electrónico.';
         } else if (email.validity.typeMismatch) {
             emailError.textContent = 'El valor introducido debe ser una dirección de correo electrónico.';
-        } else if (email.validity.tooShort) {
-            emailError.textContent = 'El correo electrónico debe tener al menos ${ email.minLength } caracteres; ha introducido ${ email.value.length }.';
         }
         emailError.className = 'error active';
     }
@@ -53,7 +51,9 @@ function validacion(){
     function showErrorPass(){
         if (passw.validity.valueMissing) {
             passError.textContent = 'Debe introducir una  contraseña para iniciar sesión.';
-        } 
+        } else if (passw.validity.tooShort) {
+            passError.textContent = 'La contraseña debe tener al menos 5 caracteres.';
+        }
         passError.className = 'error active';
     }
 }
