@@ -466,8 +466,12 @@ table {
   padding-bottom: 40px;
 }
 
-.padBottom20 {
-  padding-bottom: 20px;
+.padBottom15 {
+  padding-bottom: 15px;
+}
+
+.padTop15 {
+  padding-top: 15px;
 }
 
 .padTop {
@@ -598,6 +602,10 @@ html {
   height: 26px;
 }
 
+a.buttonMini {
+  padding-top: 7px;
+}
+
 input.button {
   padding: 0;
 }
@@ -709,6 +717,7 @@ form.secundario {
   }*/
 html,
 body {
+  font-family: 'Bitter', serif;
   height: 100%;
 }
 
@@ -718,7 +727,6 @@ header {
 }
 
 section {
-  background-color: #E2C275;
   padding-top: 5px;
 }
 
@@ -746,7 +754,6 @@ nav {
 }
 
 form {
-  font-family: 'Bitter', serif;
   position: relative;
 }
 
