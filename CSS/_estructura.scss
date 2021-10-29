@@ -1,54 +1,50 @@
 //header, footer, nav, section:
 @import "_colores.scss";
 @import url('https://fonts.googleapis.com/css2?family=Bitter&family=Vollkorn:wght@400;600&display=swap');
-html, body{
+html,
+body {
     height: 100%;
 }
 
-header{
+header {
     background-color: $colorHeader;
     height: 20%;
 }
 
-
-section{
+section {
     background-color: $colorSection;
+    padding-top: 5px;
 }
 
-.sectionIndex{
+.sectionIndex {
     background-image: url('../Img/Generales/fondo.png');
-    height: 70%;
 }
 
-.sectionEditor{
+.sectionEditor {
     background-image: url('../Img/Generales/fondoEditor.jpg');
-    height: 70%;
     background-size: cover;
 }
 
-.sectionAdmin{
+.sectionAdmin {
     background-image: url('../Img/Generales/fondoAdmin.jpg');
-    height: 70%;
-    background-size: none;
+    background-size: cover;
 }
 
-.sectionRanking{
+.sectionRanking {
     background-image: url('../Img/Generales/fondoRanking.jpg');
-    height: 70%;
-    background-size:cover;
+    background-size: cover;
 }
 
-nav{
+nav {
     min-height: 70%;
 }
 
-form{
+form {
     font-family: 'Bitter', serif;
     position: relative;
 }
 
-
-fieldset{
+fieldset {
     padding: 3px 10px;
     border: #321F28 5px solid;
     border-top-left-radius: 20px;
@@ -56,95 +52,91 @@ fieldset{
     position: relative;
 }
 
-
-.fondoFieldset{
+.fondoFieldset {
     background-color: lightpink;
 }
 
-.fondoFieldsetUsuario{
+.fondoFieldsetUsuario {
     background-color: rgb(231, 186, 127);
 }
 
-.alineado{
+.alineado {
     display: inline-block;
     width: 80px;
 }
 
-footer{
-    height:10%;
-    line-height:50px;
-    background-color:$colorHeader;
-    color:white;
-    text-align:center;
-    bottom:0;
-    left:0;
-    width:100%;
+footer {
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    height: 30px;
+    width: 100%;
+    background-color: $colorHeader;
 }
 
-.etiquetaEnigma{
+.etiquetaEnigma {
+    background-color: rgb(177, 194, 204);
+    color: black;
+    border-radius: 0.5em 0.5em 0.5em 0.5em;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.etiquetaAdmin {
     background-color: rgb(177, 194, 204);
     color: black;
     border-radius: 0.5em 0.5em 0.5em 0.5em;
 }
 
-.etiquetaAdmin{
-    background-color: rgb(177, 194, 204);
-    color: black;
-    border-radius: 0.5em 0.5em 0.5em 0.5em;
-}
-
-.fondoRegistro{
+.fondoRegistro {
     background-image: url('../Img/Generales/fondoRegistro.jpg');
     height: 70%;
     background-size: cover;
 }
 
-.fondoFieldsetRegistro{
-    background-color:#c9e1f3;
+.fondoFieldsetRegistro {
+    background-color: #c9e1f3;
 }
 
-.fondoUsuario{
+.fondoUsuario {
     background-image: url('../Img/Generales/fondoUsuario.jpg');
     height: 70%;
     background-size: cover;
 }
 
-.fondoOnline{
+.fondoOnline {
     background-image: url('../Img/Generales/fondoOnline.jpg');
     height: 70%;
     background-size: cover;
 }
 
-.colorClaro{
+.colorClaro {
     background-color: $colorClaro;
 }
 
-.colorOscuro{
+.colorOscuro {
     background-color: $colorOscuro;
 }
 
-.colorClaroOnline{
+.colorClaroOnline {
     background-color: $colorClaroOnline;
 }
 
-.colorOscuroOnline{
+.colorOscuroOnline {
     background-color: $colorOscuroOnline;
 }
 
-.etiquetaUsuario{
+.etiquetaUsuario {
     color: rgb(255, 255, 255);
     border-radius: 0.5em 0.5em 0.5em 0.5em;
 }
 
-
-.desconectado{
+.desconectado {
     border-radius: 1em 1em 1em 1em;
     background-color: red;
 }
 
-.conectado{
+.conectado {
     border-radius: 1em 1em 1em 1em;
     background-color: green;
 }
-
-

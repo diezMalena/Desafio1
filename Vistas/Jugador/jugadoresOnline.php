@@ -25,7 +25,7 @@
                 </div>
             </header>
             
-            <section class="row fondoOnline padTop"> <?php
+            <section class="row sectionRanking padTop"> <?php
                 foreach($vectorUsuarios as $i => $usuario){
                     if($i % 2 == 0){
                         $cad= '<div class="row padTop">

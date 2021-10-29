@@ -498,6 +498,14 @@ table {
   margin-top: 20px;
 }
 
+.floatIzq {
+  float: left;
+}
+
+.floatDer {
+  float: right;
+}
+
 p {
   color: black;
 }
@@ -544,39 +552,6 @@ html {
   font-family: 'Bitter', serif;
 }
 
-.botonIS {
-  color: black;
-  background-color: #734046;
-  border-color: #775155;
-  height: 40px;
-  width: 120px;
-  font-size: 18px;
-}
-
-.botonIS:hover {
-  color: black;
-  background-color: #7c6265;
-}
-
-.botonElegirRol {
-  color: #FFF;
-  background-color: #734046;
-  border-color: #775155;
-  height: 35px;
-  width: 110px;
-  font-size: 16px;
-}
-
-.botonElegirRol:hover {
-  color: black;
-  background-color: #7c6265;
-}
-
-button > a {
-  text-decoration: none;
-  color: black;
-}
-
 .tooltip {
   border-bottom: 1px dotted black;
   float: right;
@@ -600,24 +575,49 @@ button > a {
   visibility: visible;
 }
 
-.botonEditar {
-  background-image: url("../Img/Iconos/editar.jpg");
-  background-size: none;
+.button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  height: 46px;
 }
 
-.button.button-primary, button.button-primary, input[type="submit"].button-primary, input[type="reset"].button-primary, input[type="button"].button-primary {
+.buttonMini {
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+  height: 26px;
+}
+
+input.button {
+  padding: 0;
+}
+
+.buttonPrimario {
+  background-color: #3d2832;
+  color: white;
+  border: white;
+}
+
+.buttonPrimario:hover {
+  background-color: #725262;
   color: black;
-  background-color: #d13636;
-  border-color: #631616;
-  height: 14%;
-  width: 100%;
-  font-size: 20px;
+  border-radius: 0.2em 0.2em 0.2em 0.2em;
 }
 
-.button.button-primary:hover, button.button-primary:hover, input[type="submit"].button-primary:hover, input[type="reset"].button-primary:hover, input[type="button"].button-primary:hover, .button.button-primary:focus, button.button-primary:focus, input[type="submit"].button-primary:focus, input[type="reset"].button-primary:focus, input[type="button"].button-primary:focus {
-  color: var(--color-cuaterciario);
-  background-color: #b98e8e;
-  border-color: #da9393;
+.buttonSecundario {
+  background-color: #A4E555;
+  color: black;
+  border-radius: 1em 1em 1em 1em;
 }
 
 .imgResponsive {
@@ -707,7 +707,8 @@ form.secundario {
   
     box-sizing: border-box;
   }*/
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -718,28 +719,25 @@ header {
 
 section {
   background-color: #E2C275;
+  padding-top: 5px;
 }
 
 .sectionIndex {
   background-image: url("../Img/Generales/fondo.png");
-  height: 70%;
 }
 
 .sectionEditor {
   background-image: url("../Img/Generales/fondoEditor.jpg");
-  height: 70%;
   background-size: cover;
 }
 
 .sectionAdmin {
   background-image: url("../Img/Generales/fondoAdmin.jpg");
-  height: 70%;
-  background-size: none;
+  background-size: cover;
 }
 
 .sectionRanking {
   background-image: url("../Img/Generales/fondoRanking.jpg");
-  height: 70%;
   background-size: cover;
 }
 
@@ -774,20 +772,20 @@ fieldset {
 }
 
 footer {
-  height: 10%;
-  line-height: 50px;
-  background-color: #321F28;
-  color: white;
-  text-align: center;
-  bottom: 0;
-  left: 0;
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  height: 30px;
   width: 100%;
+  background-color: #321F28;
 }
 
 .etiquetaEnigma {
   background-color: #b1c2cc;
   color: black;
   border-radius: 0.5em 0.5em 0.5em 0.5em;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .etiquetaAdmin {

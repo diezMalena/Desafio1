@@ -1,82 +1,69 @@
-@import "_colores.scss";
-@import url("https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@1,700&display=swap");
-
-.botonIS{
-    color: rgb(0, 0, 0);
-    background-color: $botonIS;
-    border-color: #775155;
-    //border-radius: 1em 1em 1em 1em;
-    height: 40px;
-    width: 120px;
-    font-size: 18px;
-}
-.botonIS:hover{
-    color: rgb(0, 0, 0);;
-    background-color: $botonISencendido;
-    //border-radius: 1em 1em 1em 1em;
-}
-
-.botonElegirRol{
-    color: #FFF;
-    background-color: $botonIS;
-    border-color: #775155;
-    //border-radius: 1em 1em 1em 1em;
-    height: 35px;
-    width: 110px;
-    font-size: 16px;
-}
-
-.botonElegirRol:hover{
-    color: rgb(0, 0, 0);;
-    background-color: $botonISencendido;
-}
-
-button > a{
-    text-decoration: none;
-    color: rgb(0, 0, 0);
-}
-
-.tooltip {
-    border-bottom: 1px dotted black;
-    float: right;
-}
-
-.tooltip .tooltiptext {
-    visibility: hidden;
-    width: 20rem;
-    background-color: lightcyan;
-    color: rgb(0, 0, 0);
-    font-size: 16px;
-    text-align: left;
-    border-radius: 6px;
-    padding: 5px;
-    position: absolute;
-    z-index: 1;
-    right: 0;
-}
-
-.tooltip:hover .tooltiptext {
-    visibility: visible;
-}
-
-
-.botonEditar{
-    background-image: url('../Img/Iconos/editar.jpg');
-    background-size: none;
-}
-
-
-.button.button-primary, button.button-primary, input[type="submit"].button-primary, input[type="reset"].button-primary, input[type="button"].button-primary {
-    color: rgb(0, 0, 0);
-    background-color: rgb(209, 54, 54);
-    border-color:rgb(99, 22, 22);
-    height: 14%;
-    width: 100%;
-    font-size: 20px;
-}
-
-.button.button-primary:hover, button.button-primary:hover, input[type="submit"].button-primary:hover, input[type="reset"].button-primary:hover, input[type="button"].button-primary:hover, .button.button-primary:focus, button.button-primary:focus, input[type="submit"].button-primary:focus, input[type="reset"].button-primary:focus, input[type="button"].button-primary:focus {
-    color: var(--color-cuaterciario);
-    background-color: rgb(185, 142, 142);
-    border-color:rgb(218, 147, 147);
-}
+    @import "_colores.scss";
+    @import url("https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@1,700&display=swap");
+    .tooltip {
+        border-bottom: 1px dotted black;
+        float: right;
+    }
+    
+    .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 20rem;
+        background-color: lightcyan;
+        color: rgb(0, 0, 0);
+        font-size: 16px;
+        text-align: left;
+        border-radius: 6px;
+        padding: 5px;
+        position: absolute;
+        z-index: 1;
+        right: 0;
+    }
+    
+    .tooltip:hover .tooltiptext {
+        visibility: visible;
+    }
+    
+    .button {
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        cursor: pointer;
+        height: 46px;
+    }
+    
+    .buttonMini {
+        border: none;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 14px;
+        cursor: pointer;
+        height: 26px;
+    }
+    
+    input.button {
+        padding: 0;
+    }
+    
+    .buttonPrimario {
+        background-color: $botonPrimario;
+        color: white;
+        border: white;
+    }
+    
+    .buttonPrimario:hover {
+        background-color: $botonPrimarioEncendido;
+        color: rgb(0, 0, 0);
+        border-radius: 0.2em 0.2em 0.2em 0.2em;
+    }
+    
+    .buttonSecundario {
+        background-color: #A4E555;
+        color: black;
+        border-radius: 1em 1em 1em 1em;
+    }
