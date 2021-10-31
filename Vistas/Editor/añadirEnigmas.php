@@ -17,9 +17,9 @@
             </div>
         </header>
 
-        <main class="row">
+        <div class="row sectionEditor alturaDiv">
             <div class="col-e-12">
-                <section class="row sectionEditor">
+                <section class="row">
                     <div class="col-e-6 col-o-10 col-t-10 col-m-12  padTop padBottom offset-e-3 offset-o-1 offset-t-1 offset-m-0">
                         <form action="../../Controlador/controlador_editor.php" method="POST">
                             <fieldset class="padBottom">
@@ -109,7 +109,7 @@
                     </div>
                 </section>
             </div>
-        </main>
+        </div>
 
         <footer class="row">
             <p class=" col-e-4 col-m-8 izquierda">Creado por Malena Diez</p>

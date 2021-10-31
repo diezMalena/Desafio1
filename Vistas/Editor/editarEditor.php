@@ -27,7 +27,7 @@
         </header>
 
 
-        <main class="row sectionEditor">
+        <div class="row sectionEditor alturaDiv">
             <div class="col-e-12">
                 <section class="row">
                     <div
@@ -101,7 +101,7 @@
                     </div>
                 </section>
             </div>
-        </main>
+        </div>
 
 
         <footer class="row">

@@ -26,7 +26,7 @@
             </div>
         </header>
 
-        <main class="row sectionEditor">
+        <div class="row sectionEditor alturaDiv">
             <div class="col-e-12">
                 <div class="row">
                     <nav class="col-e-6 col-o-8 col-m-12 col-t-12 offset-e-3 offset-o-2 offset-m-0 offset-t-0">
@@ -96,13 +96,13 @@
                                                 </div>
 
                                                 <div class="row">
-                                                    <div class="col-e-2 col-m-6 floatIzq">
+                                                    <div class="col-e-2 col-m-5 floatIzq">
                                                         <div class="row">
                                                             <input type="submit" class="col-e-12 col-m-12 buttonMini buttonPrimario" name="borrarEnigma" value="Borrar">
                                                         </div>     
                                                     </div>
 
-                                                    <div class="col-e-2 col-m-6 floatDer">
+                                                    <div class="col-e-2 col-m-5 floatDer">
                                                         <div class="row">
                                                             <input type="submit" class="col-e-12 col-m-12 buttonMini buttonPrimario" name="editarEditor" value="Editar">
                                                         </div>    
@@ -117,7 +117,7 @@
                     </div>
                 </section>
             </div>
-        </main>
+        </div>
         <footer class="row">
             <p class=" col-e-4 col-m-8 izquierda">Creado por Malena Diez</p>
             <p class=" col-e-8 col-m-4 derecha">@Copyright</p>
