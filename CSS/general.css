@@ -859,4 +859,8 @@ footer {
   border-radius: 1em 1em 1em 1em;
   background-color: green;
 }
+
+.error {
+  background-color: #f35e5e;
+}
 /*# sourceMappingURL=general.css.map */

@@ -104,8 +104,17 @@
                                     </div>
                                     <div class="col-e-9 col-m-8 col-t-8 col-o-8">
                                         <div class="row">
-                                            <input type="text" class="col-e-12" name="estado"
-                                                value="<?= $usuario->getEstado() ?>">
+                                        <select name="activado">
+                                                <?php 
+                                                    if($usuario->getEstado() == 0){
+                                                        echo '<option value="0" selected>Desconectado</option>
+                                                            <option value="1">Conectado</option>';
+                                                    }else{
+                                                        echo '<option value="0">Desconectado</option>
+                                                            <option value="1" selected>Conectado</option>';
+                                                    }
+                                                ?> 
+                                            </select>
                                         </div>
 
                                     </div>
@@ -117,8 +126,17 @@
                                     </div>
                                     <div class="col-e-9 col-m-8 col-t-8 col-o-8">
                                         <div class="row">
-                                            <input type="text" class="col-e-12" name="activado"
-                                                value="<?= $usuario->getActivado() ?>">
+                                            <select name="activado">
+                                                <?php 
+                                                    if($usuario->getActivado() == 0){
+                                                        echo '<option value="0" selected>Desactivado</option>
+                                                            <option value="1">Activado</option>';
+                                                    }else{
+                                                        echo '<option value="0">Desactivado</option>
+                                                            <option value="1" selected>Activado</option>';
+                                                    }
+                                                ?> 
+                                            </select>
                                         </div>
                                     </div>
                                 </div>

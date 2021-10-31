@@ -116,7 +116,15 @@
                                                     </div>
                                                     <div class="col-e-9 col-m-8 col-t-8">
                                                         <div class="row">
-                                                            <input type="text" class="col-e-12 col-m-12" name="estado" value="'. $usuario->getEstado().'" readonly>
+                                                            <select name="estado" class="col-e-12 col-m-12" disabled>';
+                                                            if($usuario->getEstado() == 0){
+                                                                $cad .= '<option value="0" selected>Desconectado</option>
+                                                                        <option value="1">Conectado</option>';
+                                                            }else{
+                                                                $cad .= '<option value="0">Desconectado</option>
+                                                                        <option value="1" selected>Conectado</option>';
+                                                            }    
+                                                            $cad .= '</select>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -127,7 +135,15 @@
                                                     </div>
                                                     <div class="col-e-9 col-m-8 col-t-8">
                                                         <div class="row">
-                                                            <input type="text" class="col-e-12 col-m-12" name="activado" value="'. $usuario->getActivado().'" readonly>
+                                                            <select name="activado" class="col-e-12 col-m-12" disabled>';
+                                                                if($usuario->getActivado() == 0){
+                                                                    $cad .= '<option value="0" selected>Desactivado</option>
+                                                                            <option value="1">Activado</option>';
+                                                                }else{
+                                                                    $cad .= '<option value="0">Desactivado</option>
+                                                                            <option value="1" selected>Activado</option>';
+                                                                }    
+                                                    $cad .= '</select>
                                                         </div>        
                                                     </div>
                                                 </div>
