@@ -28,9 +28,9 @@
             </div>
         </header>
 
-        <main class="row">
+        <div class="row sectionIndex alturaDiv">
             <div class="col-e-12">
-                <section class="row sectionIndex">
+                <section class="row">
                     <div class="col-m-12 col-e-3 padTop padBottom offset-e-4 offset-m-0 ">
                         <form action="../Controlador/registro_IS.php" method="POST">
                             <fieldset class="padBottom centrado fondoFieldset">
@@ -65,7 +65,7 @@
                     </div>
                 </section>
             </div>
-        </main>
+        </div>
 
 
         <footer class="row">
