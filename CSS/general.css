@@ -64,6 +64,7 @@ table {
 .container {
   position: relative;
   width: 100%;
+  height: 100%;
   max-width: 1900px;
   margin: 0 auto;
 }
@@ -730,8 +731,13 @@ section {
   padding-top: 5px;
 }
 
+.alturaDiv {
+  min-height: 75%;
+}
+
 .sectionIndex {
   background-image: url("../Img/Generales/fondo.png");
+  background-size: cover;
 }
 
 .sectionEditor {
@@ -782,7 +788,7 @@ footer {
   position: fixed;
   left: 0px;
   bottom: 0px;
-  height: 30px;
+  height: 5%;
   width: 100%;
   background-color: #321F28;
 }
