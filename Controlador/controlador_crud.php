@@ -1,7 +1,12 @@
 <?php
 
     require_once (dirname(__DIR__).'/BBDD/conexion.php');
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\SMTP;
 
+    require_once 'phpmailer/src/Exception.php';
+    require_once 'phpmailer/src/PHPMailer.php';
+    require_once 'phpmailer/src/SMTP.php';
     session_start();
     $conex = new Conexion();
 
@@ -45,41 +50,83 @@
 
 
     if(isset($_REQUEST["añadirGestor"])){
-        $vectorCorreos = $conex->seleccionarCorreos();
-        $persona = new Persona($_REQUEST["correo"], $_REQUEST["nombre"], $_REQUEST["apellidos"], $_REQUEST["foto"], $_REQUEST["contraseña"]);
-    
-        //Vamos a comprobar si las dos contraseñas son iguales:
-        if($_REQUEST["contraseña"] == $_REQUEST["contraseña2"]){
-            $encontrado = false;
-            for($i = 0; $i < count($vectorCorreos); $i++){
-                //Si encontramos a una persona con un email ya registrado:
-                if($vectorCorreos[$i] == $persona->getCorreo()){
-                    $encontrado = true;
-                }
-            }
+        $recaptcha_url = 'https://www.google.com/recaptcha/api/siteverify'; 
+        $recaptcha_secret = '6Lc2AAodAAAAALMOAuh9yvcqfLj1Ez1vNGM87LIX'; 
+        $recaptcha_response = $_REQUEST['recaptcha_response']; 
+        $recaptcha = file_get_contents($recaptcha_url . '?secret=' . $recaptcha_secret . '&response=' . $recaptcha_response); 
+        $recaptcha = json_decode($recaptcha);
 
-             //Cuando no hay personas registradas con ese correo, la añadimos a la bbdd:
-            if(!$encontrado){
-                //Recojo el rol elegido en la pagina añadirGestores.php:
-                $rol = $_REQUEST["rol"];
-                $conseguido = $conex->insertarGestor($rol,$persona);
-                if(!$conseguido){
-                    $mensajeError = 'La persona que intentas registrar ya está registrada.';
-                    $_SESSION["mensajeError"] = $mensajeError; 
-                    header("location: ../Vistas/Admin/añadirGestores.php");
-                }else{
-                    //Recargo la lista de los usuarios porque ahora tendremos otro editor o administrador:
-                    $vectorUsuarios = $conex->seleccionarUsuarios();
-                $_SESSION["vectorUsuarios"] = $vectorUsuarios;
-                    header("location: ../Vistas/Admin/crudAdmin.php");
+        if($recaptcha->score >= 0.7){
+            $vectorCorreos = $conex->seleccionarCorreos();
+            $persona = new Persona($_REQUEST["correo"], $_REQUEST["nombre"], $_REQUEST["apellidos"], $_REQUEST["foto"], $_REQUEST["contraseña"]);
+        
+            //Vamos a comprobar si las dos contraseñas son iguales:
+            if($_REQUEST["contraseña"] == $_REQUEST["contraseña2"]){
+                $encontrado = false;
+                for($i = 0; $i < count($vectorCorreos); $i++){
+                    //Si encontramos a una persona con un email ya registrado:
+                    if($vectorCorreos[$i] == $persona->getCorreo()){
+                        $encontrado = true;
+                    }
                 }
+
+                //Cuando no hay personas registradas con ese correo, la añadimos a la bbdd:
+                if(!$encontrado){
+                    //Recojo el rol elegido en la pagina añadirGestores.php:
+                    $rol = $_REQUEST["rol"];
+                    $conseguido = $conex->insertarGestor($rol,$persona);
+                    if(!$conseguido){
+                        $mensajeError = 'La persona que intentas registrar ya está registrada.';
+                        $_SESSION["mensajeError"] = $mensajeError; 
+                        header("location: ../Vistas/Admin/añadirGestores.php");
+                    
+                    }else{ //Si he registrado a la persona...
+                        
+                        //Cojo el correo con el que nos registramos:
+                        $correoDestino = $_REQUEST["correo"];
+                        //verificarCorreo es como pulsar un boton submit del formulario, y le pasamos el correo para verificar a ese usuario y poner en la BBDD un 1.
+                        $enlace = "http://localhost/dashboard/ServidorLocalhost/DESAFIO1/Repositorio/Desafio1/Controlador/registro_IS.php?verificarCorreo=".$correoDestino;
+                
+                        $mail = new PHPMailer();
+                        try {
+                            $mail->isSMTP();
+                            $mail->Host = 'smtp.gmail.com';  
+                            $mail->SMTPAuth = true;
+                            $mail->Username = 'auxiliardaw2@gmail.com';                 
+                            $mail->Password = 'Chubaca20';                           
+                            $mail->SMTPSecure = 'tls';                                  
+                            $mail->Port = 587;                                    
+                            
+
+                            $mail->setFrom('AuxiliarDAW2@gmail.com'); 
+                            $mail->addAddress($correoDestino);     
+
+                            $mail->isHTML(true);
+                            $mail->Subject = 'Verificacion de cuenta.'; 
+                            $mail->Body = 'Accede a este enlace para poder verificar tu cuenta: <a href="'.$enlace.'">Verificar cuenta</a>';    
+
+                            $mail->send();
+                        } catch (Exception $e) {
+                        }
+                        
+                        //Recargo la lista de los usuarios porque ahora tendremos otro editor o administrador:
+                        $vectorUsuarios = $conex->seleccionarUsuarios();
+                        $_SESSION["vectorUsuarios"] = $vectorUsuarios;
+                        header("location: ../Vistas/Admin/crudAdmin.php");
+                    }
+                }
+        
+            }else{
+                //Si las contraseñas no coinciden, recargo la página mostrando un mensaje diciendolo.
+                //Tengo que mostrar el mensaje en la página de registro, con lo cual allí hago un isset y la muestro.
+                $mensajeError = 'Las contraseñas no coinciden. Registro fallido.';
+                $_SESSION["mensajeError"] = $mensajeError; 
+                header("location: ../Vistas/Admin/añadirGestores.php");
             }
-    
         }else{
-            //Si las contraseñas no coinciden, recargo la página mostrando un mensaje diciendolo.
-            //Tengo que mostrar el mensaje en la página de registro, con lo cual allí hago un isset y la muestro.
-            $mensajeError = 'Las contraseñas no coinciden. Registro fallido.';
-            $_SESSION["mensajeError"] = $mensajeError; 
-            header("location: ../Vistas/Admin/añadirGestores.php");
+            // KO. ERES ROBOT, EJECUTA ESTE CÓDIGO
+            $mensajeCaptcha = 'Verificación incorrecta, usted es un robot.';
+            $_SESSION["mensajeCaptcha"] = $mensajeCaptcha;
+            header("Location: ../Vistas/Admin/añadirGestores.php");
         }
     }

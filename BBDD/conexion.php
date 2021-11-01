@@ -256,6 +256,16 @@
             $this->bitacora->guardarArchivo("Persona actualizada correctamente.");
         }
 
+        public function updatePersona($persona){
+            $this->conectarBBDD();
+            $stmt = $this->conexion->prepare('UPDATE usuario SET correo = ?, nombre = ?, apellidos = ?, contraseña = ?, foto = ? WHERE correo = "'.$persona->getCorreo().'"');
+            $stmt->bind_param("sssss",$persona->getCorreo(),$persona->getNombre(),$persona->getApellidos(), $persona->getContraseña(), $persona->getFoto());
+            $stmt->execute();
+            $stmt->close();
+            $this->cerrarBBDD();
+            $this->bitacora->guardarArchivo("Persona actualizada correctamente.");
+        }
+
 
         public function añadirEnigma($frase, $opciones, $opCorrecta){
             $this->conectarBBDD();

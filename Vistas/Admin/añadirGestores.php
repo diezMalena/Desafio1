@@ -2,17 +2,16 @@
 
 <head>
     <title>Registrarse</title>
+    <script src='https://www.google.com/recaptcha/api.js?render=6Lc2AAodAAAAAFynKlvUXb95G2U8H3tRJH3wm29P'></script>
+    <script src="../../Script/recaptcha.js"></script>
+    <script src="../../Script/validacionRegistro.js"></script>
     <link rel="stylesheet" href="../../CSS/general.css">
 </head>
 
-<body>
+<body onload="validacion()">
     <?php
-            session_start();
-            if(isset($_SESSION["mensajeError"])){
-                echo $_SESSION["mensajeError"];
-                unset($_SESSION["mensajeError"]);
-            }
-        ?>
+        session_start();
+    ?>
     <div class="container">
         <header class="row">
             <div class="col-e-4 col-m-5">
@@ -29,20 +28,21 @@
                 <section class="row">
                     <div
                         class="col-m-12 col-e-4 col-t-12 col-o-8 padTop padBottom offset-e-4 offset-m-0 offset-t-0 offset-o-2">
-                        <form action="../../Controlador/controlador_crud.php" method="POST">
+                        <form novalidate action="../../Controlador/controlador_crud.php" method="POST">
+                            <input type="hidden" name="recaptcha_response" id="recaptchaResponse">
                             <fieldset class="padBottom">
                                 <legend>Añadir gestores: </legend>
                                 <div class="row padBottom15">
                                     <div class="col-e-6 col-m-4 col-t-4 col-o-4">
                                         <label for="mail" novalidate>
                                             <span>E-mail:</span>
-                                            <span class="error" aria-live="polite"></span>
                                         </label>
                                     </div>
                                     <div class="col-e-6 col-m-8 col-t-8 col-o-8">
                                         <div class="row">
                                             <input type="email" class="col-e-12" name="correo" id="mail" required
                                                 minlength="5">
+                                            <span class="error" aria-live="polite"></span>
                                         </div>
                                     </div>
                                 </div>
@@ -53,7 +53,9 @@
                                     </div>
                                     <div class="col-e-6 col-m-8 col-t-8 col-o-8">
                                         <div class="row">
-                                            <input type="text" name="nombre" class="col-e-12" value="" required>
+                                            <input type="text" id="nombre" name="nombre" class="col-e-12" value=""
+                                                required>
+                                            <span id="nombreError" class="error" aria-live="polite"></span>
                                         </div>
                                     </div>
                                 </div>
@@ -65,7 +67,9 @@
                                     </div>
                                     <div class="col-e-6 col-m-8 col-t-8 col-o-8">
                                         <div class="row">
-                                            <input type="text" name="apellidos" class="col-e-12" value="" required>
+                                            <input type="text" id="apellidos" name="apellidos" class="col-e-12" value=""
+                                                required>
+                                            <span id="apellidosError" class="error" aria-live="polite"></span>
                                         </div>
                                     </div>
                                 </div>
@@ -89,8 +93,9 @@
                                     </div>
                                     <div class="col-e-6 col-m-8 col-t-8 col-o-8">
                                         <div class="row">
-                                            <input type="password" class="col-e-12" name="contraseña" value="" required
-                                                minlength="5">
+                                            <input type="password" id="contraseña" class="col-e-12" name="contraseña"
+                                                value="" required minlength="5">
+                                            <span id="contraseñaError" class="error" aria-live="polite"></span>
                                         </div>
                                     </div>
                                 </div>
@@ -100,8 +105,9 @@
                                     </div>
                                     <div class="col-e-6 col-m-8 col-t-8 col-o-8">
                                         <div class="row">
-                                            <input type="password" class="col-e-12" name="contraseña2" value="" required
-                                                minlength="5">
+                                            <input type="password" id="contraseña2" class="col-e-12" name="contraseña2"
+                                                value="" required minlength="5">
+                                            <span id="contraseñaError2" class="error" aria-live="polite"></span>
                                         </div>
                                     </div>
                                 </div>
@@ -117,12 +123,27 @@
                                     </div>
                                 </div>
 
+                                <div class="row">
+                                    <div class="col-e-12 centrado error">
+                                        <?php
+                                            if(isset($_SESSION["mensajeError"])){
+                                                echo $_SESSION["mensajeError"];
+                                                unset($_SESSION["mensajeError"]);
+                                            }
+
+                                            if(isset($_SESSION["mensajeCaptcha"])){
+                                                echo $_SESSION["mensajeCaptcha"];
+                                                unset($_SESSION["mensajeCaptcha"]);
+                                            }
+                                        ?>
+                                    </div>
+                                </div>
 
                                 <div class="row padBottom15">
                                     <div class="col-e-2 col-m-5 floatIzq">
                                         <div class="row">
                                             <input type="submit" class="col-e-12 col-m-12 buttonMini buttonPrimario"
-                                                name="añadirGestor" value="Añadir">
+                                                name="añadirGestor" value="Añadir" id="registrarse">
                                         </div>
                                     </div>
 
@@ -133,6 +154,7 @@
                                         </div>
                                     </div>
                                 </div>
+
 
 
                             </fieldset>

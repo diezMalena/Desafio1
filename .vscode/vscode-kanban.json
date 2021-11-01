@@ -4,6 +4,34 @@
       "assignedTo": {
         "name": "Malena"
       },
+      "creation_time": "2021-11-01T13:20:18.465Z",
+      "description": {
+        "content": "Desarrollo del juego.",
+        "mime": "text/markdown"
+      },
+      "id": "13",
+      "references": [],
+      "title": "JUEGO"
+    }
+  ],
+  "in-progress": [
+    {
+      "assignedTo": {
+        "name": "Malena"
+      },
+      "creation_time": "2021-11-01T13:20:43.851Z",
+      "description": {
+        "content": "Diseño de todas las partes del programa.",
+        "mime": "text/markdown"
+      },
+      "id": "14",
+      "references": [],
+      "title": "Diseño"
+    },
+    {
+      "assignedTo": {
+        "name": "Malena"
+      },
       "creation_time": "2021-10-25T07:44:44.984Z",
       "description": {
         "content": "Integrar ReCaptcha en todos los formularios.",
@@ -12,19 +40,6 @@
       "id": "11",
       "references": [],
       "title": "Integrar ReCaptcha"
-    },
-    {
-      "assignedTo": {
-        "name": "Malena"
-      },
-      "creation_time": "2021-10-25T07:28:10.663Z",
-      "description": {
-        "content": "Página en la que se pedirá una direccion de correo para enviar un email con una nueva contraseña.",
-        "mime": "text/markdown"
-      },
-      "id": "3",
-      "references": [],
-      "title": "Página He olvidado la contraseña"
     },
     {
       "assignedTo": {
@@ -40,7 +55,6 @@
       "title": "Validaciones JS"
     }
   ],
-  "in-progress": [],
   "testing": [],
   "done": [
     {
@@ -99,6 +113,19 @@
       "assignedTo": {
         "name": "Malena"
       },
+      "creation_time": "2021-11-01T13:21:32.540Z",
+      "description": {
+        "content": "Pagina en la que el jugador podrá editar varios datos de su perfil.",
+        "mime": "text/markdown"
+      },
+      "id": "15",
+      "references": [],
+      "title": "Página Editar mi perfil (desde Usuario)"
+    },
+    {
+      "assignedTo": {
+        "name": "Malena"
+      },
       "creation_time": "2021-10-25T07:39:32.925Z",
       "description": {
         "content": "En esta página el editor selecciona un enigma para editar, y tendrá todos los campos de los enigmas para editarlos y guardar los cambios.\nIncluirá los botones Aceptar cambios y Volver.",
@@ -138,6 +165,19 @@
       "assignedTo": {
         "name": "Malena"
       },
+      "creation_time": "2021-10-25T07:28:10.663Z",
+      "description": {
+        "content": "Página en la que se pedirá una direccion de correo para enviar un email con una nueva contraseña.",
+        "mime": "text/markdown"
+      },
+      "id": "3",
+      "references": [],
+      "title": "Página He olvidado la contraseña"
+    },
+    {
+      "assignedTo": {
+        "name": "Malena"
+      },
       "creation_time": "2021-10-25T07:23:57.178Z",
       "description": {
         "content": "Página de inicio de sesión. Debe incluir campo email y contraseña, boton de aceptar, opcion de registrarse y opcion de he olvidado la contraseña.",
@@ -151,6 +191,19 @@
       "assignedTo": {
         "name": "Malena"
       },
+      "creation_time": "2021-11-01T13:23:03.811Z",
+      "description": {
+        "content": "Pagina en la que cada jugador verá el ranking de todos los jugadores ordenados de mayor a menor puntuacion que tengan.",
+        "mime": "text/markdown"
+      },
+      "id": "17",
+      "references": [],
+      "title": "Página Ranking"
+    },
+    {
+      "assignedTo": {
+        "name": "Malena"
+      },
       "creation_time": "2021-10-25T07:27:06.867Z",
       "description": {
         "content": "Página en la que se pedirán diversos campos a los usuarios para poderse registrar, con botones Registrarse y Volver.",
@@ -159,6 +212,19 @@
       "id": "2",
       "references": [],
       "title": "Página Registro"
+    },
+    {
+      "assignedTo": {
+        "name": "Malena"
+      },
+      "creation_time": "2021-11-01T13:22:08.501Z",
+      "description": {
+        "content": "Pagina en la que cada jugador podra ver que otros jugadores estan conectados en el mimsmo momento.",
+        "mime": "text/markdown"
+      },
+      "id": "16",
+      "references": [],
+      "title": "Página Usuarios conectados."
     }
   ]
 }

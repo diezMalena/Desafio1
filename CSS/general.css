@@ -471,12 +471,20 @@ table {
   padding-bottom: 15px;
 }
 
+.padBottom30 {
+  padding-bottom: 30px;
+}
+
 .padTop15 {
   padding-top: 15px;
 }
 
 .padTop {
   padding-top: 25px;
+}
+
+.padTop40 {
+  padding-top: 40px;
 }
 
 .padTarjeta {
@@ -624,9 +632,19 @@ input.button {
 }
 
 .buttonSecundario {
-  background-color: #A4E555;
+  background-color: #f4f778;
   color: black;
   border-radius: 1em 1em 1em 1em;
+  -webkit-box-shadow: 10px 10px 5px #36242c;
+          box-shadow: 10px 10px 5px #36242c;
+}
+
+.buttonSecundario:hover {
+  background-color: #ebf8a0;
+  color: black;
+  border-radius: 1em 1em 1em 1em;
+  -webkit-box-shadow: 10px 10px 5px #91597e;
+          box-shadow: 10px 10px 5px #91597e;
 }
 
 .imgResponsive {
@@ -777,6 +795,10 @@ fieldset {
 
 .fondoFieldsetUsuario {
   background-color: #e7ba7f;
+}
+
+.fondoFieldsetPartida {
+  background-color: #b8b1b4;
 }
 
 .alineado {

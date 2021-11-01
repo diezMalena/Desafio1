@@ -1,5 +1,5 @@
-function validacion(){
-    const registrarse=document.getElementById('registrarse');
+function validacion() {
+    const registrarse = document.getElementById('registrarse');
     const email = document.getElementById('mail');
     const nombre = document.getElementById('nombre');
     const apellidos = document.getElementById('apellidos');
@@ -11,8 +11,8 @@ function validacion(){
     const contraseñaError = document.getElementById('contraseñaError');
     const contraseñaError2 = document.getElementById('contraseñaError2');
 
- 
-    email.addEventListener('onblur', function (event) {
+
+    email.addEventListener('onblur', function(event) {
         if (email.validity.valid) {
             emailError.innerHTML = '';
             emailError.className = 'error';
@@ -21,7 +21,7 @@ function validacion(){
         }
     });
 
-    nombre.addEventListener('onblur', function (event) {
+    nombre.addEventListener('onblur', function(event) {
         if (nombre.validity.valid) {
             nombreError.innerHTML = '';
             nombreError.className = 'error';
@@ -30,7 +30,7 @@ function validacion(){
         }
     });
 
-    apellidos.addEventListener('onblur', function (event) {
+    apellidos.addEventListener('onblur', function(event) {
         if (apellidos.validity.valid) {
             apellidosError.innerHTML = '';
             apellidosError.className = 'error';
@@ -39,7 +39,7 @@ function validacion(){
         }
     });
 
-    contraseña.addEventListener('onblur', function (event) {
+    contraseña.addEventListener('onblur', function(event) {
         if (contraseña.validity.valid) {
             contraseñaError.innerHTML = '';
             contraseñaError.className = 'error';
@@ -48,7 +48,7 @@ function validacion(){
         }
     });
 
-    contraseña2.addEventListener('onblur', function (event) {
+    contraseña2.addEventListener('onblur', function(event) {
         if (contraseña2.validity.valid) {
             contraseñaError2.innerHTML = '';
             contraseñaError2.className = 'error';
@@ -57,7 +57,7 @@ function validacion(){
         }
     });
 
-    registrarse.addEventListener('click', function (event) {
+    registrarse.addEventListener('click', function(event) {
         if (!email.validity.valid) {
             showErrorEmail();
             event.preventDefault();
@@ -77,7 +77,7 @@ function validacion(){
             showErrorContraseña();
             event.preventDefault();
         }
-        
+
         if (!contraseña2.validity.valid) {
             showErrorContraseña2();
             event.preventDefault();
@@ -95,37 +95,32 @@ function validacion(){
         emailError.className = 'error active';
     }
 
-    function showErrorNombre(){
+    function showErrorNombre() {
         if (nombre.validity.valueMissing) {
             nombreError.textContent = 'Debe introducir un nombre para iniciar sesión.';
-        } 
+        }
         nombreError.className = 'error active';
     }
 
-    function showErrorApellidos(){
+    function showErrorApellidos() {
         if (apellidos.validity.valueMissing) {
             apellidosError.textContent = 'Debe introducir minimo un apellido para iniciar sesión.';
-        } 
+        }
         apellidosError.className = 'error active';
     }
 
-    function showErrorContraseña(){
+    function showErrorContraseña() {
         if (contraseña.validity.valueMissing) {
             contraseñaError.textContent = 'Debe introducir una  contraseña para iniciar sesión.';
-        } 
+        }
         contraseñaError.className = 'error active';
     }
 
-    function showErrorContraseña2(){
+    function showErrorContraseña2() {
         if (contraseña2.validity.valueMissing) {
             contraseñaError2.textContent = 'Debe repetir la contraseña.';
-        } 
+        }
         contraseñaError2.className = 'error active';
     }
 
 }
-
-
-
-
-

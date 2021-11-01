@@ -3,6 +3,8 @@
 <head>
     <title>Registrarse</title>
     <link rel="stylesheet" href="../CSS/general.css">
+    <script src='https://www.google.com/recaptcha/api.js?render=6Lc2AAodAAAAAFynKlvUXb95G2U8H3tRJH3wm29P'></script>
+    <script src="../Script/recaptcha.js"></script>
     <script src="../Script/validacionRegistro.js"></script>
 </head>
 
@@ -24,6 +26,7 @@
         <section class="row fondoRegistro alturaDiv">
             <div class="col-m-12 col-e-4 col-t-12 col-o-8 padTop padBottom offset-e-4 offset-m-0 offset-t-0 offset-o-2">
                 <form novalidate name="formularioRegistro" action="../Controlador/registro_IS.php" method="POST">
+                    <input type="hidden" name="recaptcha_response" id="recaptchaResponse">
                     <fieldset class="padBottom fondoFieldsetRegistro">
                         <legend>Registro: </legend>
 
@@ -74,7 +77,8 @@
                             </div>
                             <div class="col-e-6 col-m-8 col-t-8 col-o-8">
                                 <div class="row">
-                                    <input type="text" class="col-e-12" id="apellidos" name="apellidos" value="" required>
+                                    <input type="text" class="col-e-12" id="apellidos" name="apellidos" value=""
+                                        required>
                                     <span id="apellidosError" class="error" aria-live="polite"></span>
                                 </div>
                             </div>
@@ -126,20 +130,28 @@
                                         echo $_SESSION["mensajeError"];
                                         unset($_SESSION["mensajeError"]);
                                     }
+
+                                    if(isset($_SESSION["mensajeCaptcha"])){
+                                        echo $_SESSION["mensajeCaptcha"];
+                                        unset($_SESSION["mensajeCaptcha"]);
+                                    }
                                 ?>
                             </div>
                         </div>
 
                         <div class="row">
-                            <div class="col-e-6 col-m-12">
-                                <input type="submit" name="registrar" value="Registrarse" id="registrarse">
+                            <div class="col-e-5 col-m-12 floatIzq">
+                                <div class="row">
+                                    <input type="submit" value="Registrarse" name="registrar" id="registrarse"
+                                        class="col-e-12 button buttonPrimario" />
+                                </div>
                             </div>
-
-                            <div class="col-e-6 col-m-12">
-                                <button><a href="../index.php">Volver</a></button>
+                            <div class="col-e-5 col-m-12 floatDer">
+                                <div class="row">
+                                    <a href="../index.php" class="col-e-12 button buttonPrimario">Volver</a>
+                                </div>
                             </div>
                         </div>
-
                     </fieldset>
                 </form>
             </div>
