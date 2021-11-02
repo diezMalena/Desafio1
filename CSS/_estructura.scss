@@ -44,6 +44,12 @@ nav {
     min-height: 70%;
 }
 
+.fondoNav {
+    background-color: rgb(231, 186, 127);
+    padding-right: 10px;
+    border-radius: 1em 1em 1em 1em;
+}
+
 form {
     position: relative;
 }
@@ -62,6 +68,10 @@ fieldset {
 
 .fondoFieldsetUsuario {
     background-color: rgb(231, 186, 127);
+}
+
+.fondoFieldsetPartida {
+    background-color: #b8b1b4;
 }
 
 .alineado {
@@ -94,7 +104,6 @@ footer {
 
 .fondoRegistro {
     background-image: url('../Img/Generales/fondoRegistro.jpg');
-    height: 70%;
     background-size: cover;
 }
 
@@ -130,11 +139,6 @@ footer {
     background-color: $colorOscuroOnline;
 }
 
-.etiquetaUsuario {
-    color: rgb(255, 255, 255);
-    border-radius: 0.5em 0.5em 0.5em 0.5em;
-}
-
 .desconectado {
     border-radius: 1em 1em 1em 1em;
     background-color: red;
@@ -147,4 +151,9 @@ footer {
 
 .error {
     background-color: $ColorFondoError;
+    padding: 0;
+}
+
+.error.active {
+    padding: 0.1em;
 }

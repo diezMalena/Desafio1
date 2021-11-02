@@ -6,17 +6,31 @@
     $conex = new Conexion();
 
     if(isset($_REQUEST["añadirEnigma"])){
-        $frase = $_REQUEST["frase"];
-        $vectorOpciones = $_REQUEST["op"];
-        //var_dump($vectorOpciones);
-        $opcionCorrecta = $_REQUEST["opCorrecta"];
-        //Lo añado a la BBDD:  
-        $conex->añadirEnigma($frase, $vectorOpciones, $opcionCorrecta);
-        //Metemos los enigmas en una sesión:
-        $vectorEnigmas = $conex->seleccionarEnigmas();
-        $_SESSION["vectorEnigmas"] = $vectorEnigmas;
         
-        header("Location: ../Vistas/Editor/crudEditor.php");
+        $recaptcha_url = 'https://www.google.com/recaptcha/api/siteverify'; 
+        $recaptcha_secret = '6Lc2AAodAAAAALMOAuh9yvcqfLj1Ez1vNGM87LIX'; 
+        $recaptcha_response = $_REQUEST['recaptcha_response']; 
+        $recaptcha = file_get_contents($recaptcha_url . '?secret=' . $recaptcha_secret . '&response=' . $recaptcha_response); 
+        $recaptcha = json_decode($recaptcha);
+
+        if($recaptcha->score >= 0.7){
+            $frase = $_REQUEST["frase"];
+            $vectorOpciones = $_REQUEST["op"];
+            //var_dump($vectorOpciones);
+            $opcionCorrecta = $_REQUEST["opCorrecta"];
+            //Lo añado a la BBDD:  
+            $conex->añadirEnigma($frase, $vectorOpciones, $opcionCorrecta);
+            //Metemos los enigmas en una sesión:
+            $vectorEnigmas = $conex->seleccionarEnigmas();
+            $_SESSION["vectorEnigmas"] = $vectorEnigmas;
+            
+            header("Location: ../Vistas/Editor/crudEditor.php");
+        }else{
+            // KO. ERES ROBOT, EJECUTA ESTE CÓDIGO
+            $mensajeCaptcha = 'Este enigma es un robot.';
+            $_SESSION["mensajeCaptcha"] = $mensajeCaptcha;
+            header("Location: ../Vistas/Editor/añadirEnigmas.php");
+        }
     }
 
     if(isset($_REQUEST["editarEditor"])){

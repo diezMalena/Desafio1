@@ -18,12 +18,12 @@
             }
         ?>
     <div class="container">
-        <header class="row">
-            <div class="col-e-4 col-m-5">
+    <header class="row">
+            <div class="col-e-4 col-o-3 col-t-3 col-m-5">
                 <img src="../Img/Generales/barco.png" class="imgResponsive">
             </div>
 
-            <div class="col-e-6 col-m-6 edicionTitulo">
+            <div class="col-e-6 col-o-7 col-t-7 col-m-6 offset-e-1 edicionTitulo">
                 <h1>ESCAPE WEB</h1>
             </div>
         </header>
@@ -31,7 +31,7 @@
         <div class="row sectionIndex alturaDiv">
             <div class="col-e-12">
                 <section class="row">
-                    <div class="col-m-12 col-e-3 padTop padBottom offset-e-4 offset-m-0 ">
+                    <div class="col-m-12 col-e-4 col-t-8 col-o-8 padTop padBottom offset-e-4 offset-m-0 offset-t-2 offset-o-2">
                         <form action="../Controlador/registro_IS.php" method="POST">
                             <fieldset class="padBottom centrado fondoFieldset">
                                 <legend>Elige tu rol: </legend>

@@ -1,5 +1,5 @@
-function validacion(){
-   const iniciarS=document.getElementById('iniciarSesion');
+function validacion() {
+    const iniciarS = document.getElementById('iniciarSesion');
 
     const email = document.getElementById('mail');
     const passw = document.getElementById('password');
@@ -7,31 +7,33 @@ function validacion(){
     const emailError = document.querySelector('#mail + span.error');
     const passError = document.getElementById('passE');
 
-    email.addEventListener('onblur', function (event) {
+    email.addEventListener('blur', function(event) {
         if (email.validity.valid) {
             emailError.innerHTML = '';
-            emailError.className = 'error';
+            emailError.classList.remove('active');
         } else {
+            emailError.classList.add('active');
             showError();
         }
     });
 
-    passw.addEventListener('onblur', function (event) {
+    passw.addEventListener('blur', function(event) {
         if (passw.validity.valid) {
             passError.innerHTML = '';
-            passError.className = 'error';
+            passError.classList.remove('active');
         } else {
+            passError.classList.add('active');
             showErrorPass();
         }
     });
 
-    iniciarS.addEventListener('click', function (event) {
+    iniciarS.addEventListener('click', function(event) {
         if (!email.validity.valid) {
             showError();
             event.preventDefault();
         }
 
-        
+
         if (!passw.validity.valid) {
             showErrorPass();
             event.preventDefault();
@@ -44,16 +46,14 @@ function validacion(){
         } else if (email.validity.typeMismatch) {
             emailError.textContent = 'El valor introducido debe ser una dirección de correo electrónico.';
         }
-        emailError.className = 'error active';
     }
 
 
-    function showErrorPass(){
+    function showErrorPass() {
         if (passw.validity.valueMissing) {
             passError.textContent = 'Debe introducir una  contraseña para iniciar sesión.';
         } else if (passw.validity.tooShort) {
             passError.textContent = 'La contraseña debe tener al menos 5 caracteres.';
         }
-        passError.className = 'error active';
     }
 }

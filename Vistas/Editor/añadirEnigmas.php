@@ -2,6 +2,8 @@
 
 <head>
     <title>Añadir enigmas</title>
+    <script src='https://www.google.com/recaptcha/api.js?render=6Lc2AAodAAAAAFynKlvUXb95G2U8H3tRJH3wm29P'></script>
+    <script src="../../Script/recaptcha.js"></script>
     <link rel="stylesheet" href="../../CSS/general.css">
 </head>
 
@@ -20,8 +22,10 @@
         <div class="row sectionEditor alturaDiv">
             <div class="col-e-12">
                 <section class="row">
-                    <div class="col-e-6 col-o-10 col-t-10 col-m-12  padTop padBottom offset-e-3 offset-o-1 offset-t-1 offset-m-0">
+                    <div
+                        class="col-e-6 col-o-10 col-t-10 col-m-12  padTop padBottom offset-e-3 offset-o-1 offset-t-1 offset-m-0">
                         <form action="../../Controlador/controlador_editor.php" method="POST">
+                            <input type="hidden" name="recaptcha_response" id="recaptchaResponse">
                             <fieldset class="padBottom">
                                 <legend>Añadir enigmas: </legend>
                                 <div class="row">
@@ -85,6 +89,17 @@
                                             <input type="radio" name="opCorrecta" value="3" required>
                                         </div>
 
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-e-12 centrado error">
+                                        <?php
+                                            if(isset($_SESSION["mensajeCaptcha"])){
+                                                echo $_SESSION["mensajeCaptcha"];
+                                                unset($_SESSION["mensajeCaptcha"]);
+                                            }
+                                        ?>
                                     </div>
                                 </div>
 

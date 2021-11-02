@@ -2,9 +2,11 @@
 
 <head>
     <title>Escape Web</title>
+    <script src='https://www.google.com/recaptcha/api.js?render=6Lc2AAodAAAAAFynKlvUXb95G2U8H3tRJH3wm29P'></script>
+    <script src="./Script/recaptcha.js"></script>
+    <script src="./Script/validacionLogin.js"></script>
     <link rel="stylesheet" href="./CSS/general.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@1,500&display=swap">
-    <script src="./Script/validacionLogin.js"></script>
 </head>
 
 <body onload="validacion()">
@@ -27,6 +29,7 @@
         <section class="row sectionIndex alturaDiv">
             <div class="col-m-12 col-e-4 col-t-12 col-o-8 padTop padBottom offset-e-4 offset-m-0 offset-t-0 offset-o-2">
                 <form novalidate action="./Controlador/registro_IS.php" method="POST">
+                    <input type="hidden" name="recaptcha_response" id="recaptchaResponse">
                     <fieldset class="padBottom fondoFieldset">
                         <legend>Introduce tus datos: </legend>
                         <div class="row">
@@ -66,7 +69,7 @@
                                 <div class="row">
                                     <input type="email" class="col-e-12" name="correo" id="mail" required minlength="5">
                                     <span class="error" aria-live="polite"></span>
-                                </div>    
+                                </div>
                             </div>
                         </div>
 
@@ -100,6 +103,15 @@
                                         echo $_SESSION["mensajeError"];
                                         unset($_SESSION["mensajeError"]);
                                     }
+                                    
+                                    if(isset($_SESSION["mensajeCaptcha"])){
+                                        echo $_SESSION["mensajeCaptcha"];
+                                        unset($_SESSION["mensajeCaptcha"]);
+                                    }
+                                ?>
+                            </div>
+                            <div class="col-e-12 centrado">
+                                <?php
                                     if(isset($_SESSION["mensajeRecibido"])){
                                         echo $_SESSION["mensajeRecibido"];
                                         unset($_SESSION["mensajeRecibido"]);

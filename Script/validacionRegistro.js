@@ -1,5 +1,5 @@
-function validacion(){
-    const registrarse=document.getElementById('registrarse');
+function validacion() {
+    const registrarse = document.getElementById('registrarse');
     const email = document.getElementById('mail');
     const nombre = document.getElementById('nombre');
     const apellidos = document.getElementById('apellidos');
@@ -11,53 +11,58 @@ function validacion(){
     const contraseñaError = document.getElementById('contraseñaError');
     const contraseñaError2 = document.getElementById('contraseñaError2');
 
- 
-    email.addEventListener('onblur', function (event) {
+
+    email.addEventListener('blur', function(event) {
         if (email.validity.valid) {
             emailError.innerHTML = '';
-            emailError.className = 'error';
+            emailError.classList.remove('active');
         } else {
-            showError();
+            emailError.classList.add('active');
+            showErrorEmail();
         }
     });
 
-    nombre.addEventListener('onblur', function (event) {
+    nombre.addEventListener('blur', function(event) {
         if (nombre.validity.valid) {
             nombreError.innerHTML = '';
-            nombreError.className = 'error';
+            nombreError.classList.remove('active');
         } else {
-            showError();
+            nombreError.classList.add('active');
+            showErrorNombre();
         }
     });
 
-    apellidos.addEventListener('onblur', function (event) {
+    apellidos.addEventListener('blur', function(event) {
         if (apellidos.validity.valid) {
             apellidosError.innerHTML = '';
-            apellidosError.className = 'error';
+            apellidosError.classList.remove('active');
         } else {
-            showError();
+            apellidosError.classList.add('active');
+            showErrorApellidos();
         }
     });
 
-    contraseña.addEventListener('onblur', function (event) {
+    contraseña.addEventListener('blur', function(event) {
         if (contraseña.validity.valid) {
             contraseñaError.innerHTML = '';
-            contraseñaError.className = 'error';
+            contraseñaError.classList.remove('active');
         } else {
-            showError();
+            contraseñaError.classList.add('active');
+            showErrorContraseña();
         }
     });
 
-    contraseña2.addEventListener('onblur', function (event) {
+    contraseña2.addEventListener('blur', function(event) {
         if (contraseña2.validity.valid) {
             contraseñaError2.innerHTML = '';
-            contraseñaError2.className = 'error';
+            contraseñaError2.classList.remove('active');
         } else {
-            showError();
+            contraseñaError2.classList.add('active');
+            showErrorContraseña2();
         }
     });
 
-    registrarse.addEventListener('click', function (event) {
+    registrarse.addEventListener('click', function(event) {
         if (!email.validity.valid) {
             showErrorEmail();
             event.preventDefault();
@@ -77,7 +82,7 @@ function validacion(){
             showErrorContraseña();
             event.preventDefault();
         }
-        
+
         if (!contraseña2.validity.valid) {
             showErrorContraseña2();
             event.preventDefault();
@@ -89,43 +94,35 @@ function validacion(){
             emailError.textContent = 'Debe introducir una dirección de correo electrónico.';
         } else if (email.validity.typeMismatch) {
             emailError.textContent = 'El valor introducido debe ser una dirección de correo electrónico.';
-        } else if (email.validity.tooShort) {
-            emailError.textContent = 'El correo electrónico debe tener al menos ${ email.minLength } caracteres; ha introducido ${ email.value.length }.';
         }
-        emailError.className = 'error active';
     }
 
-    function showErrorNombre(){
+    function showErrorNombre() {
         if (nombre.validity.valueMissing) {
             nombreError.textContent = 'Debe introducir un nombre para iniciar sesión.';
-        } 
-        nombreError.className = 'error active';
+        }
     }
 
-    function showErrorApellidos(){
+    function showErrorApellidos() {
         if (apellidos.validity.valueMissing) {
             apellidosError.textContent = 'Debe introducir minimo un apellido para iniciar sesión.';
-        } 
-        apellidosError.className = 'error active';
+        }
     }
 
-    function showErrorContraseña(){
+    function showErrorContraseña() {
         if (contraseña.validity.valueMissing) {
             contraseñaError.textContent = 'Debe introducir una  contraseña para iniciar sesión.';
-        } 
-        contraseñaError.className = 'error active';
+        } else if (contraseña.validity.tooShort) {
+            contraseñaError.textContent = 'La contraseña debe tener al menos 5 caracteres.';
+        }
     }
 
-    function showErrorContraseña2(){
+    function showErrorContraseña2() {
         if (contraseña2.validity.valueMissing) {
             contraseñaError2.textContent = 'Debe repetir la contraseña.';
-        } 
-        contraseñaError2.className = 'error active';
+        } else if (contraseña2.validity.tooShort) {
+            contraseñaError2.textContent = 'La contraseña debe tener al menos 5 caracteres.';
+        }
     }
 
 }
-
-
-
-
-
