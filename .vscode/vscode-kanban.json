@@ -6,7 +6,7 @@
       },
       "creation_time": "2021-11-01T13:20:18.465Z",
       "description": {
-        "content": "Desarrollo del juego.",
+        "content": "Desarrollo del juego.\nUSAR JSON!",
         "mime": "text/markdown"
       },
       "id": "13",
@@ -27,19 +27,6 @@
       "id": "14",
       "references": [],
       "title": "Diseño"
-    },
-    {
-      "assignedTo": {
-        "name": "Malena"
-      },
-      "creation_time": "2021-10-25T07:45:18.709Z",
-      "description": {
-        "content": "Hacer las validaciones de los campos necesarios con JavaScript e implementarlas en las páginas correspondientes.",
-        "mime": "text/markdown"
-      },
-      "id": "12",
-      "references": [],
-      "title": "Validaciones JS"
     }
   ],
   "testing": [],
