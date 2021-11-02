@@ -632,11 +632,11 @@ input.button {
 }
 
 .buttonSecundario {
-  background-color: #f4f778;
-  color: black;
+  background-color: #472b38;
+  color: white;
   border-radius: 1em 1em 1em 1em;
-  -webkit-box-shadow: 10px 10px 5px #36242c;
-          box-shadow: 10px 10px 5px #36242c;
+  -webkit-box-shadow: 10px 10px 5px #7e1059;
+          box-shadow: 10px 10px 5px #7e1059;
 }
 
 .buttonSecundario:hover {
@@ -660,12 +660,12 @@ article.reportaje img {
 
 table.primera {
   border-color: black;
-  background-color: #043a0d;
+  background-color: #333fff;
 }
 
 table.segunda {
   border-color: black;
-  background-color: #1d5f2e;
+  background-color: #333fff;
 }
 
 form.primario {
@@ -777,6 +777,12 @@ nav {
   min-height: 70%;
 }
 
+.fondoNav {
+  background-color: #e7ba7f;
+  padding-right: 10px;
+  border-radius: 1em 1em 1em 1em;
+}
+
 form {
   position: relative;
 }
@@ -831,7 +837,6 @@ footer {
 
 .fondoRegistro {
   background-image: url("../Img/Generales/fondoRegistro.jpg");
-  height: 70%;
   background-size: cover;
 }
 
@@ -867,11 +872,6 @@ footer {
   background-color: #141313;
 }
 
-.etiquetaUsuario {
-  color: white;
-  border-radius: 0.5em 0.5em 0.5em 0.5em;
-}
-
 .desconectado {
   border-radius: 1em 1em 1em 1em;
   background-color: red;
@@ -884,5 +884,10 @@ footer {
 
 .error {
   background-color: #f35e5e;
+  padding: 0;
+}
+
+.error.active {
+  padding: 0.1em;
 }
 /*# sourceMappingURL=general.css.map */

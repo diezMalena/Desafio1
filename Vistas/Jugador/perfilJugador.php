@@ -27,7 +27,7 @@
         </header>
 
         <div class="row sectionRanking alturaDiv">
-            <nav class="col-e-2 col-o-2 col-t-12 col-m-12">
+            <nav class="col-e-2 col-o-2 col-t-12 col-m-12 fondoNav">
                 <form action="../../Controlador/controlador_jugador.php" method="POST">
                     <div class="row">
                         <div class="col-e-12">

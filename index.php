@@ -103,13 +103,18 @@
                                         echo $_SESSION["mensajeError"];
                                         unset($_SESSION["mensajeError"]);
                                     }
-                                    if(isset($_SESSION["mensajeRecibido"])){
-                                        echo $_SESSION["mensajeRecibido"];
-                                        unset($_SESSION["mensajeRecibido"]);
-                                    }
+                                    
                                     if(isset($_SESSION["mensajeCaptcha"])){
                                         echo $_SESSION["mensajeCaptcha"];
                                         unset($_SESSION["mensajeCaptcha"]);
+                                    }
+                                ?>
+                            </div>
+                            <div class="col-e-12 centrado">
+                                <?php
+                                    if(isset($_SESSION["mensajeRecibido"])){
+                                        echo $_SESSION["mensajeRecibido"];
+                                        unset($_SESSION["mensajeRecibido"]);
                                     }
                                 ?>
                             </div>

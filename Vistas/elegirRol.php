@@ -31,7 +31,7 @@
         <div class="row sectionIndex alturaDiv">
             <div class="col-e-12">
                 <section class="row">
-                    <div class="col-m-12 col-e-3 padTop padBottom offset-e-4 offset-m-0 ">
+                    <div class="col-m-12 col-e-4 col-t-8 col-o-8 padTop padBottom offset-e-4 offset-m-0 offset-t-2 offset-o-2">
                         <form action="../Controlador/registro_IS.php" method="POST">
                             <fieldset class="padBottom centrado fondoFieldset">
                                 <legend>Elige tu rol: </legend>

@@ -32,22 +32,9 @@
       "assignedTo": {
         "name": "Malena"
       },
-      "creation_time": "2021-10-25T07:44:44.984Z",
-      "description": {
-        "content": "Integrar ReCaptcha en todos los formularios.",
-        "mime": "text/markdown"
-      },
-      "id": "11",
-      "references": [],
-      "title": "Integrar ReCaptcha"
-    },
-    {
-      "assignedTo": {
-        "name": "Malena"
-      },
       "creation_time": "2021-10-25T07:45:18.709Z",
       "description": {
-        "content": "Hacer las validaciones de emails necesarios con JavaScript e implementarlas en las páginas correspondientes.",
+        "content": "Hacer las validaciones de los campos necesarios con JavaScript e implementarlas en las páginas correspondientes.",
         "mime": "text/markdown"
       },
       "id": "12",
@@ -57,6 +44,19 @@
   ],
   "testing": [],
   "done": [
+    {
+      "assignedTo": {
+        "name": "Malena"
+      },
+      "creation_time": "2021-10-25T07:44:44.984Z",
+      "description": {
+        "content": "Integrar ReCaptcha en todos los formularios.",
+        "mime": "text/markdown"
+      },
+      "id": "11",
+      "references": [],
+      "title": "Integrar ReCaptcha"
+    },
     {
       "assignedTo": {
         "name": "Malena"
