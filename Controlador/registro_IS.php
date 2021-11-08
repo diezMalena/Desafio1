@@ -22,8 +22,7 @@
         if($recaptcha->score >= 0.7){
             // OK. ERES HUMANO, EJECUTA ESTE CÓDIGO
             $correo = $_REQUEST["correo"];
-            $contraseña = $_REQUEST["contraseña"];
-
+            $contraseña = md5($_REQUEST["contraseña"]);
             $persona = $conex->iniciarSesion($correo, $contraseña);
             
 
@@ -80,10 +79,14 @@
 
             //Vamos a coger todos los emails de la BBDD:
             $vectorCorreos = $conex->seleccionarCorreos();
-            $persona = new Persona($_REQUEST["correo"], $_REQUEST["nombre"], $_REQUEST["apellidos"], $_REQUEST["foto"], $_REQUEST["contraseña"]);
+            $contraseña = md5($_REQUEST["contraseña"]);
+            $contraseña2 = md5($_REQUEST["contraseña2"]);
+            /*$foto = file_get_contents($_FILES["image"]["tmp_name"]);
+            var_dump($foto);*/
+            $persona = new Persona($_REQUEST["correo"], $_REQUEST["nombre"], $_REQUEST["apellidos"], $contraseña, $_REQUEST["foto"]);
         
             //Vamos a comprobar si las dos contraseñas son iguales:
-            if($_REQUEST["contraseña"] == $_REQUEST["contraseña2"]){
+            if($contraseña == $contraseña2){
                 $encontrado = false;
                 for($i = 0; $i < count($vectorCorreos); $i++){
                     //Si encontramos a una persona con un email ya registrado:
@@ -223,8 +226,8 @@
 
     if(isset($_REQUEST["cambiarContraseña"])){
         $correo = $_REQUEST["correo"];
-        $contraseña = $_REQUEST["contraseña"];
-        $contraseña2 = $_REQUEST["contraseña2"];
+        $contraseña = md5($_REQUEST["contraseña"]);
+        $contraseña2 = md5($_REQUEST["contraseña2"]);
         if($contraseña == $contraseña2){
             $conex->updateContraseña($correo, $contraseña);
             $mensajeRecibido = 'La contraseña ha sido actualizada.';

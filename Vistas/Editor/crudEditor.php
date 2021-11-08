@@ -18,7 +18,7 @@
     <div class="container">
         <header class="row">
             <div class="col-e-4 col-m-5">
-                <img src="../../Img/Generales/barco.png" class="imgResponsive">
+                <a href="../../index.php"><img src="../../Img/Generales/barco.png" class="imgResponsive"></a>
             </div>
 
             <div class="col-e-8 col-m-6 edicionTitulo">
@@ -39,13 +39,13 @@
                             </div>
                             <div class="col-e-4 col-o-3 col-m-12 col-t-12">
                                 <div class="row">
-                                    <a href="../elegirRol.php" class="col-e-12 button buttonPrimario">Volver</a>
+                                    <a href="../elegirRol.php" class="col-e-12 button buttonPrimarioVolver">Volver</a>
                                 </div>
                             </div>
                             <div class="col-e-4 col-o-4 col-m-12 col-t-12">
                                 <form action="../../Controlador/registro_IS.php" method="POST">
                                     <div class="row">
-                                        <input class="col-e-12 button buttonPrimario" type="submit" name="cerrarSesion"
+                                        <input class="col-e-12 button buttonPrimarioVolver" type="submit" name="cerrarSesion"
                                             value="Cerrar sesion"></input>
                                     </div>
                                 </form>

@@ -15,7 +15,7 @@
     <div class="container">
         <header class="row">
             <div class="col-e-4 col-m-5">
-                <img src="../Img/Generales/barco.png" class="imgResponsive">
+                <a href="../index.php"><img src="../Img/Generales/barco.png" class="imgResponsive"></a>
             </div>
 
             <div class="col-e-8 col-m-6 edicionTitulo">
@@ -24,15 +24,15 @@
         </header>
 
 
-        <div class="row fondoRegistro alturaDiv">
+        <div class="row sectionRanking alturaDiv">
             <div class="col-e-12">
                 <section class="row">
                     <div
-                        class="col-m-12 col-e-4 col-t-12 col-o-8 padTop padBottom offset-e-4 offset-m-0 offset-t-0 offset-o-2">
+                        class="col-m-12 col-e-4 col-t-12 col-o-6 padTop padBottom offset-e-4 offset-m-0 offset-t-0 offset-o-3">
                         <form novalidate name="formularioRegistro" action="../Controlador/registro_IS.php"
                             method="POST">
                             <input type="hidden" name="recaptcha_response" id="recaptchaResponse">
-                            <fieldset class="padBottom fondoFieldsetRegistro">
+                            <fieldset class="padBottom fondoFieldsetUsuario">
                                 <legend>Registro: </legend>
 
                                 <div class="row padBottom15">
@@ -147,13 +147,13 @@
                                 </div>
 
                                 <div class="row">
-                                    <div class="col-e-5 col-m-12 floatIzq">
+                                    <div class="col-e-5 col-m-5 floatIzq">
                                         <div class="row">
                                             <input type="submit" value="Registrarse" name="registrar" id="registrarse"
                                                 class="col-e-12 button buttonPrimario" />
                                         </div>
                                     </div>
-                                    <div class="col-e-5 col-m-12 floatDer">
+                                    <div class="col-e-5 col-m-5 floatDer">
                                         <div class="row">
                                             <a href="../index.php" class="col-e-12 button buttonPrimario">Volver</a>
                                         </div>

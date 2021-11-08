@@ -28,8 +28,14 @@
         $nombre = $_REQUEST["nombre"];
         $apellidos = $_REQUEST["apellidos"];
         $foto = $_REQUEST["foto"];
-        $contraseña = $_REQUEST["contraseña"];
-        $persona = new Persona($correo, $nombre, $apellidos, $contraseña, $foto);
+        $contraseña = md5($_REQUEST["contraseña"]);
+        $persona = $_SESSION["persona"];
+        $persona->setCorreo($correo);
+        $persona->setNombre($nombre);
+        $persona->setApellidos($apellidos);
+        $persona->setFoto($foto);
+        $persona->setContraseña($contraseña);
+        //$persona = new Persona($correo, $nombre, $apellidos, $contraseña, $foto);
         $conex->updatePersona($persona);
         //Ahora actualizo al objeto Persona para volver a guardarlo en una session:
         $conex->cogerUsuario($persona);
@@ -42,5 +48,16 @@
     }
 
     if(isset($_REQUEST["jugar"])){
+        $vectorPartida = $conex->recogerPartidas();
+        $_SESSION["vectorPartida"] = $vectorPartida;
         header("Location: ../Vistas/Jugador/jugar.php");
+    }
+
+    if(isset($_REQUEST["cambiarRol"])){
+        $persona = $_SESSION["persona"];
+        //En este vector metemos los roles a los que puede acceder este gestor
+        $vectorRoles = $conex->seleccionarRoles($persona->getRol());
+        //Lo metemos en una sesión para llevarnoslo a elegirRol.php.
+        $_SESSION["vectorRoles"] = $vectorRoles;
+        header("Location: ../Vistas/elegirRol.php");
     }

@@ -26,11 +26,11 @@
         </header>
 
 
-        <section class="row sectionIndex alturaDiv">
+        <section class="row sectionRanking alturaDiv">
             <div class="col-m-12 col-e-4 col-t-12 col-o-8 padTop padBottom offset-e-4 offset-m-0 offset-t-0 offset-o-2">
                 <form novalidate action="./Controlador/registro_IS.php" method="POST">
                     <input type="hidden" name="recaptcha_response" id="recaptchaResponse">
-                    <fieldset class="padBottom fondoFieldset">
+                    <fieldset class="padBottom fondoFieldsetUsuario">
                         <legend>Introduce tus datos: </legend>
                         <div class="row">
                             <div class="col-e-12 col-m-12 col-t-12 col-o-12">
@@ -60,12 +60,12 @@
 
 
                         <div class="row padBottom15">
-                            <div class="col-e-4 col-m-12">
+                            <div class="col-e-4 col-o-4 col-t-4 col-m-4">
                                 <label for="mail">
                                     <span>E-mail:</span>
                                 </label>
                             </div>
-                            <div class="col-e-8 col-m-12">
+                            <div class="col-e-8 col-o-8 col-t-8 col-m-8">
                                 <div class="row">
                                     <input type="email" class="col-e-12" name="correo" id="mail" required minlength="5">
                                     <span class="error" aria-live="polite"></span>
@@ -74,10 +74,10 @@
                         </div>
 
                         <div class="row padBottom15">
-                            <div class="col-e-4 col-m-12">
+                            <div class="col-e-4 col-o-4 col-t-4 col-m-4">
                                 Contraseña:
                             </div>
-                            <div class="col-e-8 col-m-12">
+                            <div class="col-e-8 col-o-8 col-t-8 col-m-8">
                                 <div class="row">
                                     <input class="col-e-12" type="password" id="password" name="contraseña" value=""
                                         required minlength="5">

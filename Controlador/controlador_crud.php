@@ -58,10 +58,12 @@
 
         if($recaptcha->score >= 0.7){
             $vectorCorreos = $conex->seleccionarCorreos();
-            $persona = new Persona($_REQUEST["correo"], $_REQUEST["nombre"], $_REQUEST["apellidos"], $_REQUEST["foto"], $_REQUEST["contraseña"]);
+            $contraseña = md5($_REQUEST["contraseña"]);
+            $contraseña2 = md5($_REQUEST["contraseña2"]);
+            $persona = new Persona($_REQUEST["correo"], $_REQUEST["nombre"], $_REQUEST["apellidos"], $_REQUEST["foto"], $contraseña);
         
             //Vamos a comprobar si las dos contraseñas son iguales:
-            if($_REQUEST["contraseña"] == $_REQUEST["contraseña2"]){
+            if($contraseña == $contraseña2){
                 $encontrado = false;
                 for($i = 0; $i < count($vectorCorreos); $i++){
                     //Si encontramos a una persona con un email ya registrado:

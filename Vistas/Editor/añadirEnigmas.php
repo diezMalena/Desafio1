@@ -11,7 +11,7 @@
     <div class="container">
         <header class="row">
             <div class="col-e-4 col-o-3 col-t-3 col-m-5">
-                <img src="../../Img/Generales/barco.png" class="imgResponsive">
+                <a href="../../index.php"><img src="../../Img/Generales/barco.png" class="imgResponsive"></a>
             </div>
 
             <div class="col-e-6 col-o-7 col-t-7 col-m-6 offset-e-1 edicionTitulo">
@@ -115,7 +115,7 @@
                                     <div class="col-e-2 col-o-5 col-m-5 col-t-5 floatDer padTop15">
                                         <div class="row">
                                             <a href="crudEditor.php"
-                                                class="col-e-12 col-m-12 buttonMini buttonPrimario">Volver</a>
+                                                class="col-e-12 col-m-12 buttonMini buttonPrimarioVolver">Volver</a>
                                         </div>
                                     </div>
                                 </div>
