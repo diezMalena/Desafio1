@@ -1,0 +1,14 @@
+.imgResponsive{
+    width: 120px;
+    height: auto;
+    display: block;
+}
+
+//todas las etiquetas article con clase reportaje que dentro tengan img: 
+article.reportaje img{
+    float: left;
+    border-radius: 1em 1em 1em 1em;
+}
+
+
+

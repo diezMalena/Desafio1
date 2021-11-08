@@ -1,0 +1,192 @@
+//3 puntos de corte, 480px, 768px y 1280px:
+$maxColumnas: 12;
+$colorMain:rgb(5, 88, 54);
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-width: 1900px;
+    margin: 0 auto;
+    //padding: 0 10px;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: block;
+    //border: 1px solid orange;
+}
+
+@mixin paginaResponsive ($puntoCorte) {
+    @if $puntoCorte==movil {
+        @media only screen and ( max-width: 480px) {
+            @content;
+        }
+    }
+    @if $puntoCorte==tablet {
+        @media ( max-width: 768px) {
+            @content;
+        }
+    }
+    @if $puntoCorte==ordenador {
+        @media ( max-width: 1280px) {
+            @content;
+        }
+    }
+    @if $puntoCorte==extra {
+        @media ( max-width: 2000px) {
+            @content;
+        }
+    }
+}
+
+@include paginaResponsive(extra) {
+    @for $i from 0 through $maxColumnas {
+        .col-e-#{$i} {
+            width: (100% / $maxColumnas)*$i;
+            float: left;
+        }
+        .offset-e-#{$i} {
+            margin-left: (100% / $maxColumnas)*$i;
+        }
+    }
+}
+
+@include paginaResponsive(ordenador) {
+    @for $i from 0 through $maxColumnas {
+        .col-o-#{$i} {
+            width: (100% / $maxColumnas)*$i;
+            float: left;
+        }
+        .offset-o-#{$i} {
+            margin-left: (100% / $maxColumnas)*$i;
+        }
+    }
+}
+
+@include paginaResponsive(tablet) {
+    @for $i from 0 through $maxColumnas {
+        .col-t-#{$i} {
+            width: (100% / $maxColumnas)*$i;
+            float: left;
+        }
+        .offset-t-#{$i} {
+            margin-left: (100% / $maxColumnas)*$i;
+        }
+    }
+}
+
+@include paginaResponsive(movil) {
+    @for $i from 0 through $maxColumnas {
+        .col-m-#{$i} {
+            width: (100% / $maxColumnas)*$i;
+            float: left;
+        }
+        .offset-m-#{$i} {
+            margin-left: (100% / $maxColumnas)*$i;
+        }
+    }
+}
+
+
+/*@mixin menu_desaparece($puntoRuptura) {
+    @if($puntoRuptura==movil) {
+        @media only screen and (max-width: 550px) {
+            @content;
+        }
+    }
+}
+
+.desaparece {
+    @include menu_desaparece(movil) {
+        display: none;
+    }
+}*/
+
+.izquierda {
+    text-align: left;
+}
+
+.centrado {
+    text-align: center;
+}
+
+.derecha {
+    text-align: right;
+}
+
+.padBottom {
+    padding-bottom: 40px;
+}
+
+.padBottom15 {
+    padding-bottom: 15px;
+}
+
+.padBottom30 {
+    padding-bottom: 30px;
+}
+
+.padTop15 {
+    padding-top: 15px;
+}
+
+.padTop {
+    padding-top: 25px;
+}
+
+.padLeft {
+    padding-left: 7%;
+}
+
+.padTop40 {
+    padding-top: 40px;
+}
+
+.padTopCentrar {
+    padding-top: 7%;
+}
+
+.padTarjeta {
+    padding: 7px;
+}
+
+.marginTarjeta {
+    margin: 12px;
+}
+
+.marginBottom {
+    margin-bottom: 12px;
+}
+
+.margin {
+    margin: 5px 5px 5px 5px;
+}
+
+.padding {
+    padding: 15px 15px 15px 15px;
+}
+
+.marginTop {
+    margin-top: 50px;
+}
+
+.divMenuHorizontal {
+    margin-left: 26%;
+}
+
+.edicionTitulo {
+    margin-top: 20px;
+}
+
+.floatIzq {
+    float: left;
+}
+
+.floatDer {
+    float: right;
+}

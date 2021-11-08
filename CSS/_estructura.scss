@@ -1,0 +1,154 @@
+//header, footer, nav, section:
+@import "_colores.scss";
+@import url('https://fonts.googleapis.com/css2?family=Bitter&family=Vollkorn:wght@400;600&display=swap');
+html,
+body {
+    font-family: 'Bitter', serif;
+    height: 100%;
+}
+
+header {
+    background-color: $colorHeader;
+    height: 20%;
+}
+
+section {
+    padding-top: 5px;
+}
+
+.alturaDiv {
+    min-height: 75%;
+}
+
+.sectionEditor {
+    background-image: url('../Img/Generales/fondoEditor.jpg');
+    background-size: cover;
+}
+
+.sectionAdmin {
+    background-image: url('../Img/Generales/fondoAdmin.jpg');
+    background-size: cover;
+}
+
+.sectionRanking {
+    background-image: url('../Img/Generales/fondoRanking.jpg');
+    background-size: cover;
+}
+
+nav {
+    //min-height: 70%;
+}
+
+.fondoNav {
+    background-color: rgb(231, 186, 127);
+    padding-right: 10px;
+    border-radius: 1em 1em 1em 1em;
+}
+
+.fondoRanking {
+    background-color: rgb(231, 186, 127);
+    border-radius: 1em 1em 1em 1em;
+}
+
+.navegador {
+    background-color: #b8b1b4;
+    padding: 2px 2px 2px 2px;
+}
+
+form {
+    position: relative;
+}
+
+fieldset {
+    padding: 3px 10px;
+    border: #321F28 5px solid;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    position: relative;
+}
+
+.fondoFieldsetUsuario {
+    background-color: rgb(231, 186, 127);
+}
+
+.fondoFieldsetPartida {
+    background-color: #b8b1b4;
+}
+
+.alineado {
+    display: inline-block;
+    width: 80px;
+}
+
+footer {
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    height: 5%;
+    width: 100%;
+    background-color: $colorHeader;
+}
+
+.etiquetaEnigma {
+    background-color: rgb(177, 194, 204);
+    color: black;
+    border-radius: 0.5em 0.5em 0.5em 0.5em;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.etiquetaAdmin {
+    background-color: rgb(177, 194, 204);
+    color: black;
+    border-radius: 0.5em 0.5em 0.5em 0.5em;
+}
+
+.fondoFieldsetRegistro {
+    background-color: #c9e1f3;
+}
+
+.colorClaro {
+    background-color: $colorClaro;
+}
+
+.colorOscuro {
+    background-color: $colorOscuro;
+}
+
+.colorClaroOnline {
+    background-color: $colorClaroOnline;
+}
+
+.colorOscuroOnline {
+    background-color: $colorOscuroOnline;
+}
+
+.desconectado {
+    border-radius: 1em 1em 1em 1em;
+    background-color: red;
+}
+
+.conectado {
+    border-radius: 1em 1em 1em 1em;
+    background-color: green;
+}
+
+.error {
+    background-color: $ColorFondoError;
+    padding: 0;
+}
+
+.error.active {
+    padding: 0.1em;
+}
+
+.redonditoGris {
+    border-radius: 2em 2em 2em 2em;
+    background-color: #b8b1b4;
+}
+
+.fondoJugar {
+    background-color: $colorSection;
+    border-radius: 2em 2em 2em 2em;
+    padding: 10px 10px 10px 10px;
+}

@@ -1,0 +1,93 @@
+    @import "_colores.scss";
+    @import url("https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@1,700&display=swap");
+    .tooltip {
+        border-bottom: 1px dotted black;
+        float: right;
+    }
+    
+    .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 20rem;
+        background-color: lightcyan;
+        color: rgb(0, 0, 0);
+        font-size: 16px;
+        text-align: left;
+        border-radius: 6px;
+        padding: 5px;
+        position: absolute;
+        z-index: 1;
+        right: 0;
+    }
+    
+    .tooltip:hover .tooltiptext {
+        visibility: visible;
+    }
+    
+    .button {
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        cursor: pointer;
+        height: 46px;
+    }
+    
+    .buttonMini {
+        border: none;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 14px;
+        cursor: pointer;
+        height: 26px;
+    }
+    
+    a.buttonMini {
+        padding-top: 7px;
+    }
+    
+    input.button {
+        padding: 0;
+    }
+    
+    .buttonPrimario {
+        background-color: $botonPrimario;
+        color: white;
+        border: white;
+    }
+    
+    .buttonPrimario:hover {
+        background-color: $botonPrimarioEncendido;
+        color: rgb(0, 0, 0);
+        border-radius: 0.2em 0.2em 0.2em 0.2em;
+    }
+    
+    .buttonPrimarioVolver {
+        background-color: $botonPrimarioVolver;
+        color: white;
+        border: white;
+    }
+    
+    .buttonPrimarioVolver:hover {
+        background-color: $botonPrimarioVolverEncendido;
+        color: rgb(0, 0, 0);
+        border-radius: 0.2em 0.2em 0.2em 0.2em;
+    }
+    
+    .buttonSecundario {
+        background-color: $botonSecundario;
+        color: white;
+        border-radius: 1em 1em 1em 1em;
+        box-shadow: 5px 5px 5px #7e1059;
+    }
+    
+    .buttonSecundario:hover {
+        background-color: $botonSecundarioEncendido;
+        color: black;
+        border-radius: 1em 1em 1em 1em;
+        box-shadow: 5px 5px 5px rgb(145, 89, 126)
+    }

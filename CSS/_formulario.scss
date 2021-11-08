@@ -1,0 +1,27 @@
+@import "_colores.scss";
+form.primario {
+    background-color: silver;
+    color: black;
+    input {
+        border: 1px dotted black;
+    }
+}
+
+form.secundario {
+    background-color: wheat;
+    color: black;
+}
+
+.sinBorde {
+    border: 0;
+}
+
+.sinBordeClaro {
+    border: 0;
+    background-color: #977df7;
+}
+
+.sinBordeOscuro {
+    border: 0;
+    background-color: #8583f8;
+}
