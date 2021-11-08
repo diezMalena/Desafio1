@@ -18,7 +18,7 @@
     <div class="container">
         <header class="row">
             <div class="col-e-4 col-m-5">
-                <img src="../../Img/Generales/barco.png" class="imgResponsive">
+                <a href="../../index.php"><img src="../../Img/Generales/barco.png" class="imgResponsive"></a>
             </div>
 
             <div class="col-e-8 col-m-6 edicionTitulo">
@@ -176,7 +176,7 @@
                                     <div class="col-e-2 col-m-5 floatDer">
                                         <div class="row">
                                             <a href="crudAdmin.php"
-                                                class="col-e-12 col-m-12 buttonMini buttonPrimario">Volver</a>
+                                                class="col-e-12 col-m-12 buttonMini buttonPrimarioVolver">Volver</a>
                                         </div>
                                     </div>
                                 </div>

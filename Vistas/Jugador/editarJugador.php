@@ -18,7 +18,7 @@
     <div class="container">
         <header class="row">
             <div class="col-e-4 col-o-3 col-t-3 col-m-5">
-                <img src="../../Img/Generales/barco.png" class="imgResponsive">
+                <a href="../../index.php"><img src="../../Img/Generales/barco.png" class="imgResponsive"></a>
             </div>
 
             <div class="col-e-6 col-o-7 col-t-7 col-m-6 offset-e-1 edicionTitulo">
@@ -31,9 +31,9 @@
             <div class="col-e-12">
                 <section class="row">
                     <div
-                        class="col-e-4 col-o-7 col-t-7 col-m-12 offset-e-4 offset-m-0 offset-o-3 offset-t-3 padTop padBottom marginTop">
+                        class="col-e-4 col-o-7 col-t-12 col-m-12 offset-e-4 offset-m-0 offset-o-3 offset-t-0 padTop padBottom marginTop">
                         <form action="../../Controlador/controlador_jugador.php" method="POST">
-                            <fieldset class="padBottom fondoFieldsetUsuario">
+                            <fieldset class="padBottom fondoFieldsetPartida">
                                 <legend>Editar usuario: </legend>
                                 <div class="row padBottom15">
                                     <div class="col-e-3 col-o-3 col-m-3 col-t-3">
@@ -94,7 +94,7 @@
 
                                     <div class="col-e-9 col-o-9 col-m-9 col-t-9">
                                         <div class="row">
-                                            <input type="text" class="col-e-12 col-o-8 col-t-8 col-m-8"
+                                            <input type="password" class="col-e-12 col-o-8 col-t-8 col-m-8"
                                                 name="contraseña" value="<?= $usuario->getContraseña()?>">
                                         </div>
                                     </div>
@@ -111,7 +111,7 @@
                                     <div class="col-e-2 col-m-5 floatDer">
                                         <div class="row">
                                             <a href="perfilJugador.php"
-                                                class="col-e-12 col-m-12 buttonMini buttonSecundario">Volver</a>
+                                                class="col-e-12 col-m-12 buttonMini buttonPrimarioVolver">Volver</a>
                                         </div>
                                     </div>
                                 </div>

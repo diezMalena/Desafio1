@@ -18,7 +18,7 @@
     <div class="container">
         <header class="row">
             <div class="col-e-4 col-m-5">
-                <img src="../Img/Generales/barco.png" class="imgResponsive">
+                <a href="../index.php"><img src="../Img/Generales/barco.png" class="imgResponsive"></a>
             </div>
 
             <div class="col-e-6 col-m-6 edicionTitulo">
@@ -27,13 +27,13 @@
         </header>
 
 
-        <section class="row sectionIndex alturaDiv">
+        <section class="row sectionRanking alturaDiv">
             <div class="col-m-12 col-e-4 padTop padBottom offset-e-4 offset-m-0">
                 <form action="../Controlador/registro_IS.php" method="POST">
                     <input type="hidden"
                         value=<?=$_REQUEST["correo"]  //En un campo oculto meto el correo al que le cambio la contraseña?>
                         name="correo">
-                    <fieldset class="padBottom fondoFieldset">
+                    <fieldset class="padBottom fondoFieldsetUsuario">
                         <legend>Introduce una nueva contraseña: </legend>
 
                         <div class="row padTop padBottom">

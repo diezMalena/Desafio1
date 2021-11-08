@@ -66,16 +66,28 @@
         border-radius: 0.2em 0.2em 0.2em 0.2em;
     }
     
+    .buttonPrimarioVolver {
+        background-color: $botonPrimarioVolver;
+        color: white;
+        border: white;
+    }
+    
+    .buttonPrimarioVolver:hover {
+        background-color: $botonPrimarioVolverEncendido;
+        color: rgb(0, 0, 0);
+        border-radius: 0.2em 0.2em 0.2em 0.2em;
+    }
+    
     .buttonSecundario {
         background-color: $botonSecundario;
         color: white;
         border-radius: 1em 1em 1em 1em;
-        box-shadow: 10px 10px 5px #7e1059;
+        box-shadow: 5px 5px 5px #7e1059;
     }
     
     .buttonSecundario:hover {
         background-color: $botonSecundarioEncendido;
         color: black;
         border-radius: 1em 1em 1em 1em;
-        box-shadow: 10px 10px 5px rgb(145, 89, 126)
+        box-shadow: 5px 5px 5px rgb(145, 89, 126)
     }

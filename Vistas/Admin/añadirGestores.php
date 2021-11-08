@@ -15,7 +15,7 @@
     <div class="container">
         <header class="row">
             <div class="col-e-4 col-m-5">
-                <img src="../../Img/Generales/barco.png" class="imgResponsive">
+                <a href="../../index.php"><img src="../../Img/Generales/barco.png" class="imgResponsive"></a>
             </div>
 
             <div class="col-e-8 col-m-6 edicionTitulo">

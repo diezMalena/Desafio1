@@ -1,66 +1,27 @@
-form.primario{
-    background-color:silver;
+@import "_colores.scss";
+form.primario {
+    background-color: silver;
     color: black;
-    input{
+    input {
         border: 1px dotted black;
     }
 }
 
-form.secundario{
-    background-color:wheat;
+form.secundario {
+    background-color: wheat;
     color: black;
 }
 
+.sinBorde {
+    border: 0;
+}
 
-/*input[type=email]{
-    -webkit-appearance: none;
-    appearance: none;
-  
-    width: 100%;
-    border: 1px solid #333;
-    margin: 0;
-  
-    font-family: inherit;
-    font-size: 90%;
-  
-    box-sizing: border-box;
-  }
-  
-   Este es nuestro diseño para los campos no válidos 
-  input:invalid{
-    border-color: #900;
-    background-color: #FDD;
-  }
-  
-  input:focus:invalid {
-    outline: none;
-  }
-  
-   Este es el diseño para nuestros mensajes de error 
-  .error {
-    width : 100%;
-    padding: 0;
-  
-    font-size: 80%;
-    color: white;
-    background-color: #900;
-    border-radius: 0 0 5px 5px;
-  
-    box-sizing: border-box;
-  }
-  
-  .error.active {
-    padding: 0.3em;
-  }
-  
-  .noerror {
-    width : 100%;
-    padding: 0;
-  
-    font-size: 80%;
-    color: white;
-    background-color: #090;
-    border-radius: 0 0 5px 5px;
-  
-    box-sizing: border-box;
-  }*/
+.sinBordeClaro {
+    border: 0;
+    background-color: #977df7;
+}
+
+.sinBordeOscuro {
+    border: 0;
+    background-color: #8583f8;
+}

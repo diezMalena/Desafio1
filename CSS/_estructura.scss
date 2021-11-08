@@ -20,11 +20,6 @@ section {
     min-height: 75%;
 }
 
-.sectionIndex {
-    background-image: url('../Img/Generales/fondo.png');
-    background-size: cover;
-}
-
 .sectionEditor {
     background-image: url('../Img/Generales/fondoEditor.jpg');
     background-size: cover;
@@ -41,13 +36,23 @@ section {
 }
 
 nav {
-    min-height: 70%;
+    //min-height: 70%;
 }
 
 .fondoNav {
     background-color: rgb(231, 186, 127);
     padding-right: 10px;
     border-radius: 1em 1em 1em 1em;
+}
+
+.fondoRanking {
+    background-color: rgb(231, 186, 127);
+    border-radius: 1em 1em 1em 1em;
+}
+
+.navegador {
+    background-color: #b8b1b4;
+    padding: 2px 2px 2px 2px;
 }
 
 form {
@@ -60,10 +65,6 @@ fieldset {
     border-top-left-radius: 20px;
     border-bottom-right-radius: 20px;
     position: relative;
-}
-
-.fondoFieldset {
-    background-color: lightpink;
 }
 
 .fondoFieldsetUsuario {
@@ -102,25 +103,8 @@ footer {
     border-radius: 0.5em 0.5em 0.5em 0.5em;
 }
 
-.fondoRegistro {
-    background-image: url('../Img/Generales/fondoRegistro.jpg');
-    background-size: cover;
-}
-
 .fondoFieldsetRegistro {
     background-color: #c9e1f3;
-}
-
-.fondoUsuario {
-    background-image: url('../Img/Generales/fondoUsuario.jpg');
-    height: 70%;
-    background-size: cover;
-}
-
-.fondoOnline {
-    background-image: url('../Img/Generales/fondoOnline.jpg');
-    height: 70%;
-    background-size: cover;
 }
 
 .colorClaro {
@@ -156,4 +140,15 @@ footer {
 
 .error.active {
     padding: 0.1em;
+}
+
+.redonditoGris {
+    border-radius: 2em 2em 2em 2em;
+    background-color: #b8b1b4;
+}
+
+.fondoJugar {
+    background-color: $colorSection;
+    border-radius: 2em 2em 2em 2em;
+    padding: 10px 10px 10px 10px;
 }

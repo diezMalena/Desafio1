@@ -23,7 +23,7 @@
     <div class="container">
         <header class="row">
             <div class="col-e-4 col-m-5">
-                <img src="../Img/Generales/barco.png" class="imgResponsive">
+                <a href="../index.php"><img src="../Img/Generales/barco.png" class="imgResponsive"></a>
             </div>
 
             <div class="col-e-6 col-m-6 edicionTitulo">
@@ -32,11 +32,12 @@
         </header>
 
 
-        <section class="row sectionIndex alturaDiv">
-            <div class="col-m-12 col-e-4 col-o-6 padTop padBottom offset-e-4 offset-m-0 offset-o-3">
+        <section class="row sectionRanking alturaDiv">
+            <div
+                class="col-m-12 col-e-4 col-o-6 col-t-12 padTop40 padBottom offset-e-4 offset-m-0 offset-t-0 offset-o-3">
                 <form action="../Controlador/registro_IS.php" method="POST">
-                    <fieldset class="padBottom fondoFieldset">
-                        <legend>Introduce una direccion de correo electronico: </legend>
+                    <fieldset class="padBottom fondoFieldsetUsuario">
+                        <legend>Introduce un e-mail: </legend>
 
                         <div class="row padTop padBottom">
                             <div class="col-e-3 col-o-3 col-m-4 col-t-4">
@@ -49,6 +50,17 @@
                                 <div class="row">
                                     <input type="email" class="col-e-12" name="correo" id="mail" required minlength="5">
                                 </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-e-6 offset-e-3 padBottom15">
+                            <?php 
+                                    if(isset($_SESSION["mensajeLlegada"])){
+                                        echo $_SESSION["mensajeLlegada"];
+                                        unset($_SESSION["mensajeLlegada"]);
+                                    }
+                            ?>
                             </div>
                         </div>
 

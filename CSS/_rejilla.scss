@@ -92,6 +92,21 @@ $colorMain:rgb(5, 88, 54);
     }
 }
 
+
+/*@mixin menu_desaparece($puntoRuptura) {
+    @if($puntoRuptura==movil) {
+        @media only screen and (max-width: 550px) {
+            @content;
+        }
+    }
+}
+
+.desaparece {
+    @include menu_desaparece(movil) {
+        display: none;
+    }
+}*/
+
 .izquierda {
     text-align: left;
 }
@@ -124,8 +139,16 @@ $colorMain:rgb(5, 88, 54);
     padding-top: 25px;
 }
 
+.padLeft {
+    padding-left: 7%;
+}
+
 .padTop40 {
     padding-top: 40px;
+}
+
+.padTopCentrar {
+    padding-top: 7%;
 }
 
 .padTarjeta {
@@ -138,6 +161,14 @@ $colorMain:rgb(5, 88, 54);
 
 .marginBottom {
     margin-bottom: 12px;
+}
+
+.margin {
+    margin: 5px 5px 5px 5px;
+}
+
+.padding {
+    padding: 15px 15px 15px 15px;
 }
 
 .marginTop {
